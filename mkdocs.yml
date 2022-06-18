@@ -11,7 +11,7 @@ theme:
   icon:
     logo: material/code-greater-than
     repo : fontawesome/brands/github
-  favicon: xtra/favSNT.png
+  favicon: xtra/fav.png
 
   features:
     - navigation.instant
