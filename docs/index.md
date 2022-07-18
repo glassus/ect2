@@ -1,5 +1,4 @@
-<script src="../data/webcomponentsjs/webcomponents-loader.js"></script>
-<script src="../data/dist/gif-player.es6.js" defer async></script>
+
 
 ## Actualités
 
