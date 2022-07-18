@@ -5,7 +5,7 @@
 test gif anim
 
 
-<gif-player src="../data/arbre.gif" speed="1" play></gif-player>
+<gif-player src="/data/arbre.gif" speed="1" play></gif-player>
   
 
 <!--
