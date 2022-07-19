@@ -2,10 +2,10 @@
 
 ## Actualités
 
-test gif anim3
+test gif anim4
 
 <center>
-<gif-player src="{{ base_url }}/data/arbre.gif" speed="1" play></gif-player>
+<gif-player src="https://glassus.github.io/terminale_nsi/T2_Programmation/2.2_Recursivite/data/arbre.gif" speed="1" play></gif-player>
 </center>
 
 
