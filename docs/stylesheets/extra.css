@@ -18,7 +18,7 @@
 
 gif-player {
     display: block;
-    margin: 0 auto;
+    margin: auto;
     border: 1px solid #ccc;
     width: 240px;
     height: 160px;
