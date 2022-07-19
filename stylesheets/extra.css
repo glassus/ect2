@@ -1,0 +1,25 @@
+.md-typeset div.arithmatex  {
+    overflow: initial;
+}
+
+.md-typeset .admonition {
+    font-size: 0.8rem;
+}
+
+.md-typeset details {
+    font-size: 0.8rem;
+}
+
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+gif-player {
+    display: block;
+    margin: auto;
+    border: 1px solid #ccc;
+    width: 240px;
+    height: 160px;
+}
