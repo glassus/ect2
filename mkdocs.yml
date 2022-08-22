@@ -75,8 +75,10 @@ markdown_extensions:
 
 
 plugins:
- # - search
-  - git-revision-date
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: false
+      locale: fr
   - awesome-pages:
       collapse_single_pages: false
   - macros
