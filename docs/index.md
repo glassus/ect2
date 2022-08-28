@@ -1,6 +1,13 @@
 
 
-## Actualités
+!!! note "Séance en cours"
+    - [TD01](./TD01/TD01/) : révision des structures élémentaires
+
+
+
+
+
+<!--
 
 test gif anim4
 
@@ -10,7 +17,6 @@ test gif anim4
 
 
 
-<!--
 
 ## Programmes officiels
 ### Programme ECT1 - partie informatique
