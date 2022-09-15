@@ -20,6 +20,7 @@ theme:
     - navigation.top
     - toc.integrate
     - header.autohide
+    - content.code.annotate 
 
   palette:
     # Light mode
@@ -54,7 +55,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.details
   - pymdownx.highlight:
-      linenums: true
+      linenums: None
   - pymdownx.tasklist:
       custom_checkbox: false
   - pymdownx.inlinehilite
