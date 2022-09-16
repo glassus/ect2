@@ -1,7 +1,19 @@
 
 
-!!! note "Séance en cours"
+### 1. Séances de Travaux Dirigés
+
+!!! note ":star: Séance en cours :star:"
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
+
+
+!!! note "Séances précédentes"
+    - ...
+
+### 2. Python en ligne sans installation
+
+Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/){. target="_blank"} :
+
+[![image](data/basthon.png){: .center width=60%}](https://console.basthon.fr/){. target="_blank"}
 
 
 
