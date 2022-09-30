@@ -731,7 +731,9 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -778,43 +780,66 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 </code></pre></div></td></tr></table></div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Tracer le diagramme en barres de la fonction <code>mystere</code> de l'exercice 1, pour des valeurs allant entre 0 et 12.</p>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">mystere</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">c</span><span class="o">/</span><span class="n">n</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
+    <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">mystere</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<!--     === "Correction"
-        ```python linenums='1'
-        import numpy as np
-        import numpy.random as rd
-        import matplotlib.pyplot as plt
-
-        def mystere(val):
-            n = 1000
-            c = 0
-            j = 0
-            while j < n:
-                x = 1 + np.floor(6*rd.random())
-                y = 1 + np.floor(6*rd.random())
-                if x + y == val:
-                    c += 1
-                j += 1
-
-            return c/n
-
-
-        plt.clf()
-        X = np.arange(13)
-        Y = np.zeros(13)
-        for k in range(13):
-            Y[k] = mystere(k)
-        plt.bar(X,Y) 
-        plt.show()
-        ``` -->
-
+</div>
 <h2 id="5-retour-sur-le-while">5. Retour sur le <code>while</code>.<a class="headerlink" href="#5-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 3</p>
@@ -873,7 +898,7 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <p><img alt="image" class="center" src="../data/unif.png" /></p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 4</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
@@ -882,22 +907,29 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <li>Simuler 100 000 fois cette expérience aléatoire et afficher la fréquence d'apparition d'une boule blanche. </li>
 </ol>
 </div>
-</div>
-</div>
-</div>
-<!--     === "Correction Q1"
-        ```python linenums='1'
-        import numpy as np
-        import numpy.random as rd
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
 
-        def tirage():
-            val_alea = rd.random()
-            if val_alea < 3/8:
-                return 1
-            else:
-                return 0
-        ``` -->
-
+<span class="k">def</span> <span class="nf">tirage</span><span class="p">():</span>
+    <span class="n">val_alea</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">val_alea</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
 <!--     === "Correction Q2"
         ```python linenums='1'
         nb_tirages = 10**5
