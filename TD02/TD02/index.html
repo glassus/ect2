@@ -898,7 +898,7 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <p><img alt="image" class="center" src="../data/unif.png" /></p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 4</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label><label for="__tabbed_4_3">Correction Q2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
@@ -927,19 +927,23 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
         <span class="k">return</span> <span class="mi">0</span>
 </code></pre></div></td></tr></table></div>
 </div>
-</div>
-</div>
-</div>
-<!--     === "Correction Q2"
-        ```python linenums='1'
-        nb_tirages = 10**5
-        somme_blanches = 0
-        for k in range(nb_tirages):
-            somme_blanches += tirage()
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nb_tirages</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
+<span class="n">somme_blanches</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_tirages</span><span class="p">):</span>
+    <span class="n">somme_blanches</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
 
-        print(somme_blanches / nb_tirages)
-        ``` -->
-
+<span class="nb">print</span><span class="p">(</span><span class="n">somme_blanches</span> <span class="o">/</span> <span class="n">nb_tirages</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="7-retour-sur-les-suites">7. Retour sur les suites<a class="headerlink" href="#7-retour-sur-les-suites" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 5</p>
