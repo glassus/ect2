@@ -3,10 +3,11 @@
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD02](./TD02/TD02/) : premières simulations
+    - [TD03](./TD03/TD03/) : retour sur les simulations
 
 
 !!! note "Séances précédentes"
+    - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
 
 ### 2. Python en ligne sans installation
