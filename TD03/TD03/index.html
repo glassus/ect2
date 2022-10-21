@@ -678,7 +678,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 2</p>
 <p><em>inspiré par Ecricome 2018</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction Q1</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction Q1</label><label for="__tabbed_2_3">Correction Q2</label><label for="__tabbed_2_4">Correction Q3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne <span class="arithmatex">\(U\)</span> contenant deux boules blanches et une boule noire indiscernables au toucher, ainsi qu’une urne <span class="arithmatex">\(V\)</span> contenant une boule blanche et trois boules noires, elles aussi indiscernables au toucher. On effectue une suite de tirages d’une boule dans ces urnes en procédant comme suit :</p>
@@ -784,28 +784,29 @@
     <span class="k">return</span> <span class="n">X</span>
 </code></pre></div></td></tr></table></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">compteur</span> <span class="o">+=</span> <span class="n">simulation</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">compteur</span> <span class="o">/</span> <span class="n">n</span>
+</code></pre></div></td></tr></table></div>
 </div>
-</div>
-</div>
-<!--     === "Correction Q2"
-        ```python linenums='1'
-        def freq(n):
-            compteur = 0
-            for k in range(n):
-                compteur += simulation()
-            return compteur / n
-        ``` -->
-
-<!--     === "Correction Q3"
-        Expérimentalement :
-        <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<div class="tabbed-block">
+<p>Expérimentalement :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 <span class="mf">1.055416</span>
-</code></pre></div>
-
-        Théoriquement, en faisant un arbre de probalités,
-
-        $$E(X_2) = 2 \times \dfrac{2}{6} +  1 \times \dfrac{1}{2} +  1 \times \dfrac{2}{9} = \dfrac{57}{54}$$ -->
-
+</code></pre></div></p>
+<p>Théoriquement, en faisant un arbre de probalités,</p>
+<div class="arithmatex">\[E(X_2) = 2 \times \dfrac{2}{6} +  1 \times \dfrac{1}{2} +  1 \times \dfrac{2}{9} = \dfrac{57}{54}\]</div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="2-retour-sur-le-while">2. Retour sur le <code>while</code>.<a class="headerlink" href="#2-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 3</p>
@@ -834,24 +835,35 @@
 </div>
 </div>
 </div>
-<!--    === "Correction"
-        ```python linenums='1'
-        import numpy as np
-        import numpy.random as rd
+<p>=== "Correction"
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
 
-        nb_secret = 1 + np.floor(100*rd.random())
+<span class="n">nb_secret</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
 
-        prop = int(input("proposition ? "))
-        while prop != nb_secret:
-            if prop > nb_secret:
-                print("trop grand")
-            else:
-                print("trop petit")
-            prop = int(input("proposition ? "))
+<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">prop</span> <span class="o">!=</span> <span class="n">nb_secret</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">prop</span> <span class="o">&gt;</span> <span class="n">nb_secret</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop grand&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop petit&quot;</span><span class="p">)</span>
+    <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
 
-        print("bravo !")
-        ``` -->
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bravo !&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="3-retour-sur-les-suites">3. Retour sur les suites<a class="headerlink" href="#3-retour-sur-les-suites" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 4</p>
