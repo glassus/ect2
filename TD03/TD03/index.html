@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -629,7 +629,7 @@
 <p><img alt="image" class="center" src="../data/unif.png" /></p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction Q1</label><label for="__tabbed_1_3">Correction Q2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
@@ -638,47 +638,36 @@
 <li>Simuler 100 000 fois cette expérience aléatoire et afficher la fréquence d'apparition d'une boule blanche. </li>
 </ol>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+</div>
+</div>
+</div>
+<!--     === "Correction Q1"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
 
-<span class="k">def</span> <span class="nf">tirage</span><span class="p">():</span>
-    <span class="n">val_alea</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">val_alea</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nb_tirages</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
-<span class="n">somme_blanches</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_tirages</span><span class="p">):</span>
-    <span class="n">somme_blanches</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
+        def tirage():
+            val_alea = rd.random()
+            if val_alea < 3/8:
+                return 1
+            else:
+                return 0
+        ``` -->
 
-<span class="nb">print</span><span class="p">(</span><span class="n">somme_blanches</span> <span class="o">/</span> <span class="n">nb_tirages</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
+<!--     === "Correction Q2"
+        ```python linenums='1'
+        nb_tirages = 10**5
+        somme_blanches = 0
+        for k in range(nb_tirages):
+            somme_blanches += tirage()
+
+        print(somme_blanches / nb_tirages)
+        ``` -->
+
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 2</p>
 <p><em>inspiré par Ecricome 2018</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction Q1</label><label for="__tabbed_2_3">Correction Q2</label><label for="__tabbed_2_4">Correction Q3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne <span class="arithmatex">\(U\)</span> contenant deux boules blanches et une boule noire indiscernables au toucher, ainsi qu’une urne <span class="arithmatex">\(V\)</span> contenant une boule blanche et trois boules noires, elles aussi indiscernables au toucher. On effectue une suite de tirages d’une boule dans ces urnes en procédant comme suit :</p>
@@ -738,75 +727,54 @@
 <strong>Q2.</strong> Écrire une fonction <code>freq(n)</code> qui renvoie la valeur moyenne du nombre de boules blanches tirées sur <code>n</code> expériences réalisées.</p>
 <p><strong>Q3.</strong> En déduire <span class="arithmatex">\(E(X_2)\)</span> et retrouver ce résultat par un calcul théorique.</p>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="k">def</span> <span class="nf">simulation</span><span class="p">():</span>
-    <span class="n">tirage1</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">tirage1</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="n">X</span> <span class="o">=</span> <span class="n">res1</span> <span class="o">+</span> <span class="n">res2</span>
-    <span class="k">return</span> <span class="n">X</span>
-</code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">compteur</span> <span class="o">+=</span> <span class="n">simulation</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">compteur</span> <span class="o">/</span> <span class="n">n</span>
-</code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<p>Expérimentalement :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</div>
+<!--     === "Correction Q1"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
+
+        def simulation():
+            tirage1 = rd.randint(1, 4)
+            if tirage1 < 3:
+                res1 = 1
+                tirage2 = rd.randint(1, 5)
+                if tirage2 == 1:
+                    res2 = 1
+                else:
+                    res2 = 0
+            else:
+                res1 = 0
+                tirage2 = rd.randint(1, 4)
+                if tirage2 < 3:
+                    res2 = 1
+                else:
+                    res2 = 0
+
+            X = res1 + res2
+            return X
+        ``` -->
+
+<!--     === "Correction Q2"
+        ```python linenums='1'
+        def freq(n):
+            compteur = 0
+            for k in range(n):
+                compteur += simulation()
+            return compteur / n
+        ``` -->
+
+<!--     === "Correction Q3"
+        Expérimentalement :
+        <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 <span class="mf">1.055416</span>
-</code></pre></div></p>
-<p>Théoriquement, en faisant un arbre de probalités,</p>
-<div class="arithmatex">\[E(X_2) = 2 \times \dfrac{2}{6} +  1 \times \dfrac{1}{2} +  1 \times \dfrac{2}{9} = \dfrac{57}{54}\]</div>
-</div>
-</div>
-</div>
-</div>
+</code></pre></div>
+
+        Théoriquement, en faisant un arbre de probalités,
+
+        $$E(X_2) = 2 \times \dfrac{2}{6} +  1 \times \dfrac{1}{2} +  1 \times \dfrac{2}{9} = \dfrac{57}{54}$$ -->
+
 <h2 id="2-retour-sur-le-while">2. Retour sur le <code>while</code>.<a class="headerlink" href="#2-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 3</p>
@@ -835,40 +803,29 @@
 </div>
 </div>
 </div>
-<p>=== "Correction"
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+<!--    === "Correction"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
 
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+        nb_secret = 1 + np.floor(100*rd.random())
 
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">prop</span> <span class="o">!=</span> <span class="n">nb_secret</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">prop</span> <span class="o">&gt;</span> <span class="n">nb_secret</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop grand&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop petit&quot;</span><span class="p">)</span>
-    <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
+        prop = int(input("proposition ? "))
+        while prop != nb_secret:
+            if prop > nb_secret:
+                print("trop grand")
+            else:
+                print("trop petit")
+            prop = int(input("proposition ? "))
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bravo !&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
+        print("bravo !")
+        ``` -->
+
 <h2 id="3-retour-sur-les-suites">3. Retour sur les suites<a class="headerlink" href="#3-retour-sur-les-suites" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 4</p>
 <p><em>extrait du sujet 0 Ecricome</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label><label for="__tabbed_4_3">Correction Q2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère la suite <span class="arithmatex">\((u_n)_{n \in \mathbb{N}^*}\)</span> définie par <span class="arithmatex">\(u_1=\dfrac{2}{3}\)</span> et, <span class="arithmatex">\(\forall n \in \mathbb{N}^*, u_{n+1}=\dfrac{n+1}{3n}u_n\)</span>.</p>
@@ -887,24 +844,21 @@
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(u_2=\dfrac{4}{9}\)</span> et <span class="arithmatex">\(u_3 = \dfrac{2}{9}\)</span></p>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
-    <span class="k">return</span> <span class="n">u</span>
-</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-</div>
+<!--     === "Correction Q1"
+        $u_2=\dfrac{4}{9}$ et $u_3 = \dfrac{2}{9}$
+
+    === "Correction Q2"
+        ```python linenums='1'
+        def suite(n):
+            u = 2/3
+            for k in range(1, n):
+                u = (k+1)/(3*k) * u
+            return u
+        ``` -->
+
 <div class="admonition abstract">
 <p class="admonition-title">Exercice 5</p>
 <p><em>inspiré du sujet Ecricome 2019</em></p>
@@ -1002,7 +956,7 @@
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">14 octobre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">21 octobre 2022</span>
       
     
   </small>
