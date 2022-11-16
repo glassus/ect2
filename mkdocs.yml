@@ -82,6 +82,7 @@ plugins:
       locale: fr
   - awesome-pages:
       collapse_single_pages: false
+  - sqlite-console
   - macros
  
  # - mkdocs-jupyter

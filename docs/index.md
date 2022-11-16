@@ -16,11 +16,16 @@ Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/
 
 [![image](data/basthon.png){: .center width=60%}](https://console.basthon.fr/){. target="_blank"}
 
-
-
-
-
 <!--
+
+Chargement base livres
+
+{!{ sqlide titre="Chargement d'une base"  base="data/livres.db"}!}
+
+
+
+
+
 
 test gif anim4
 
