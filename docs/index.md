@@ -1,4 +1,6 @@
-
+---
+test: ok
+---
 
 ### 1. Séances de Travaux Dirigés
 
@@ -15,6 +17,11 @@
 Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/){. target="_blank"} :
 
 [![image](data/basthon.png){: .center width=60%}](https://console.basthon.fr/){. target="_blank"}
+
+
+{{ page.meta.test }}
+
+{# comment #}
 
 <!--
 
