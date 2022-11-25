@@ -4,7 +4,6 @@ site_url: https://glassus.github.io/ect2
 
 theme:
   name: material
-  site_url: ""
   custom_dir: my_theme_customizations/
   font: false
   language: fr

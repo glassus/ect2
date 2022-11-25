@@ -1,20 +1,8 @@
-# Cours de SQL
-
-## 1. Extraits du programme officiel
-
-### 1.1 Première année
-![image](data/ex1Aa.png){: .center}
-![image](data/ex1Ab.png){: .center}
+#  Modèle relationnel
 
 
-
-### 1.2 Deuxième année
-![image](data/ex2A.png){: .center}
-
-
-## 2. Modèle relationnel
 Théorisé en 1970 par le Britannique Edgard J. Codd, 
-le modèle relationnel est à ce jour le modèle de base de données le plus utilisé, même si l'ère actuelle du Big Data tend à mettre en avant d'autres modèles non relationnels (nous en reparlerons).
+le modèle relationnel est à ce jour le modèle de base de données le plus utilisé, même si l'ère actuelle du Big Data tend à mettre en avant d'autres modèles non relationnels.
 
 
 !!! abstract "Les principes de base du modèle relationnel"
@@ -26,7 +14,7 @@ le modèle relationnel est à ce jour le modèle de base de données le plus uti
 
 Un modèle relationnel est donc basé sur des... **relations**.
 
-### 2.1 Première relation
+## 1. Première relation
 
 Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 ![](data/rel_livres.png
@@ -41,12 +29,13 @@ Prenons l'exemple d'une bibliothèque dont la base de données possède une rela
     - **domaine** : le domaine désigne «le type» (au sens type ```Int```, ```Float```, ```String```).      
     L'attribut «Éditeur» est une chaîne de caractères, son domaine est donc ```String```.  
     Par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. Son domaine est donc ```Int```.
-    - **schéma** : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif. Ici notre schéma serait : 
+    - **schéma** :heart: :heart: :heart: : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif.  
+    Ici notre schéma serait :  
     ```((Code, Entier), (Titre, Chaîne de caractères), (Auteur, Chaîne de caractères), (Éditeur, Chaîne de caractères), (ISBN, Entier))``` 
 
 
 
-### 2.2 Clé Primaire
+## 2. Clé Primaire
 
 !!! note "Clé primaire :heart:"
     Une clé primaire (**PRIMARY KEY**) est un attribut (ou une réunion d'attributs) **dont la connaissance suffit à identifier avec certitude un unique enregistrement**.
@@ -63,7 +52,7 @@ Par exemple, la clé primaire de la relation des personnes nées en France pourr
 - Code : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.
 
 
-### 2.3 Clé Étrangère
+## 3. Clé Étrangère
 
 Ajoutons maintenant les relations ci-dessous :
 
@@ -93,6 +82,6 @@ Y-a-t-il une clé primaire dans la relation «Emprunts» ?
 «id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**. 
 
 !!! note "Clé étrangère :heart:"
-    Une clé étrangère (**FOREIGN KEY**)est une clé primaire d'une autre relation.
+    Une clé étrangère (**FOREIGN KEY**) est une clé primaire d'une autre relation.
 
 «code» est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation emprunt, car un même livre pourra être pris à différentes dates.
