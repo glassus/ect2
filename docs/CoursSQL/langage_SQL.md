@@ -200,7 +200,7 @@ Le mot-clé WHERE doit être suivi d'un booléen. Les opérateurs classiques ```
 **Remarque**  
 L'alias ```AS``` sera souvent utilisé pour raccourcir un nom, notamment lors des jointures de plusieurs tables (voir plus loin).
 
-### 1.2. Opérations sur les données : sélection avec agrégation
+### 1.2. Opérations sur les données : sélection avec agrégation *(non exigible)*
 
 Les requêtes effectuées jusqu'ici ont juste sélectionné des données grâce à différents filtres : aucune action à partir de ces données n'a été effectuée.  
 Nous allons maintenant effectuer des opérations à partir des données sélectionnées. On appelle ces opérations des **opérations d'agrégation**.
@@ -336,18 +336,20 @@ Souvenons-nous du diagramme de la base de données.
 
 #### 1.3.1 Exemple 13 
 
-!!! note "Jointure de 2 tables : JOIN :heart:"
+!!! note "Jointure de 2 tables : INNER JOIN :heart:"
     - **Commande :** 
     ```sql
     SELECT livre.titre, emprunt.code_barre, emprunt.retour FROM emprunt
-            JOIN livre ON emprunt.isbn = livre.isbn;
+            INNER JOIN livre ON emprunt.isbn = livre.isbn;
     ``` 
     - **Traduction :** 
     Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le nom de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.
 
+**Remarque :** On peut aussi utiliser simplement JOIN à la place d'INNER JOIN.
+
 L'expression 
 ```sql
-JOIN livre ON emprunt.isbn = livre.isbn
+INNER JOIN livre ON emprunt.isbn = livre.isbn
 ``` 
 doit se comprendre comme ceci : on «invite» la table «livres» (dont on va afficher la colonne «titre»). La correspondance entre la table «livres» et la table «emprunt» doit se faire sur l'attribut ISBN, qui est la clé primaire de «livres» et une clé étrangère d'«emprunts».  
 Il est donc très important de spécifier ce sur quoi les deux tables vont se retrouver (ici, l'ISBN) 
@@ -364,12 +366,12 @@ Il est donc très important de spécifier ce sur quoi les deux tables vont se re
 
 Le résultat précédent a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure, en invitant maintenant les deux tables «livre» et «usager».
 
-!!! note "Jointure de 3 tables : JOIN :heart:"
+!!! note "Jointure de 3 tables : INNER JOIN :heart:"
     - **Commande :** 
     ```sql
     SELECT u.nom, u.prenom, l.titre, e.retour FROM emprunt AS e
-            JOIN livre AS l ON e.isbn = l.isbn
-            JOIN usager AS u ON e.code_barre = u.code_barre;
+            INNER JOIN livre AS l ON e.isbn = l.isbn
+            INNER JOIN usager AS u ON e.code_barre = u.code_barre;
     ``` 
     - **Traduction :** 
     Il faut bien comprendre que la table principale qui nous intéresse ici est «emprunts», mais qu'on modifie les valeurs affichées en allant chercher des correspondances dans deux autres tables. 
