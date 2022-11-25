@@ -6,7 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://glassus.github.io/ect2/CoursSQL/coursSQL/</loc>
+         <loc>https://glassus.github.io/ect2/CoursSQL/langage_SQL/</loc>
+         <lastmod>2022-11-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://glassus.github.io/ect2/CoursSQL/modele_relationnel/</loc>
+         <lastmod>2022-11-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://glassus.github.io/ect2/CoursSQL/programme_officiel/</loc>
          <lastmod>2022-11-25</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -1,0 +1,1487 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/">
+      
+      <link rel="icon" href="../../xtra/fav.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Langage SQL - ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+<script src="https://glassus.github.io/ect2//js/sqlite_ide.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css"><link rel="stylesheet" href="https://glassus.github.io/ect2//css/sqlite_ide.css"><script>path="https://glassus.github.io/ect2/"</script>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+    <script src="../../xtra/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../xtra/gifplayer/gif-player.es6.js" defer async></script>
+    <!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.asm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/js/jquery.terminal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.23.0/css/jquery.terminal.min.css" rel="stylesheet">
+
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../xtra/stylesheets/pyoditeur.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#langage-sql" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux" class="md-header__button md-logo" aria-label="ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.41 7.41 15 12l-4.59 4.6L9 15.18 12.18 12 9 8.82M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Langage SQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../programme_officiel/" class="md-tabs__link md-tabs__link--active">
+        Cours de SQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Memento_Python/commandes/" class="md-tabs__link">
+        Memento Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Programmes/1A/" class="md-tabs__link">
+        Programmes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TD01/TD01/" class="md-tabs__link">
+        TD01
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TD02/TD02/" class="md-tabs__link">
+        TD02
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TD03/TD03/" class="md-tabs__link">
+        TD03
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TD04/TD04/" class="md-tabs__link">
+        TD04
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux" class="md-nav__button md-logo" aria-label="ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.41 7.41 15 12l-4.59 4.6L9 15.18 12.18 12 9 8.82M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"/></svg>
+
+    </a>
+    ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Cours de SQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cours de SQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cours de SQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programme_officiel/" class="md-nav__link">
+        Programme officiel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modele_relationnel/" class="md-nav__link">
+        Modèle relationnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Langage SQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Langage SQL
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-du-modele-relationnel-au-sgbd" class="md-nav__link">
+    0. Du modèle relationnel au SGBD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-au-langage-sql" class="md-nav__link">
+    1. Introduction au langage SQL
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction au langage SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10-differents-moyens-dinterroger-la-base-de-donnees" class="md-nav__link">
+    1.0 Différents moyens d'interroger la base de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-selection-de-donnees" class="md-nav__link">
+    1.1. Sélection de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-operations-sur-les-donnees-selection-avec-agregation" class="md-nav__link">
+    1.2. Opérations sur les données : sélection avec agrégation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-des-recherches-croisees-sur-les-tables-les-jointures" class="md-nav__link">
+    1.3 Des recherches croisées sur les tables : les jointures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creation-et-modification-dune-base-de-donnees" class="md-nav__link">
+    2. Création et modification d'une base de données
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlenligne/" class="md-nav__link">
+        SQL en ligne
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Memento Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Memento Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Memento Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memento_Python/commandes/" class="md-nav__link">
+        Les commandes exigibles du programme officiel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Programmes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programmes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Programmes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmes/1A/" class="md-nav__link">
+        1A
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmes/2A/" class="md-nav__link">
+        2A
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          TD01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TD01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          TD01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD01/TD01/" class="md-nav__link">
+        TD01 : Révisions des structures élémentaires
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          TD02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TD02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          TD02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD02/TD02/" class="md-nav__link">
+        TD02 : Premières simulations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          TD03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TD03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          TD03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD03/TD03/" class="md-nav__link">
+        TD03 : Retour sur les simulations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          TD04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TD04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          TD04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        TD04 : Découverte du langage SQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+                  
+
+
+<h1 id="langage-sql">Langage SQL<a class="headerlink" href="#langage-sql" title="Permanent link">⚓︎</a></h1>
+<p><img alt="image" class="center" src="../data/meme1.png" width="40%" /></p>
+<h2 id="0-du-modele-relationnel-au-sgbd">0. Du modèle relationnel au SGBD<a class="headerlink" href="#0-du-modele-relationnel-au-sgbd" title="Permanent link">⚓︎</a></h2>
+<p>Les considérations sur le modèle relationnel du <a href="../../4.1_Modele_relationnel/cours/">cours précédent</a> traitaient plutôt de la structure mathématique des données. </p>
+<p>Il s'agissait de déterminer la meilleure structure pour représenter les données et les relations qui les lient. </p>
+<p>Il convient maintenant d'aborder la partie logicielle : les SGBD (Systèmes de Gestion de Bases de Données).</p>
+<p>Les SGBD jouent le rôle d'interface entre l'être humain et la base de données.
+Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter ou modifier la base de données. Le SGBD est garant de l'intégrité de cette base, et prévient notamment que les modifications (souvent appelées <strong>transactions</strong>) ne soient pas préjudiciables à la base de données.</p>
+<p>Le langage utilisé pour communiquer avec le SGBD est le langage <strong>SQL</strong>, pour Structured  Query Langage (pour <em>langage de requêtes structurées</em>).</p>
+<p>Les SGBD les plus utilisés sont basés sur le modèle relationnel. Parmi eux, citons Oracle, MySQL, Microsoft SQL Server, PostgreSQL, Microsoft Access, SQLite, MariaDB...</p>
+<p>Mais de plus en plus de SGBD <strong>non-relationnels</strong> sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. On les retrouve sous l'appelation <strong>NoSQL</strong>  (pour <em>Not only SQL</em>). Citons parmi eux MongoDB, Cassandra (Facebook), BigTable (Google)...</p>
+<h2 id="1-introduction-au-langage-sql">1. Introduction au langage SQL<a class="headerlink" href="#1-introduction-au-langage-sql" title="Permanent link">⚓︎</a></h2>
+<p>Dans toute la suite, nous allons travailler avec la base de données <code>livres.db</code>.</p>
+<h3 id="10-differents-moyens-dinterroger-la-base-de-donnees">1.0 Différents moyens d'interroger la base de données<a class="headerlink" href="#10-differents-moyens-dinterroger-la-base-de-donnees" title="Permanent link">⚓︎</a></h3>
+<p><strong>Pré-requis :</strong> téléchargez la base de données <a href="../data/livres.db">livres.db</a>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">1. En ligne avec <code>sqliteonline.com</code> </p>
+<ul>
+<li>Rendez vous sur <a href="https://sqliteonline.com/">https://sqliteonline.com/</a></li>
+<li>Par File / OpenDB, ouvrez le fichier  <code>livres.db</code> précédemment téléchargé.</li>
+<li>Écrivez votre requête plus cliquez sur Run.<br />
+<img alt="" src="../data/sqlonline.png" /></li>
+</ul>
+</div>
+<hr />
+<p>Dans toute la suite, les manipulations sont à faire en interrogeant la base de données <code>livres.db</code>, avec l'une des méthodes indiquées ci-dessus.</p>
+<p>Voici le diagramme relationnel de cette base :
+<img alt="" class="center" src="../data/ERD_livres.png" /></p>
+<ul>
+<li>les clés primaires sont en bleu (suivi d'une icone de clé)</li>
+<li>les clés étrangères sont en noir et reliées à leur clé primaire.</li>
+</ul>
+<!-- diagramme réalisé depuis https://app.quickdatabasediagrams.com/
+.db -> .sql fait avec DBbrowser -->
+
+<h3 id="11-selection-de-donnees">1.1. Sélection de données<a class="headerlink" href="#11-selection-de-donnees" title="Permanent link">⚓︎</a></h3>
+<h4 id="110-exemple-0">1.1.0 Exemple 0<a class="headerlink" href="#110-exemple-0" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Requête basique : SELECT, FROM <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut tous les titres de la table «livre».</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex0.png" /></p>
+</div>
+<p><strong>Remarques</strong>  </p>
+<ul>
+<li>
+<p>Les mots-clés SQL sont traditionnellement écrits en MAJUSCULES. 
+<img alt="image" class="center" src="../data/SQLmeme2.png" width="40%" /></p>
+</li>
+<li>
+<p>Le <code>;</code> signale la fin de l'instruction. Il peut donc être omis s'il n'y a pas d'instructions enchaînées (ce qui sera toujours notre cas).  </p>
+</li>
+<li>
+<p>L'indentation n'est pas syntaxique (pas comme en Python). On peut faire des retours à la ligne et des indentations pour rendre le code plus lisible.</p>
+</li>
+</ul>
+<h4 id="111-exemple-1">1.1.1 Exemple 1<a class="headerlink" href="#111-exemple-1" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Requête filtrée : SELECT, FROM, WHERE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut les titres de la table «livre» qui sont parus après (ou en ) 1990;</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex1.png" /></p>
+</div>
+<p>Le mot-clé WHERE doit être suivi d'un booléen. Les opérateurs classiques <code>=</code> , <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> peuvent être utilisés, mais aussi le mot-clé IN :</p>
+<h4 id="111bis-exemple-1bis">1.1.1bis Exemple 1bis<a class="headerlink" href="#111bis-exemple-1bis" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Requête avec plusieurs possibilités : WHERE ... IN... <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span><span class="w"> </span><span class="mi">1991</span><span class="p">,</span><span class="w"> </span><span class="mi">1992</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut les titres de la table «livre» qui sont parus en 1990, 1991 ou 1992.</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex1bis.png" /></p>
+</div>
+<h4 id="112-exemple-2">1.1.2 Exemple 2<a class="headerlink" href="#112-exemple-2" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Requête avec booléens : AND - OR <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w">   </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1970</span><span class="w"> </span><span class="k">AND</span><span class="w"></span>
+<span class="w">                                </span><span class="n">annee</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1980</span><span class="w"> </span><span class="k">AND</span><span class="w"></span>
+<span class="w">                                </span><span class="n">editeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dargaud&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut les titres de la table «livre» qui sont parus entre 1970 et 1980 chez l'éditeur Dargaud;</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex2.png" /></p>
+</div>
+<h4 id="113-exemple-3">1.1.3 Exemple 3<a class="headerlink" href="#113-exemple-3" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Requête approchée : LIKE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Astérix%&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut les titres de la table «livre» dont le titre contient la chaîne de caractères "Astérix".<br />
+Le symbole <code>%</code> est un joker qui peut symboliser n'importe quelle chaîne de caractères. </p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex3.png" /></p>
+</div>
+<h4 id="114-exemple-4">1.1.4 Exemple 4<a class="headerlink" href="#114-exemple-4" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Plusieurs colonnes <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut les titres et les ISBN de la table «livre» qui sont parus après 1990.</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex4.png" /></p>
+</div>
+<h4 id="115-exemple-5">1.1.5 Exemple 5<a class="headerlink" href="#115-exemple-5" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Toutes les colonnes : * <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut toutes les colonnes disponibles de la table «livre» pour les livres qui sont parus après 1990.<br />
+L'astérisque <code>*</code> est un joker (<em>wildcard</em> en anglais).</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex5.png" /></p>
+</div>
+<h4 id="116-exemple-6">1.1.6 Exemple 6<a class="headerlink" href="#116-exemple-6" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Renommer les colonnes : AS <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">titre_du_livre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>Lors de l'affichage du résulats et dans la suite de la requête (important), la colonne "titre" est renommée "titre_du_livre".</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex6.png" /></p>
+</div>
+<p><strong>Remarque</strong><br />
+L'alias <code>AS</code> sera souvent utilisé pour raccourcir un nom, notamment lors des jointures de plusieurs tables (voir plus loin).</p>
+<h3 id="12-operations-sur-les-donnees-selection-avec-agregation">1.2. Opérations sur les données : sélection avec agrégation<a class="headerlink" href="#12-operations-sur-les-donnees-selection-avec-agregation" title="Permanent link">⚓︎</a></h3>
+<p>Les requêtes effectuées jusqu'ici ont juste sélectionné des données grâce à différents filtres : aucune action à partir de ces données n'a été effectuée.<br />
+Nous allons maintenant effectuer des opérations à partir des données sélectionnées. On appelle ces opérations des <strong>opérations d'agrégation</strong>.</p>
+<h4 id="121-exemple-7">1.2.1 Exemple 7<a class="headerlink" href="#121-exemple-7" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Compter : COUNT <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut compter le nombre d'enregistrements de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «total».</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex7.png" /></p>
+</div>
+<h4 id="122-exemple-8">1.2.2 Exemple 8<a class="headerlink" href="#122-exemple-8" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Additionner : SUM <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">somme</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut additionner les années des livres de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «somme».
+<em>Attention : dans notre cas précis, ce calcul n'a aucun sens...</em></p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex8.png" /></p>
+</div>
+<h4 id="123-exemple-9">1.2.3 Exemple 9<a class="headerlink" href="#123-exemple-9" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Faire une moyenne : AVG <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">moyenne</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut calculer la moyenne des années de parution des livres de la table livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «moyenne».<br />
+<em>Attention : là encore, ce calcul n'a aucun sens...</em></p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex9.png" /></p>
+</div>
+<h4 id="124-exemple-10">1.2.4 Exemple 10<a class="headerlink" href="#124-exemple-10" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Trouver les extremums : MIN, MAX <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">minimum</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut trouver la plus petite valeur de la colonne «annee» parmi les livres de la tables livre comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée minimum. Le fonctionnement est identique avec <strong>MAX</strong> pour la recherche du maximum.</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex10.png" /></p>
+</div>
+<h4 id="125-exemple-11">1.2.5 Exemple 11<a class="headerlink" href="#125-exemple-11" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Classer des valeurs : ORDER BY, ASC, DESC, LIMIT <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li>
+<p><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Traduction :</strong> </p>
+</li>
+</ul>
+<p>On veut afficher tous les albums d'Astérix, et leur année de parution, classés par année décroissante.</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex11.png" /></p>
+<ul>
+<li>
+<p><strong>Comportement par défaut :</strong> Si le paramètre ASC ou DESC est omis, le classement se fait par ordre <strong>croissant</strong> (donc ASC est le paramètre par défaut).</p>
+</li>
+<li>
+<p><strong>Utilisation de LIMIT :</strong> Le mot-clé LIMIT (suivi d'un nombre) permet de limiter le nombre de résultats affichés.<br />
+Ainsi la requête<br />
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"></span>
+<span class="w">                </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
+<span class="w">                </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+permet d'obtenir les renseignements sur l'Astérix le plus récent.                    </p>
+</li>
+</ul>
+</div>
+<h4 id="125-exemple-12">1.2.5 Exemple 12<a class="headerlink" href="#125-exemple-12" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Suppression des doublons : DISTINCT <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">editeur</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> </li>
+</ul>
+<p>On veut la liste de tous les éditeurs. Sans le mot-clé <code>DISTINCT</code>, beaucoup de doublons apparaîtraient.</p>
+<ul>
+<li><strong>Résultat :</strong>   </li>
+</ul>
+<p><img alt="" src="../data/ex12.png" /></p>
+</div>
+<h2 id="13-des-recherches-croisees-sur-les-tables-les-jointures">1.3 Des recherches croisées sur les tables : les jointures<a class="headerlink" href="#13-des-recherches-croisees-sur-les-tables-les-jointures" title="Permanent link">⚓︎</a></h2>
+<p>Observons le contenu de la table «emprunt» :</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<img alt="" src="../data/noex1.png" /></p>
+<p>Le contenu est peu lisible : qui a emprunté quel livre ?<br />
+Souvenons-nous du diagramme de la base de données.</p>
+<p><img alt="" class="center" src="../data/ERD_livres.png" /></p>
+<p>Pour que la table «emprunt» soit lisible, il faudrait (dans un premier temps) que l'on affiche à la place de l'ISBN le titre de l'ouvrage. Or ce titre est disponible dans la table «livres».  On va donc procéder à une <strong>jointure</strong> de ces deux tables.</p>
+<h4 id="131-exemple-13">1.3.1 Exemple 13<a class="headerlink" href="#131-exemple-13" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Jointure de 2 tables : JOIN <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">code_barre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">retour</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span><span class="w"></span>
+<span class="w">        </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">isbn</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li><strong>Traduction :</strong> 
+Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le nom de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.</li>
+</ul>
+</div>
+<p>L'expression 
+<div class="highlight"><pre><span></span><code><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">isbn</span><span class="w"></span>
+</code></pre></div>
+doit se comprendre comme ceci : on «invite» la table «livres» (dont on va afficher la colonne «titre»). La correspondance entre la table «livres» et la table «emprunt» doit se faire sur l'attribut ISBN, qui est la clé primaire de «livres» et une clé étrangère d'«emprunts».<br />
+Il est donc très important de spécifier ce sur quoi les deux tables vont se retrouver (ici, l'ISBN) </p>
+<p><img alt="image" class="center" src="../data/ex_join.png" /></p>
+<ul>
+<li><strong>Résultat :</strong>  </li>
+</ul>
+<p><img alt="" src="../data/ex13.png" /></p>
+<h4 id="132-exemple-14">1.3.2 Exemple 14<a class="headerlink" href="#132-exemple-14" title="Permanent link">⚓︎</a></h4>
+<p>Le résultat précédent a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure, en invitant maintenant les deux tables «livre» et «usager».</p>
+<div class="admonition note">
+<p class="admonition-title">Jointure de 3 tables : JOIN <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">retour</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
+<span class="w">        </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">isbn</span><span class="w"></span>
+<span class="w">        </span><span class="k">JOIN</span><span class="w"> </span><span class="n">usager</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">code_barre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">code_barre</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+<li>
+<p><strong>Traduction :</strong> 
+Il faut bien comprendre que la table principale qui nous intéresse ici est «emprunts», mais qu'on modifie les valeurs affichées en allant chercher des correspondances dans deux autres tables. 
+Notez ici que des alias sont donnés aux tables (par <strong>AS</strong>) afin de faciliter l'écriture. </p>
+</li>
+<li>
+<p><strong>Résultat :</strong>  </p>
+</li>
+</ul>
+<p><img alt="" src="../data/ex14.png" /></p>
+</div>
+<h2 id="2-creation-et-modification-dune-base-de-donnees">2. Création et modification d'une base de données<a class="headerlink" href="#2-creation-et-modification-dune-base-de-donnees" title="Permanent link">⚓︎</a></h2>
+<p>L'objectif est de créer la table suivante :</p>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">Nom</th>
+<th align="center">Maths</th>
+<th align="center">Anglais</th>
+<th align="center">Français</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">Alice</td>
+<td align="center">16</td>
+<td align="center">11</td>
+<td align="center">17</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Bob</td>
+<td align="center">12</td>
+<td align="center">15</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">Charles</td>
+<td align="center">9</td>
+<td align="center">11</td>
+<td align="center">18</td>
+</tr>
+</tbody>
+</table>
+<h4 id="21-exemple-15">2.1 Exemple 15<a class="headerlink" href="#21-exemple-15" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Création d'une table : CREATE TABLE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">Id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Maths</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Anglais</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">NSI</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+</code></pre></div></li>
+<li>
+<p><strong>Remarque :</strong><br />
+C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé primaire.</p>
+</li>
+<li>
+<p><strong>Résultat :</strong>  </p>
+</li>
+</ul>
+</div>
+<p><img alt="" src="../data/ex15.png" /></p>
+<h4 id="22-exemple-16">2.2 Exemple 16<a class="headerlink" href="#22-exemple-16" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Insertion de valeurs : INSERT INTO, VALUES <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<ul>
+<li>
+<p><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span><span class="w"></span>
+<span class="w">                        </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"></span>
+<span class="w">                        </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Résultat :</strong>  </p>
+</li>
+</ul>
+<p><img alt="" src="../data/ex16.png" /></p>
+</div>
+<h4 id="23-exemple-17-interet-de-la-cle-primaire">2.3 Exemple 17 : Intérêt de la clé primaire<a class="headerlink" href="#23-exemple-17-interet-de-la-cle-primaire" title="Permanent link">⚓︎</a></h4>
+<p>Essayons d'insérer un 4ème enregistrement ayant le même <code>id</code> qu'un autre élève. </p>
+<ul>
+<li>
+<p><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Denis&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Résultat :</strong><br />
+La contrainte de relation est violée : le SGBD «protège» la base de données en n'acceptant pas la proposition d'insertion. La base de données n'est pas modifiée.
+<img alt="" src="../data/ex17.png" /></p>
+</li>
+<li>
+<p><strong>Remarque :</strong>
+Il est possible de «déléguer» la gestion des valeurs de la clé primaire avec l'instruction <code>AUTOINCREMENT</code>. 
+La déclaration de la table et l'insertion des valeurs serait :
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">Id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Maths</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Anglais</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">NSI</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">Maths</span><span class="p">,</span><span class="w"> </span><span class="n">Anglais</span><span class="p">,</span><span class="w"> </span><span class="n">NSI</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+et le résultat serait : </p>
+</li>
+</ul>
+<p><img alt="" src="../data/ex17b.png" /></p>
+<p>L'attribut <code>id</code> est donc géré automatiquement par le SGBD.</p>
+<h4 id="24-exemple-18">2.4 Exemple 18<a class="headerlink" href="#24-exemple-18" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Modification d'une valeur UPDATE, SET <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Pour modifier la note de Maths d'Alice :</p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">Maths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+</ul>
+</div>
+<h4 id="25-exemple-19">2.5 Exemple 19<a class="headerlink" href="#25-exemple-19" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Suppression d'un enregistrement : DELETE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Pour supprimer totalement la ligne concernant Charles :</p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+</ul>
+</div>
+<p>Si une autre table contient par exemple l'attribut <code>id</code>  comme clé étrangère, et si l'<code>id</code>  de Charles fait partie de cette table, le SGBD refusera de supprimer cette ligne, afin de ne pas violer la contrainte de référence.</p>
+<h4 id="26-exemple-20">2.6 Exemple 20<a class="headerlink" href="#26-exemple-20" title="Permanent link">⚓︎</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Suppression totale d'une table : DROP TABLE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
+<p>Pour supprimer totalement et défitivement la table :</p>
+<ul>
+<li><strong>Commande :</strong> 
+<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Table_notes</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></li>
+</ul>
+</div>
+<p>Là encore, si une autre table est reliée à <code>Table_notes</code> par une clé étrangère, la suppression sera bloquée par le SGBD.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Dernière mise à jour:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 novembre 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+    <script src="../../js/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../modele_relationnel/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Modèle relationnel" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Modèle relationnel
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sqlenligne/" class="md-footer__link md-footer__link--next" aria-label="Suivant: SQL en ligne" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              SQL en ligne
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY-SA / G.Lassus
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:gilles.lassus@ac-bordeaux.fr" target="_blank" rel="noopener" title="Écrire à l&#39;auteur" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6l-126.3-52.5-40.1 74.5c-5.2 9.7-16.3 14.6-27 11.9S192 499 192 488v-96c0-5.3 1.8-10.5 5.1-14.7l165.3-212.6c2.5-7.1-6.5-14.3-13-8.4l-179 161.9-32 28.9c-9.2 8.3-22.3 10.6-33.8 5.8l-85-35.4C8.4 312.8.8 302.2.1 290s5.5-23.7 16.1-29.8l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../scripts/mathjax.js"></script>
+      
+        <script src="../../xtra/javascripts/interpreter.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
