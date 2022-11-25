@@ -1,6 +1,6 @@
 site_name: "ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux"
 
-site_url: https://glassus.github.io/ect2/
+site_url: https://glassus.github.io/ect2
 
 theme:
   name: material

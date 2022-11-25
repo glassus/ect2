@@ -15,4 +15,4 @@
 
 ![image](data/ERD_livres.png){: .center}
 
-{!{ sqlide titre="**Requête :**"  base="data/livres.db"}!}
+{!{ sqlide titre="**Requête :**"  base="CoursSQL/data/livres.db"}!}

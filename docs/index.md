@@ -19,20 +19,13 @@ Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/
 [![image](data/basthon.png){: .center width=60%}](https://console.basthon.fr/){. target="_blank"}
 
 
-{{ page.meta.test }}
-
-{# comment #}
-
-<!--
-
-Chargement base livres
 
 {!{ sqlide titre="Chargement d'une base"  base="data/livres.db"}!}
 
 
 
 
-
+{#
 
 test gif anim4
 
@@ -49,4 +42,4 @@ test gif anim4
 ### Programme ECT2 - partie informatique
 <embed src="https://glassus.github.io/ect2/data/prog2A.pdf" type="application/pdf" width="800px" height="800px"/>
 
--->
+#}
