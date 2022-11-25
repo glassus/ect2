@@ -815,41 +815,29 @@
 <h3 id="2-python-en-ligne-sans-installation">2. Python en ligne sans installation<a class="headerlink" href="#2-python-en-ligne-sans-installation" title="Permanent link">⚓︎</a></h3>
 <p>Vous pouvez utiliser l'excellente solution <a class="" href="https://console.basthon.fr/" target="_blank">Basthon</a> :</p>
 <p><a class="" href="https://console.basthon.fr/" target="_blank"><img alt="image" class="center" src="data/basthon.png" width="60%" /></a></p>
-<p>ok</p>
-<!--
 
-Chargement base livres
+<div id="ide1" >
+<label for='sqlcommands'>Chargement d'une base</label>
+<br>
+<textarea id="sqlcommands" class="sqlcommands"></textarea>
+<button id="execute" class="sqlbutton execute">Exécuter</button>
+<div id="error" class="sqlerror"></div>
+<pre id="output" class="sqloutput"></pre>
+</div>
+<script>
+  onElementLoaded("div#ide1").then(() => {
+    const ide = document.querySelector("div#ide1");
+    load(ide, 'https:/glassus.github.io/ect2/data/livres.db', '', '', );
+}).catch(() => {});
+</script>
 
-{!{ sqlide titre="Chargement d'une base"  base="data/livres.db"}!}
-
-
-
-
-
-
-test gif anim4
-
-<center>
-<gif-player src="https://glassus.github.io/terminale_nsi/T2_Programmation/2.2_Recursivite/data/arbre.gif" speed="1" play></gif-player>
-</center>
-
-
-
-
-## Programmes officiels
-### Programme ECT1 - partie informatique
-<embed src="https://glassus.github.io/ect2/data/prog1A.pdf" type="application/pdf" width="800px" height="800px"/>
-### Programme ECT2 - partie informatique
-<embed src="https://glassus.github.io/ect2/data/prog2A.pdf" type="application/pdf" width="800px" height="800px"/>
-
--->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 novembre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 novembre 2022</span>
       
     
   </small>
