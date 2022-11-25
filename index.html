@@ -845,22 +845,6 @@
 <p>Vous pouvez utiliser l'excellente solution <a class="" href="https://console.basthon.fr/" target="_blank">Basthon</a> :</p>
 <p><a class="" href="https://console.basthon.fr/" target="_blank"><img alt="image" class="center" src="data/basthon.png" width="60%" /></a></p>
 
-<div id="ide1" >
-<label for='sqlcommands'>Chargement d'une base</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide1").then(() => {
-    const ide = document.querySelector("div#ide1");
-    load(ide, 'https:/glassus.github.io/ect2/livres.db', '', '', );
-}).catch(() => {});
-</script>
-
-
   <hr>
 <div class="md-source-file">
   <small>
