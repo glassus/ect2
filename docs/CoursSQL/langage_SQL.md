@@ -4,7 +4,7 @@
 
 
 ## 0. Du modèle relationnel au SGBD
-Les considérations sur le modèle relationnel du [cours précédent](../../4.1_Modele_relationnel/cours/) traitaient plutôt de la structure mathématique des données. 
+Les considérations sur le modèle relationnel traitaient plutôt de la structure mathématique des données. 
 
 Il s'agissait de déterminer la meilleure structure pour représenter les données et les relations qui les lient. 
 
@@ -29,13 +29,17 @@ Dans toute la suite, nous allons travailler avec la base de données ```livres.d
 ### 1.0 Différents moyens d'interroger la base de données
 **Pré-requis :** téléchargez la base de données [livres.db](data/livres.db).
 
-!!! abstract "1. En ligne avec ```sqliteonline.com``` "
+??? abstract "1. En ligne avec ```sqliteonline.com``` "
     - Rendez vous sur [https://sqliteonline.com/](https://sqliteonline.com/)
     - Par File / OpenDB, ouvrez le fichier  ```livres.db``` précédemment téléchargé.
     - Écrivez votre requête plus cliquez sur Run.  
     ![](data/sqlonline.png)
 
 
+!!! abstract "2. Directement sur ce site"
+    - Rendez vous sur la page [SQL en ligne](../sqlenligne/){. target="_blank"}
+    []()
+    - Écrivez la requête dans le champ prévu pour votre base.
 
 
 --------
