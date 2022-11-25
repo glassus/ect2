@@ -20,7 +20,7 @@ Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/
 
 
 
-{!{ sqlide titre="Chargement d'une base"  base="data/livres.db"}!}
+{!{ sqlide titre="Chargement d'une base"  base='livres.db'}!}
 
 
 
