@@ -386,7 +386,7 @@ Le résultat précédent a permis d'améliorer la visibilité de la table «empr
 
 L'objectif est de créer la table suivante :
 
-| id | Nom | Maths | Anglais | Français |
+| id | Nom | Maths | Anglais | Histoire |
 |:-----:|:-----:|:-------:|:----:|:----:|
 | 1 | Alice | 16 | 11 | 17 |
 | 2 | Bob  | 12 | 15 | 10 |
@@ -398,12 +398,12 @@ L'objectif est de créer la table suivante :
 !!! note "Création d'une table : CREATE TABLE :heart:"
     - **Commande :** 
     ```sql
-    CREATE TABLE Table_notes (
+    CREATE TABLE table_notes (
             Id INTEGER PRIMARY KEY,
             Nom TEXT,
             Maths INTEGER,
             Anglais INTEGER,
-            NSI INTEGER
+            Histoire INTEGER
             );
     ``` 
     - **Remarque :**  
@@ -412,14 +412,13 @@ L'objectif est de créer la table suivante :
     - **Résultat :**  
     
 
-![](data/ex15.png)
 
 #### 2.2 Exemple 16 
 
 !!! note "Insertion de valeurs : INSERT INTO, VALUES :heart:"
     - **Commande :** 
     ```sql
-    INSERT INTO Table_notes VALUES  (1, 'Alice', 16, 11, 17),
+    INSERT INTO table_notes VALUES  (1, 'Alice', 16, 11, 17),
                             (2, 'Bob', 12, 15, 10),
                             (3, 'Charles', 9, 11, 18);
     ``` 
@@ -433,7 +432,7 @@ Essayons d'insérer un 4ème enregistrement ayant le même ```id``` qu'un autre 
 
 - **Commande :** 
 ```sql
-INSERT INTO Table_notes VALUES  (3, 'Denis', 18, 10, 12);
+INSERT INTO table_notes VALUES  (3, 'Denis', 18, 10, 12);
 ``` 
 
 - **Résultat :**  
@@ -444,12 +443,12 @@ La contrainte de relation est violée : le SGBD «protège» la base de données
 Il est possible de «déléguer» la gestion des valeurs de la clé primaire avec l'instruction ```AUTOINCREMENT```. 
 La déclaration de la table et l'insertion des valeurs serait :
 ```sql
-CREATE TABLE Table_notes (
+CREATE TABLE table_notes (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
         Nom TEXT,
         Maths INTEGER,
         Anglais INTEGER,
-        NSI INTEGER
+        Histoire INTEGER
         );
 
 INSERT INTO Table_notes (Nom, Maths, Anglais, NSI) VALUES
