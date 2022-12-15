@@ -857,10 +857,10 @@
 
 
 <h1 id="td05-decouverte-du-langage-sql">TD05 : Découverte du langage SQL<a class="headerlink" href="#td05-decouverte-du-langage-sql" title="Permanent link">⚓︎</a></h1>
-<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a href="../../CoursSQL/programme_officiel/">Cours de SQL</a>.</p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a href="../../CoursSQL/langage_SQL/">Cours de SQL</a>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  1</p>
-<p><em>Extrait du sujet 0 Ecricome ECG Mathématiques Approfondies</em></p>
+<p><em>Extrait du <a class="" href="../data/Sujet-Zero2-2023-math-appli.pdf" target="_blank">sujet 0 n°2 Ecricome ECG Mathématiques Appliquées</a></em></p>
 <p>On dispose d’une base de données comportant deux tables <code>vehicule</code> et <code>annonce</code> décrites ci-dessous. </p>
 <p>La table <code>vehicule</code> recense des informations sur les modèles de véhicules en vente sur le marché. Elle est composée
 des attributs suivants. </p>
@@ -882,8 +882,26 @@ utilisé dans la table vehicules.  </li>
 <li><code>km</code> (de type <code>INTEGER</code>) : nombre de kilomètres parcourus par le véhicule au moment de la revente.  </li>
 <li><code>prix_occasion</code> (de type <code>INTEGER</code>) : prix de vente du véhicule d’occasion.</li>
 </ul>
-<p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables vehicule et annonce, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
-<p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>.  </p>
+<p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables <code>vehicule</code> et <code>annonce</code>, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
+<details class="tip">
+<summary>Correction</summary>
+<ul>
+<li>Table <code>vehicule</code> : <code>id_vehicule</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque véhicule.</li>
+<li>Table <code>annonce</code> : <ul>
+<li><code>id_annonce</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque annonce.</li>
+<li><code>id_vehicule</code> est une clé étrangère car c'est une clé primaire de la table <code>vehicule</code>. </li>
+</ul>
+</li>
+</ul>
+</details>
+<p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>. </p>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">modele</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dubreuil Motors&#39;</span><span class="w"></span>
+</code></pre></div>
+</details>
 <p><strong>Q3.</strong> Expliquer le fonctionnement de la requête SQL suivante et préciser l’effet éventuel de cette requête sur chacune des tables <code>vehicule</code> et <code>annonce</code>.
 <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">annonce</span><span class="w"></span>
 <span class="k">SET</span><span class="w"> </span><span class="n">prix_occasion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prix_neuf</span><span class="w"></span>
@@ -891,224 +909,29 @@ utilisé dans la table vehicules.  </li>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"></span>
 <span class="k">AND</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span><span class="w"></span>
 </code></pre></div></p>
+<details class="tip">
+<summary>Correction</summary>
+<p>Cette requête met à jour la table <code>annonce</code>. On change le <code>prix_occasion</code> (qui devient égal au <code>prix neuf</code>) toutes les voitures dont on a repéré que le <code>prix_occasion</code> était supérieur au <code>prix_neuf</code>, ce qui n'est pas normal. L'identification entre les deux tables se fait grâce à la ligne <code>vehicule.id_vehicule = annonce.id_vehicule</code>.</p>
+</details>
 <p><strong>Q4.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
 <ul>
 <li>l’identifiant de l’annonce <code>id_annonce</code>.</li>
 <li>le kilométrage <code>km</code>,</li>
-<li>le prix de vente du véhicule neuf <code>prix_neuf</code>,</li>
+<li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
 <li>le prix de l’annonce d’occasion <code>prix_occasion</code>.</li>
 </ul>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span><span class="w"></span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"></span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  2</p>
 <p><em>Questions interactives à réaliser sur le site sqlzoo.net.</em></p>
-<p><strong>Q1.</strong> Travail sur SELECT, (base de données Nobel) <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial" target="_blank">ici</a>.</p>
-<details class="note">
-<summary>Correction</summary>
-<p>Corrections extraites du dépôt <em>https://github.com/jisaw/sqlzoo-solutions</em>.
-<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
-<span class="cm">Third section of sqlzoo, SELECT from Nobel</span>
-<span class="cm">*/</span><span class="w"></span>
-
-<span class="c1">--#1</span>
-<span class="cm">/*</span>
-<span class="cm">Change the query shown so that it displays Nobel prizes for 1950.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">yr</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1950</span><span class="w"></span>
-
-<span class="c1">--#2</span>
-<span class="cm">/*</span>
-<span class="cm">Show who won the 1962 prize for Literature.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1962</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Literature&#39;</span><span class="w"></span>
-
-<span class="c1">--#3</span>
-<span class="cm">/*</span>
-<span class="cm">Show the year and subject that won &#39;Albert Einstein&#39; his prize.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">yr</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Albert Einstein&#39;</span><span class="w"></span>
-
-<span class="c1">--#4</span>
-<span class="cm">/*</span>
-<span class="cm">Give the name of the &#39;Peace&#39; winners since the year 2000, including 2000.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Peace&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2000</span><span class="w"></span>
-
-<span class="c1">--#5</span>
-<span class="cm">/*</span>
-<span class="cm">Show all details (yr, subject, winner) of the Literature prize winners for 1980 to 1989 inclusive</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">yr</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">yr</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">1980</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">1989</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Literature&#39;</span><span class="w"></span>
-
-<span class="c1">--#6</span>
-<span class="cm">/*</span>
-<span class="cm">Show all details of the presidential winners:</span>
-
-<span class="cm">Theodore Roosevelt</span>
-<span class="cm">Woodrow Wilson</span>
-<span class="cm">Jimmy Carter</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Theodore Roosevelt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Woodrow Wilson&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jimmy Carter&#39;</span><span class="p">)</span><span class="w"></span>
-
-<span class="c1">--#7</span>
-<span class="cm">/*</span>
-<span class="cm">Show the winners with first name John</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;john%&#39;</span><span class="w"></span>
-
-<span class="c1">--#8</span>
-<span class="cm">/*</span>
-<span class="cm">Show the Physics winners for 1980 together with the Chemistry winners for 1984.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Physics&quot;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1980&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Chemistry&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1984</span><span class="p">)</span><span class="w"></span>
-
-<span class="c1">--#9</span>
-<span class="cm">/*</span>
-<span class="cm">Show the winners for 1980 excluding the Chemistry and Medicine</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1980</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Medicine&#39;</span><span class="p">)</span><span class="w"></span>
-
-<span class="c1">--#10</span>
-<span class="cm">/*</span>
-<span class="cm">Show who won a &#39;Medicine&#39; prize in an early year (before 1910, not including 1910) together with winners of a &#39;Literature&#39; prize in a later year (after 2004, including 2004)</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">subject</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Medicine&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1910</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Literature&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2004</span><span class="p">)</span><span class="w"></span>
-
-<span class="c1">--#11</span>
-<span class="cm">/*</span>
-<span class="cm">Find all details of the prize won by PETER GRÜNBERG</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;peter gr%nberg&#39;</span><span class="w"></span>
-
-<span class="c1">--#12</span>
-<span class="cm">/*</span>
-<span class="cm">Find all details of the prize won by EUGENE O&#39;NEILL</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Eugene O&#39;&#39;Neill&#39;</span><span class="w"></span>
-
-<span class="c1">--#13</span>
-<span class="cm">/*</span>
-<span class="cm">Knights in order</span>
-
-<span class="cm">List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">winner</span><span class="p">,</span><span class="w"> </span><span class="n">yr</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">winner</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;sir%&#39;</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">winner</span><span class="w"></span>
-
-<span class="c1">--#14</span>
-<span class="cm">/*</span>
-<span class="cm">The expression subject IN (&#39;Chemistry&#39;,&#39;Physics&#39;) can be used as a value - it will be 0 or 1.</span>
-
-<span class="cm">Show the 1984 winners ordered by subject and winner name; but list Chemistry and Physics last.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">winner</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">nobel</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">yr</span><span class="o">=</span><span class="mi">1984</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">),</span><span class="n">subject</span><span class="p">,</span><span class="n">winner</span><span class="w"></span>
-</code></pre></div></p>
-</details>
-<p><strong>Q2.</strong> Travail sur SUM et COUNT, (base de données World) <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://sqlzoo.net/wiki/SUM_and_COUNT" target="_blank">ici</a>. (jusqu'à la question 5.)</p>
-<details class="note">
-<summary>Correction</summary>
-<p>Corrections extraites du dépôt <em>https://github.com/jisaw/sqlzoo-solutions</em>.
-<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
-<span class="cm">Fifth section of sqlzoo, SUM and COUNT</span>
-<span class="cm">*/</span><span class="w"></span>
-
-
-<span class="c1">--#1</span>
-<span class="cm">/*</span>
-<span class="cm">Show the total population of the world.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-
-<span class="c1">--#2</span>
-<span class="cm">/*</span>
-<span class="cm">List all the continents - just once each.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="p">(</span><span class="n">continent</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-
-<span class="c1">--#3</span>
-<span class="cm">/*</span>
-<span class="cm">Give the total GDP of Africa</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">gdp</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">continent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Africa&#39;</span><span class="w"></span>
-
-<span class="c1">--#4</span>
-<span class="cm">/*</span>
-<span class="cm">How many countries have an area of at least 1000000</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000000</span><span class="w"></span>
-
-<span class="c1">--#5</span>
-<span class="cm">/*</span>
-<span class="cm">What is the total population of (&#39;France&#39;,&#39;Germany&#39;,&#39;Spain&#39;)</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;France&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Spain&#39;</span><span class="p">)</span><span class="w"></span>
-
-<span class="c1">--#6</span>
-<span class="cm">/*</span>
-<span class="cm">For each continent show the continent and number of countries.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">continent</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">continent</span><span class="w"></span>
-
-
-<span class="c1">--#7</span>
-<span class="cm">/*</span>
-<span class="cm">For each continent show the continent and number of countries with populations of at least 10 million.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">continent</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">population</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10000000</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">continent</span><span class="w"></span>
-
-<span class="c1">--#8</span>
-<span class="cm">/*</span>
-<span class="cm">List the continents that have a total population of at least 100 million.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">continent</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">world</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">continent</span><span class="w"></span>
-<span class="k">HAVING</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100000000</span><span class="w"></span>
-</code></pre></div></p>
-</details>
-<p><strong>Q3.</strong> Travail sur JOIN, (base de données Euro2012) <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://sqlzoo.net/wiki/The_JOIN_operation" target="_blank">ici</a>.</p>
+<p><strong>Q1.</strong> Travail sur JOIN, (base de données Euro2012) <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://sqlzoo.net/wiki/The_JOIN_operation" target="_blank">ici</a>.</p>
 <details class="note">
 <summary>correction</summary>
 <div class="highlight"><pre><span></span><code><span class="cm">/*</span>
@@ -1303,7 +1126,7 @@ utilisé dans la table vehicules.  </li>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">9 décembre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">15 décembre 2022</span>
       
     
   </small>

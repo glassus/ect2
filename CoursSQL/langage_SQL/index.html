@@ -1301,7 +1301,7 @@ Notez ici que des alias sont donnés aux tables (par <strong>AS</strong>) afin d
 <th align="center">Nom</th>
 <th align="center">Maths</th>
 <th align="center">Anglais</th>
-<th align="center">Français</th>
+<th align="center">Histoire</th>
 </tr>
 </thead>
 <tbody>
@@ -1333,12 +1333,12 @@ Notez ici que des alias sont donnés aux tables (par <strong>AS</strong>) afin d
 <p class="admonition-title">Création d'une table : CREATE TABLE <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">        </span><span class="n">Id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Maths</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Anglais</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">NSI</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
+<span class="w">        </span><span class="n">Histoire</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
 </code></pre></div></li>
 <li>
@@ -1350,14 +1350,13 @@ C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé 
 </li>
 </ul>
 </div>
-<p><img alt="" src="../data/ex15.png" /></p>
 <h4 id="22-exemple-16">2.2 Exemple 16<a class="headerlink" href="#22-exemple-16" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Insertion de valeurs : INSERT INTO, VALUES <img alt="❤" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li>
 <p><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span><span class="w"></span>
 <span class="w">                        </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"></span>
 <span class="w">                        </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></p>
@@ -1373,7 +1372,7 @@ C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé 
 <ul>
 <li>
 <p><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Denis&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Denis&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></p>
 </li>
 <li>
@@ -1385,12 +1384,12 @@ La contrainte de relation est violée : le SGBD «protège» la base de données
 <p><strong>Remarque :</strong>
 Il est possible de «déléguer» la gestion des valeurs de la clé primaire avec l'instruction <code>AUTOINCREMENT</code>. 
 La déclaration de la table et l'insertion des valeurs serait :
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">        </span><span class="n">Id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Maths</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="n">Anglais</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">NSI</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
+<span class="w">        </span><span class="n">Histoire</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
 
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">Maths</span><span class="p">,</span><span class="w"> </span><span class="n">Anglais</span><span class="p">,</span><span class="w"> </span><span class="n">NSI</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"></span>
@@ -1441,7 +1440,7 @@ et le résultat serait : </p>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 novembre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">15 décembre 2022</span>
       
     
   </small>

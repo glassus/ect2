@@ -506,6 +506,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-votre-propre-base-de-donnees" class="md-nav__link">
+    2. Votre propre base de données
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -905,6 +912,23 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/livres.db', '', '', );
 }).catch(() => {});
 </script>
+<h2 id="2-votre-propre-base-de-donnees">2. Votre propre base de données<a class="headerlink" href="#2-votre-propre-base-de-donnees" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez créer des tables et des enregistrements ici :</p>
+
+<div id="ide2" >
+<label for='sqlcommands'><strong>Requête :</strong></label>
+<br>
+<textarea id="sqlcommands" class="sqlcommands"></textarea>
+<button id="execute" class="sqlbutton execute">Exécuter</button>
+<div id="error" class="sqlerror"></div>
+<pre id="output" class="sqloutput"></pre>
+</div>
+<script>
+  onElementLoaded("div#ide2").then(() => {
+    const ide = document.querySelector("div#ide2");
+    load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', );
+}).catch(() => {});
+</script>
 
 
   <hr>
@@ -912,7 +936,7 @@
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 novembre 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">15 décembre 2022</span>
       
     
   </small>
