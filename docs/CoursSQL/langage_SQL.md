@@ -392,6 +392,9 @@ L'objectif est de créer la table suivante :
 | 2 | Bob  | 12 | 15 | 10 |
 | 3 | Charles | 9 | 11 | 18 |
 
+Pour cela vous pouvez travailler sur [cette page](http://127.0.0.1:8000/ect2/CoursSQL/sqlenligne/#2-votre-propre-base-de-donnees){. target="_blank"}.
+
+
 #### 2.1 Exemple 15 
 
 
