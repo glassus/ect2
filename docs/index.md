@@ -5,10 +5,11 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD05](./TD05/TD05/) : SQL 2ème partie
+    - [TD06](./TD06/TD06/) : retour du Python (et un soupçon de SQL)
 
 
 !!! note "Séances précédentes"
+    - [TD05](./TD05/TD05/) : SQL 2ème partie
     - [TD04](./TD04/TD04/) : découverte du langage SQL
     - [TD03](./TD03/TD03/) : retour sur les simulations
     - [TD02](./TD02/TD02/) : premières simulations
