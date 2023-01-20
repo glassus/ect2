@@ -1010,17 +1010,17 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">joueurs</span><span class="w"> </span><span class="p">(</span>
-<span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="n">taille</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
-<span class="n">poids</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
-<span class="n">club</span><span class="w"> </span><span class="nb">TEXT</span>
-<span class="p">);</span>
+<p>&lt;!--??? tip "Correction"
+    ```SQL
+    CREATE TABLE joueurs (
+    id INTEGER PRIMARY KEY,
+    nom TEXT,
+    taille INTEGER,
+    poids INTEGER,
+    club TEXT
+    );</p>
+<div class="highlight"><pre><span></span><code>```--&gt;
 </code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1061,15 +1061,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">joueurs</span>
-<span class="k">VALUES</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Dupont&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">174</span><span class="p">,</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Toulouse&#39;</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jalibert&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bordeaux&#39;</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Penaud&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Clermont&#39;</span><span class="p">);</span>
-</code></pre></div>
-</details>
+<!--??? tip "Correction"
+    <code>SQL
+    INSERT INTO joueurs
+    VALUES
+    (1, 'Dupont', 174, 84, 'Toulouse'),
+    (2, 'Jalibert', 181, 86, 'Bordeaux'),
+    (3, 'Penaud', 192, 95, 'Clermont');</code> -->
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1089,12 +1087,10 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">joueurs</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">poids</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
-</code></pre></div>
-</details>
+<!--??? tip "Correction"
+    <code>SQL
+    SELECT * FROM joueurs
+    WHERE poids &lt; 90;</code> -->
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
@@ -1130,13 +1126,11 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">joueurs</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">poids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">87</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dupont&#39;</span><span class="p">;</span>
-</code></pre></div>
-</details>
+<p><!--??? tip "Correction"
+    <code>SQL
+    UPDATE joueurs
+    SET poids = 87
+    WHERE nom = 'Dupont';</code>  -->      </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1172,12 +1166,10 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">joueurs</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Penaud&#39;</span><span class="p">;</span>
-</code></pre></div>
-</details>
+<p><!--??? tip "Correction"
+    <code>SQL
+    DELETE FROM joueurs
+    WHERE nom = 'Penaud';</code>  -->      </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 6</p>
@@ -1213,11 +1205,9 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">joueurs</span><span class="p">;</span>
-</code></pre></div>
-</details>
+<p><!--??? tip "Correction"
+    <code>SQL
+    DROP TABLE joueurs;</code>     --> </p>
 </div>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
@@ -1235,11 +1225,11 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
 <ul>
 <li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1]\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
-<li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition)</li>
+<li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
 </ul>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span> (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
 </li>
 <li>
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
@@ -1254,35 +1244,24 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <li>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</li>
 <li>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</li>
 </ol>
-<details class="tip">
-<summary>Correction</summary>
-<ol>
-<li><span class="arithmatex">\(E(X) = \frac{1}{0.1} = 10\)</span></li>
-<li><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">+=</span> <span class="n">rd</span><span class="o">.</span><span class="n">geometric</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></li>
-</ol>
-</details>
 </div>
+<!--     ??? tip "Correction"
+        1. $X$ suit une loi géométrique de paramètre $p=\frac{1}{10}=0,1$. Donc $E(X) = \frac{1}{p} = \frac{1}{0.1} = 10$
+        2. 
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
+
+        n = 10**5
+
+        s = 0
+
+        for k in range(n):
+            s += rd.geometric(0.1)
+
+        print(s/n)
+        ```    -->
+
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
 <p><em>d'après ECT2 Mathématiques-Informatique, éditions Ellipses.</em></p>
@@ -1298,36 +1277,27 @@ L'après-midi, il relance une série d'appels, uniquement vers les clients qu'il
 
 <span class="c1"># à vous</span>
 </code></pre></div></td></tr></table></div>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">nb_matin</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
-
-<span class="n">nb_aprem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">nb_matin</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
-
-<span class="n">total</span> <span class="o">=</span> <span class="n">nb_matin</span> <span class="o">+</span> <span class="n">nb_aprem</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
+<!--     ??? tip "Correction"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
+
+        nb_matin = rd.binomial(100, 1/8)
+
+        nb_aprem = rd.binomial(100-nb_matin, 1/8)
+
+        total = nb_matin + nb_aprem
+
+        print(total)
+        ``` -->
+
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  4</p>
 <p><em>d'après BCE ESC 2020</em></p>
 <p>Un mobile se déplace sur les points à coordonnées entières positives d'un axe d'origine <span class="arithmatex">\(O\)</span>.<br />
 Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se déplace selon la règle suivante : s'il est sur le point d'abscisse <span class="arithmatex">\(k-1\)</span> (<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) à l'instant <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \in \mathbb{N}\)</span>), alors, à l'instant <span class="arithmatex">\(n+1\)</span>, il sera sur le point d'abscisse <span class="arithmatex">\(k\)</span> avec la probabilité <span class="arithmatex">\(\frac{k}{k+1}\)</span>, ou sur le point d'abscisse 0 avec la probabilité <span class="arithmatex">\(\frac{1}{k+1}\)</span>.</p>
-<p>On note <span class="arithmatex">\(U\)</span> l'instant auquel le mobile se trouve pour la première fois à l'origine (sans compter son positionnement de départ) et on admet que <span class="arithmatex">\(U\)</span> est une variable aléatoire. On convient que <span class="arithmatex">\(U\)</span> prend la valeur 0 si le mobile ne revient jamais en <span class="arithmatex">\(O\)</span>.</p>
+<p>On note <span class="arithmatex">\(U\)</span> l'instant auquel le mobile se trouve pour la première fois à l'origine (sans compter son positionnement de départ) et on admet que <span class="arithmatex">\(U\)</span> est une variable aléatoire. </p>
 <p>Compléter les commandes du script Python suivant afin qu'il calcule et affiche la valeur prise par <span class="arithmatex">\(U\)</span> lors de l'expérience aléatoire étudiée.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1349,30 +1319,21 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U a pris la valeur&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">hasard</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">hasard</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">hasard</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U a pris la valeur&#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
+<!--     ??? tip "Correction"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
+
+        k = 1
+        hasard = rd.randint(1, k+2)
+        while hasard < k+1:
+            k = k + 1
+            hasard = rd.randint(1, k+2)
+
+        print('U a pris la valeur', k)
+        ``` -->
+
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  5</p>
 <p><em>d'après BCE ESC 2020</em></p>
@@ -1414,44 +1375,27 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
+<!--     ??? tip "Correction"
+        ```python linenums='1'
+        import numpy as np
+        import numpy.random as rd
+
+        x = 1
+        y = 1
+        lancer = rd.randint(0,2)
+        if lancer == 1:
+            while lancer == 1:
+                lancer = rd.randint(0,2)
+                y = y + 1
+        else:
+            while lancer == 0:
+                lancer = rd.randint(0,2)
+                x = x + 1
+
+        print(x)
+        print(y)
+        ``` -->
 
   <hr>
 <div class="md-source-file">
