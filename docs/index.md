@@ -5,7 +5,7 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD06](./TD06/TD06/) : retour du Python (et un soupçon de SQL)
+    - [TD06](./TD06/TD06/) : lois à densité (et un soupçon de SQL)
 
 
 !!! note "Séances précédentes"
