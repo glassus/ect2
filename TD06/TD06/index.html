@@ -1254,24 +1254,35 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <li>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</li>
 <li>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</li>
 </ol>
+<details class="tip">
+<summary>Correction</summary>
+<ol>
+<li><span class="arithmatex">\(X\)</span> suit une loi géométrique de paramètre <span class="arithmatex">\(p=\frac{1}{10}=0,1\)</span>. Donc <span class="arithmatex">\(E(X) = \frac{1}{p} = \frac{1}{0.1} = 10\)</span></li>
+<li><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">rd</span><span class="o">.</span><span class="n">geometric</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></li>
+</ol>
+</details>
 </div>
-<!--     ??? tip "Correction"
-        1. $X$ suit une loi géométrique de paramètre $p=\frac{1}{10}=0,1$. Donc $E(X) = \frac{1}{p} = \frac{1}{0.1} = 10$
-        2. 
-        ```python linenums='1'
-        import numpy as np
-        import numpy.random as rd
-
-        n = 10**5
-
-        s = 0
-
-        for k in range(n):
-            s += rd.geometric(0.1)
-
-        print(s/n)
-        ```    -->
-
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
 <p><em>d'après ECT2 Mathématiques-Informatique, éditions Ellipses.</em></p>
@@ -1287,21 +1298,30 @@ L'après-midi, il relance une série d'appels, uniquement vers les clients qu'il
 
 <span class="c1"># à vous</span>
 </code></pre></div></td></tr></table></div>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="n">nb_matin</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">nb_aprem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">nb_matin</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">nb_matin</span> <span class="o">+</span> <span class="n">nb_aprem</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
-<!--     ??? tip "Correction"
-        ```python linenums='1'
-        import numpy as np
-        import numpy.random as rd
-
-        nb_matin = rd.binomial(100, 1/8)
-
-        nb_aprem = rd.binomial(100-nb_matin, 1/8)
-
-        total = nb_matin + nb_aprem
-
-        print(total)
-        ``` -->
-
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  4</p>
 <p><em>d'après BCE ESC 2020</em></p>
