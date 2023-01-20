@@ -1130,11 +1130,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/test.db', '', '', rugby);
 }).catch(() => {});
 </script>
-<p><!--??? tip "Correction"
-    <code>SQL
-    UPDATE joueurs
-    SET poids = 87
-    WHERE nom = 'Dupont';</code>  -->      </p>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">joueurs</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">poids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">87</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dupont&#39;</span><span class="p">;</span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
