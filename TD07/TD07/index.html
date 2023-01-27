@@ -1066,13 +1066,14 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<!--??? tip "Correction"
-    <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="k">year</span>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="k">year</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Steven Spielberg&#39;</span>
 <span class="k">AND</span><span class="w">  </span><span class="n">metacritic_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">80</span>
 </code></pre></div>
--->
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1092,13 +1093,14 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<!--??? tip "Correction"
-    <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Henry Fonda&#39;</span>
 </code></pre></div>
--->
+</details>
 </div>
 </div>
 <div class="admonition note">
