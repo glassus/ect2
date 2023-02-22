@@ -5,10 +5,11 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD07](./TD07/TD07/) : Suite des lois de probabilités
+    - [TD08](./TD08/TD08/) : Suite des lois de probabilités
 
 
 !!! note "Séances précédentes"
+    - [TD07](./TD07/TD07/) : Suite des lois de probabilités
     - [TD06](./TD06/TD06/) : lois de probabilités (et un soupçon de SQL)
     - [TD05](./TD05/TD05/) : SQL 2ème partie
     - [TD04](./TD04/TD04/) : découverte du langage SQL
