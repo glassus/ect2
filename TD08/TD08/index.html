@@ -19,7 +19,7 @@
     
     
       
-        <title>TD08 : Suite des lois de probabilités - ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux</title>
+        <title>TD08 : SQl, matrices, simulations - ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
 <script src="https://glassus.github.io/ect2//js/sqlite_ide.js"></script>
 
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#td08-suite-des-lois-de-probabilites" class="md-skip">
+        <a href="#td08-sql-matrices-simulations" class="md-skip">
           Aller au contenu
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD08 : Suite des lois de probabilités
+              TD08 : SQl, matrices, simulations
             
           </span>
         </div>
@@ -1047,9 +1047,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TD08 : SQl, matrices, simulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        TD08 : Suite des lois de probabilités
+        TD08 : SQl, matrices, simulations
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-entrainement-sql" class="md-nav__link">
+    1. Entraînement SQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-retour-sur-les-matrices" class="md-nav__link">
+    2. Retour sur les matrices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-retour-sur-les-simulations" class="md-nav__link">
+    3. Retour sur les simulations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1078,7 +1123,8 @@
                   
 
 
-<h1 id="td08-suite-des-lois-de-probabilites">TD08 : Suite des lois de probabilités<a class="headerlink" href="#td08-suite-des-lois-de-probabilites" title="Permanent link">⚓︎</a></h1>
+<h1 id="td08-sql-matrices-simulations">TD08 : SQl, matrices, simulations<a class="headerlink" href="#td08-sql-matrices-simulations" title="Permanent link">⚓︎</a></h1>
+<h2 id="1-entrainement-sql">1. Entraînement SQL<a class="headerlink" href="#1-entrainement-sql" title="Permanent link">⚓︎</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  1</p>
 <p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
@@ -1223,6 +1269,155 @@
 </details>
 </div>
 </div>
+<h2 id="2-retour-sur-les-matrices">2. Retour sur les matrices<a class="headerlink" href="#2-retour-sur-les-matrices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition note">
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> Syntaxe des opérations matricielles <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
+<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>Saisir une matrice</strong><br />
+La matrice 
+<span class="arithmatex">\(A=\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{pmatrix}\)</span>
+se saisira par le code suivant :
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+</code></pre></div>
+<img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>Saisir un vecteur</strong><br />
+Le vecteur 
+<span class="arithmatex">\(X=\begin{pmatrix}
+1 \\
+2 \\
+3 
+\end{pmatrix}\)</span>
+se saisira par le code suivant :
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></p>
+<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>Effectuer un produit matriciel</strong><br />
+Le calcul du produit matriciel <span class="arithmatex">\(A \times X\)</span> se fera par le code suivant : 
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">14</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice  2</p>
+<p><em>d'après le sujet 0 n°2 Ecricome 2023</em></p>
+<p>On note
+<span class="arithmatex">\(B=\begin{pmatrix}
+-1 &amp; 4 &amp; -1 \\
+-2 &amp; 5 &amp; 2 \\
+0 &amp; 0 &amp; -2
+\end{pmatrix}\)</span>,
+<span class="arithmatex">\(P=\begin{pmatrix}
+1 &amp; 2 &amp; 1 \\
+0 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 0
+\end{pmatrix}\)</span>,
+<span class="arithmatex">\(Q=\begin{pmatrix}
+0 &amp; 0 &amp; 1 \\
+1 &amp; -1 &amp; -1 \\
+-1 &amp; 2 &amp; 1
+\end{pmatrix}\)</span> et
+<span class="arithmatex">\(D=\begin{pmatrix}
+-2 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 3
+\end{pmatrix}\)</span>,</p>
+<p><strong>Q1.</strong> Créer en Python la variable <code>B</code> correspondant à la matrice <span class="arithmatex">\(B\)</span>, ainsi que les variables <code>X1</code>, <code>X2</code>, <code>X3</code> correspondant respectivement aux vecteurs <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> ci-dessous :</p>
+<p><span class="arithmatex">\(X_1=\begin{pmatrix}
+1  \\
+0  \\
+1 
+\end{pmatrix}\)</span>,
+<span class="arithmatex">\(X_2=\begin{pmatrix}
+2  \\
+1  \\
+0 
+\end{pmatrix}\)</span>,
+<span class="arithmatex">\(X_3=\begin{pmatrix}
+1  \\
+1  \\
+0 
+\end{pmatrix}\)</span></p>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p><strong>Q2.</strong> Par des calculs en Python, montrer que les vecteurs <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> sont des vecteurs propres de la matrice <span class="arithmatex">\(B\)</span>, et préciser pour chacun la valeur propre associée.</p>
+<details class="tip">
+<summary>Correction</summary>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X3</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+On en déduit que :</p>
+<ul>
+<li><span class="arithmatex">\(BX_1 = 2X_1\)</span>, donc <span class="arithmatex">\(X_1\)</span> est un vecteur propre associé à la valeur propre 2.</li>
+<li><span class="arithmatex">\(BX_2 = X_2\)</span>, donc <span class="arithmatex">\(X_2\)</span> est un vecteur propre associé à la valeur propre 1.</li>
+<li><span class="arithmatex">\(BX_3 = 3X_3\)</span>, donc <span class="arithmatex">\(X_3\)</span> est un vecteur propre associé à la valeur propre 3.</li>
+</ul>
+</details>
+<p><strong>Q3.</strong> On considère le script Python suivant :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span> <span class="o">-</span> <span class="n">I</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">P</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+À son exécution, on obtient :
+<div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]]</span>
+<span class="p">[[</span><span class="o">-</span><span class="mi">2</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span><span class="p">]]</span>
+</code></pre></div></p>
+<p>Que peut-on en conjecturer sur la matrice <span class="arithmatex">\(P\)</span> ? sur la matrice <span class="arithmatex">\(D\)</span> ?</p>
+<details class="tip">
+<summary>correction</summary>
+<ul>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(R\)</span> est une matrice nulle. Comme <span class="arithmatex">\(R=PQ-I\)</span>, cela signifie que <span class="arithmatex">\(PQ=I\)</span> et donc que <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(Q\)</span> sont deux matrices inverses.  </p>
+</li>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(S\)</span> est égale à la matrice <span class="arithmatex">\(D\)</span>. Donc <span class="arithmatex">\(D=QBP=P^{-1}BP\)</span>.<br />
+Or la matrice <span class="arithmatex">\(P\)</span> est formée des trois vecteurs propres <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> de la matrice <span class="arithmatex">\(B\)</span>, c'est donc sa matrice de passage. Le calcul <span class="arithmatex">\(P^{-1}BP\)</span> va donc donner la matrice diagonale associée à <span class="arithmatex">\(B\)</span>.<br />
+On reconnaît d'ailleurs que <span class="arithmatex">\(D\)</span> est bien formée des 3 valeurs propres trouvées à la question précédente.</p>
+</li>
+</ul>
+</details>
+</div>
+<h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
 <p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
 <p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
@@ -1264,7 +1459,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 </div>
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
 <div class="admonition abstract">
-<p class="admonition-title">Exercice  2</p>
+<p class="admonition-title">Exercice  3</p>
 <p><em>d'après BCE ESC 2020</em></p>
 <p>Un mobile se déplace sur les points à coordonnées entières positives d'un axe d'origine <span class="arithmatex">\(O\)</span>.<br />
 Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se déplace selon la règle suivante : s'il est sur le point d'abscisse <span class="arithmatex">\(k-1\)</span> (<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) à l'instant <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \in \mathbb{N}\)</span>), alors, à l'instant <span class="arithmatex">\(n+1\)</span>, il sera sur le point d'abscisse <span class="arithmatex">\(k\)</span> avec la probabilité <span class="arithmatex">\(\frac{k}{k+1}\)</span>, ou sur le point d'abscisse 0 avec la probabilité <span class="arithmatex">\(\frac{1}{k+1}\)</span>.</p>
@@ -1297,7 +1492,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">22 février 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">23 février 2023</span>
       
     
   </small>
