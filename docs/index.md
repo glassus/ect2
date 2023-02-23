@@ -5,7 +5,7 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD08](./TD08/TD08/) : Suite des lois de probabilités
+    - [TD08](./TD08/TD08/) : SQL, matrices, simulations
 
 
 !!! note "Séances précédentes"
