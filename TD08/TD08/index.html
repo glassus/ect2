@@ -1545,9 +1545,92 @@ L'évolution de la population mondiale depuis 1950 est donnée dans le tableau c
 </table>
 <p>On note <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> les variables égales respectivement à l'année et au nombre d'habitants dans le monde (en milliards). On note <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> les séries statistiques respectivement associées.</p>
 <p><strong>Q1.</strong> Écrire les commandes Python permettant de représenter le nuage de points associé à la série double <span class="arithmatex">\((x,y)\)</span> et marquer le point moyen du nuage par une croix rouge.</p>
+<details class="tip">
+<summary>correction</summary>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.54</span><span class="p">,</span> <span class="mf">2.77</span><span class="p">,</span> <span class="mf">3.03</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.70</span><span class="p">,</span> <span class="mf">4.08</span><span class="p">,</span> <span class="mf">4.46</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">5.33</span><span class="p">,</span> <span class="mf">5.74</span><span class="p">,</span> <span class="mf">6.14</span><span class="p">,</span> <span class="mf">6.54</span><span class="p">,</span> <span class="mf">6.96</span><span class="p">,</span> <span class="mf">7.38</span><span class="p">,</span> <span class="mf">7.80</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)],</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<img alt="image" class="center" src="../data/Figure_3.png" />       </p>
+</details>
 <p><strong>Q2.</strong> Prévoir le signe du coefficient de corrélation linéaire de la série double <span class="arithmatex">\((x,y)\)</span>.</p>
+<details class="tip">
+<summary>correction</summary>
+<p>Plus l'année augmente, plus la population augmente : <span class="arithmatex">\(\rho\)</span> sera donc positif.</p>
+</details>
 <p><strong>Q3.</strong> Calculer le coefficient de corrélation linéaire et tracer la droite de régression.</p>
+<details class="tip">
+<summary>correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.54</span><span class="p">,</span> <span class="mf">2.77</span><span class="p">,</span> <span class="mf">3.03</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.70</span><span class="p">,</span> <span class="mf">4.08</span><span class="p">,</span> <span class="mf">4.46</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">5.33</span><span class="p">,</span> <span class="mf">5.74</span><span class="p">,</span> <span class="mf">6.14</span><span class="p">,</span> <span class="mf">6.54</span><span class="p">,</span> <span class="mf">6.96</span><span class="p">,</span> <span class="mf">7.38</span><span class="p">,</span> <span class="mf">7.80</span><span class="p">])</span>
+
+
+<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)],</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Coefficient de corrélation linéaire :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">coeff</span>
+<span class="mf">0.9979169799754183</span>
+</code></pre></div></p>
+<p><img alt="image" class="center" src="../data/Figure_4.png" /> </p>
+</details>
 <p><strong>Q4.</strong> À l'aide des coefficients <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)</span> de la droite de régression, conjecturer la population mondiale en 2050 et vérifier la prévision de l'ONU.</p>
+<details class="tip">
+<summary>correction</summary>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.07745714285714277</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="o">-</span><span class="mf">148.77376190476173</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2050</span> <span class="o">+</span> <span class="n">b</span>
+<span class="mf">10.013380952380942</span>
+</code></pre></div>
+<p>La prévision de l'ONU est donc compatible avec notre simulation.</p>
+</details>
 </div>
 <h2 id="4-retour-sur-les-simulations">4. Retour sur les simulations<a class="headerlink" href="#4-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
