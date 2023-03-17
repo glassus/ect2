@@ -1220,13 +1220,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>Quel rôle joue l'attribut <code>immatriculation</code> dans la table <code>voitures</code> ?  </li>
 <li>Quel rôle joue l'attribut <code>proprietaire</code> dans la table <code>voitures</code> ? </li>
 </ol>
-<details class="tip">
-<summary>Correction</summary>
-<ol>
-<li><code>immatriculation</code> est la clé <strong>primaire</strong> la table <code>voitures</code>. </li>
-<li><code>proprietaire</code> une clé <strong>étrangère</strong> de la table <code>voitures</code>, elle fait référence à la clé primaire <code>id</code> de la table <code>personnes</code>. </li>
-</ol>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 1</p>
@@ -1246,12 +1239,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1271,12 +1258,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1296,13 +1277,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rose&#39;</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
@@ -1338,12 +1312,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Berry&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Gérard&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">33000</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bordeaux&quot;</span><span class="p">)</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1363,14 +1331,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Porsche&quot;</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
@@ -1437,7 +1397,10 @@ Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> de 1, on pe
 <p><img alt="image" class="center" src="../data/Figure_8.png" /></p>
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>Tracé de la droite de régression :</strong> <code>a, b = np.polyfit(x, y, 1)</code></p>
 <ul>
-<li>Le calcul du coefficient directeur <code>a</code> et de l'ordonnée à l'origine <code>b</code> de la droite de régression se fait par la commande  <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <code>a, b = np.polyfit(x, y, 1)</code> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></li>
+<li>Le calcul du coefficient directeur <code>a</code> et de l'ordonnée à l'origine <code>b</code> de la droite de régression se fait par la commande </li>
+</ul>
+<p><img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /> <code>a, b = np.polyfit(x, y, 1)</code> <img alt="❤" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" title=":heart:" /></p>
+<ul>
 <li>Le tracé de la droite se fait par <code>plt.plot(x, a*x + b)</code></li>
 </ul>
 <p>Insérer les lignes :
@@ -1460,71 +1423,17 @@ dans le code précédent. On obtient alors :
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </code></pre></div>
-<details class="tip">
-<summary>correction <strong>Q1.</strong></summary>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-
-<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<img alt="image" class="center" src="../data/Q1.png" />
-<code>r = -0.037</code> donc on ne peut absolument pas tenter un ajustement linéaire. </p>
-</details>
 <p><strong>Q2.</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">108</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">70</span><span class="p">])</span>
 </code></pre></div>
-<details class="tip">
-<summary>correction <strong>Q2.</strong></summary>
-<p><img alt="image" class="center" src="../data/Q2.png" />
-<code>r = -0.249</code> donc on ne peut absolument pas tenter un ajustement linéaire. </p>
-</details>
 <p><strong>Q3.</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">346</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">322</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">301</span><span class="p">,</span> <span class="mi">287</span><span class="p">,</span> <span class="mi">269</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">249</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">208</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">158</span><span class="p">])</span>
 </code></pre></div>
-<details class="tip">
-<summary>correction <strong>Q3.</strong></summary>
-<p><img alt="image" class="center" src="../data/Q3.png" />
-<code>r = -0.993</code> donc il est légitime tenter un ajustement linéaire. </p>
-<p>Insérons (avant le tracé par <code>plt.show()</code>) le code suivant :
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-</code></pre></div></p>
-<p><img alt="image" class="center" src="../data/Q3bis.png" />
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="o">-</span><span class="mf">9.808270676691734</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="mf">347.2285714285715</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">30</span><span class="o">+</span><span class="n">b</span>
-<span class="mf">52.98045112781949</span>
-</code></pre></div>
-On peut donc estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra environ 53.</p>
-</details>
 </div>
 <div class="admonition note">
-<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> HorsProgramme <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></p>
+<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> Hors Programme <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></p>
 <p>Le nuage de points obtenu en <strong>Q2</strong> ne donne absolument pas envie de faire un ajustement linéaire : la forme du nuage ne ressemble pas du tout à une droite.</p>
 <p>Par contre, elle ressemble à une parabole... </p>
 <p>Peut-on ajuster cette série statistique avec un polynôme de degré 2 ? Essayons !
@@ -1574,9 +1483,10 @@ On peut alors estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra 
 <p>Mais <code>polyfit</code> est capable de mieux ! Il peut nous donner les coefficients du polynôme de degré 6 qui passera <strong>parfaitement</strong> par les 7 points :</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </code></pre></div>
-<p>Traçons donc la courbe obtenue...</p>
+<p>Traçons donc la courbe du polynôme <code>a*x**6 + b*x**5 + c*x**4 + d*x**3 + e*x**2 + f*x + g</code> :</p>
 <p><img alt="image" class="center" src="../data/over3.png" /></p>
-<p>À trop vouloir coller aux valeurs données, on a perdu le «sens» de la série statistique, et nos prévisions risquent d'être totalement fausses. On appelle ce phénomène l'<strong>overfitting</strong>, ou <strong>sur-apprentissage</strong> en Intelligence Artificielle.<br />
+<p>C'est parfait pour les valeurs données... mais très bizarre dès qu'on sort de ces valeurs.</p>
+<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> À trop vouloir coller aux valeurs données, on a perdu le «sens» de la série statistique, et nos prévisions risquent d'être totalement fausses. On appelle ce phénomène l'<strong>overfitting</strong>, ou <strong>sur-apprentissage</strong> en Intelligence Artificielle.<br />
 Une interprétation dans la vie courante pourrait être que lorsque vous savez <strong>trop parfaitement</strong> quelque chose, il y a un risque d'en perdre le sens et donc de ne pas pouvoir s'adapter en cas de léger décalage par rapport à ce que vous attendez.</p>
 </div>
 <h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
@@ -1605,6 +1515,9 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <li>
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi exponentielle</strong> : <code>rd.exponential(1/lambda)</code> renvoie un réel qui suit une loi exponentielle de paramètre <code>lambda</code>.</p>
 </li>
+<li>
+<p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <strong>loi de Poisson</strong> : <code>rd.poisson(lambda)</code> renvoie un entier qui suit une loi de Poisson de paramètre <code>lambda</code>.</p>
+</li>
 </ul>
 <p><img alt="⭐" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
 <p><strong>Exemple :</strong><br />
@@ -1622,6 +1535,54 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <p><img alt="➡" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
+<p>On se propose dans cet exercice de retrouver empiriquement la formule théorique du calcul de probabilités d'une variable <span class="arithmatex">\(X\)</span> suivant une loi de Poisson de paramètre <span class="arithmatex">\(\lambda\)</span> :</p>
+<div class="arithmatex">\[\forall k \in \mathbb{N}, \qquad P(X=k)=\dfrac{\lambda ^k}{k!} e^{-\lambda}\]</div>
+<p><strong>Q1.</strong> Compléter le code ci-dessous afin que la fonction <code>formule_poisson</code> qui prend pour paramètres deux entiers :  </p>
+<ul>
+<li><code>lamb</code> : le paramètre de la loi de Poisson</li>
+<li><code>k</code> : le nombre dont on veut tester la probabilité d'apparition lors d'une loi de Poisson</li>
+</ul>
+<p>renvoie la probabilité que <span class="arithmatex">\(X\)</span> soit égal à <code>k</code> si <span class="arithmatex">\(X\)</span> suit une loi de Poisson de paramètre <code>lamb</code>. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
+
+<span class="k">def</span> <span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">...**...</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="o">...</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Q2.</strong> On va maintenant calculer de manière empirique cette probabilité, grâce à la loi des grands nombres.</p>
+<p>Compléter le code ci-dessous afin que la fonction <code>empirique_poisson</code> qui prend pour paramètres 3 entiers :  </p>
+<ul>
+<li><code>lamb</code> : le paramètre de la loi de Poisson</li>
+<li><code>k</code> : le nombre dont on veut tester la probabilité d'apparition lors d'une loi de Poisson</li>
+<li><code>nb_iter</code> : le nombre d'itérations</li>
+</ul>
+<p>renvoie la fréquence d'apparition de la valeur <code>k</code> lors de <code>nb_iter</code> itérations d'un tirage par la fonction Python <code>rd.poisson</code>. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">def</span> <span class="nf">empirique_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nb_iter</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+        <span class="n">tirage</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tirage</span> <span class="o">==</span> <span class="o">...</span><span class="p">:</span>
+            <span class="o">...</span> <span class="o">+=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="o">...</span> <span class="o">/</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Q3.</strong> Comparer ces deux fonctions avec (par exemple) <code>lamb</code> égal à 10, <code>k</code> égal à 7 et une valeur <code>nb_iter</code> que vous adapterez.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice  4</p>
 <p><em>d'après BCE ESC 2020</em></p>
 <p>Un mobile se déplace sur les points à coordonnées entières positives d'un axe d'origine <span class="arithmatex">\(O\)</span>.<br />
 Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se déplace selon la règle suivante : s'il est sur le point d'abscisse <span class="arithmatex">\(k-1\)</span> (<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) à l'instant <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \in \mathbb{N}\)</span>), alors, à l'instant <span class="arithmatex">\(n+1\)</span>, il sera sur le point d'abscisse <span class="arithmatex">\(k\)</span> avec la probabilité <span class="arithmatex">\(\frac{k}{k+1}\)</span>, ou sur le point d'abscisse 0 avec la probabilité <span class="arithmatex">\(\frac{1}{k+1}\)</span>.</p>
@@ -1654,7 +1615,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">16 mars 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">17 mars 2023</span>
       
     
   </small>
