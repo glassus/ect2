@@ -1202,7 +1202,7 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <p>la table <code>personnes</code> possède comme attributs :</p>
 <ul>
 <li><code>id</code> : un numéro d'identification unique pour chaque personne.</li>
-<li><code>nom</code>, <code>prenoms</code>, <code>code postal</code>, <code>ville</code> </li>
+<li><code>nom</code>, <code>prenom</code>, <code>code_postal</code>, <code>ville</code> </li>
 </ul>
 </li>
 <li>
@@ -1338,6 +1338,12 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">personnes</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Berry&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Gérard&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">33000</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bordeaux&quot;</span><span class="p">)</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1357,6 +1363,14 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Porsche&quot;</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
