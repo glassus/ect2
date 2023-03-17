@@ -1220,6 +1220,13 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>Quel rôle joue l'attribut <code>immatriculation</code> dans la table <code>voitures</code> ?  </li>
 <li>Quel rôle joue l'attribut <code>proprietaire</code> dans la table <code>voitures</code> ? </li>
 </ol>
+<details class="tip">
+<summary>Correction</summary>
+<ol>
+<li><code>immatriculation</code> est la clé <strong>primaire</strong> la table <code>voitures</code>. </li>
+<li><code>proprietaire</code> une clé <strong>étrangère</strong> de la table <code>voitures</code>, elle fait référence à la clé primaire <code>id</code> de la table <code>personnes</code>. </li>
+</ol>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 1</p>
@@ -1239,6 +1246,12 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1258,6 +1271,12 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1277,6 +1296,13 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rose&#39;</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
