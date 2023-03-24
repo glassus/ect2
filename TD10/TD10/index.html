@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1264,7 +1264,7 @@
 <p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
 <p><strong>Création de table</strong></p>
 <p>On souhaite créer une table <code>tournoi</code> concernant les joueurs de rugby du tournoi des VI nations 2023 et leur nombre de points marqués.</p>
-<p>On veut que la tablea ait la structure suivante :</p>
+<p>On veut que la table ait la structure suivante :</p>
 <ul>
 <li><code>id_joueur</code> : nombre unique identifiant un joueur (type <code>INT</code>)</li>
 <li><code>nom</code> : nom du joueur (type <code>TEXT</code> )</li>
@@ -1273,6 +1273,10 @@
 <li><code>points</code> : nombre de points marqués (type <code>INT</code> )</li>
 </ul>
 <p><strong>Q1.</strong> Quelle sera la clé primaire de cette table ?  </p>
+<details class="tip">
+<summary>Correction Q1.</summary>
+<p>La clé primaire de cette table est <code>id_joueur</code> car c'est un attribut qui identifie de manière unique chaque joueur.</p>
+</details>
 <p><strong>Q2.</strong> Écrire la requête SQL permettant la création de cette table <code>tournoi</code>. </p>
 <script>var rugby = new Worker(path + "/js/worker.sql-wasm.js");</script>
 <div id="ide1" >
@@ -1289,6 +1293,17 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction Q2.</summary>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tournoi</span><span class="w"> </span><span class="p">(</span>
+<span class="n">id_joueur</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="n">prénom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="err">é</span><span class="n">quipe</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="n">points</span><span class="w"> </span><span class="nb">INTEGER</span>
+<span class="p">);</span>
+</code></pre></div>
+</details>
 <p><strong>Q3.</strong> Insérer dans cette table le joueur Finn Russell (Ecosse) qui a marqué 32 points. On lui attribuera un <code>id_joueur</code> égal à 1. </p>
 
 <div id="ide2" >
@@ -1321,6 +1336,12 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction Q3.</summary>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tournoi</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Russel&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Finn&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ecosse&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span>
+</code></pre></div>
+</details>
 <p><strong>Q4.</strong> Afin de rajouter des joueurs dans cette table, copier-coller le code ci-dessous dans le champ SQL :</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tournoi</span>
 <span class="k">VALUES</span><span class="w"> </span>
@@ -1380,6 +1401,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(() => {});
 </script>
+<details class="tip">
+<summary>Correction Q4.</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prénom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tournoi</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="err">é</span><span class="n">quipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Ecosse&quot;</span>
+</code></pre></div>
+</details>
 <p><strong>Q5.</strong> (Hors-Programme) L'instruction <code>ORDER BY</code> permet de classer les enregistrements d'une table suivant l'ordre (alphabétique, ou numérique) d'un de ses attributs.</p>
 <p>Ainsi la requête
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
@@ -1388,6 +1416,13 @@
 </code></pre></div></p>
 <p>va classer tous les joueurs par ordre alphabétique de leur nom. Si on remplace le <code>ASC</code> (qui signifie ASCendant) par <code>DESC</code> (qui signifie DESCendant) on aurait l'ordre inverse.</p>
 <p>Établir le classement des meilleurs marqueurs de points de ce tournoi 2023.  </p>
+<details class="tip">
+<summary>Correction Q5.</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tournoi</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="k">DESC</span>
+</code></pre></div>
+</details>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -1722,7 +1757,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "header.autohide", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="../../scripts/mathjax.js"></script>
       
