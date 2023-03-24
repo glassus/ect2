@@ -1672,6 +1672,19 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 </code></pre></div></td></tr></table></div>
 </details>
 <p><strong>Q2</strong> Écrire une fonction <code>moyenne_tirages</code> qui prend pour paramètre un entier <code>n</code> et qui renvoie la valeur moyenne de la fonction <code>tirage</code> sur <code>n</code> tirages.</p>
+<details class="tip">
+<summary>Correction Q2.</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne_tirages</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">n</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q3</strong> Les instructions ci-dessous permettent de tracer l'histogramme des valeurs que prend <code>moyenne_tirages(5)</code> lorsqu'on la répète 100 fois.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
