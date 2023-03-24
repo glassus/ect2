@@ -14,6 +14,8 @@
         <link rel="prev" href="../../TD08/TD08/">
       
       
+        <link rel="next" href="../../TD10/TD10/">
+      
       <link rel="icon" href="../../xtra/fav.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
@@ -397,6 +399,22 @@
     <li class="md-tabs__item">
       <a href="./" class="md-tabs__link md-tabs__link--active">
         TD09
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TD10/TD10/" class="md-tabs__link">
+        TD10
       </a>
     </li>
   
@@ -1174,6 +1192,57 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+          TD10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          TD10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD10/TD10/" class="md-nav__link">
+        TD10 : retour du SQL, régression, simulations, suite et fin
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1591,6 +1660,17 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <span class="k">def</span> <span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="o">...**...</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="o">...</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<details class="tip">
+<summary>Correction Q1.</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
+
+<span class="k">def</span> <span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">lamb</span><span class="o">**</span><span class="n">k</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lamb</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q2.</strong> On va maintenant calculer de manière empirique cette probabilité, grâce à la loi des grands nombres.</p>
 <p>Compléter le code ci-dessous afin que la fonction <code>empirique_poisson</code> qui prend pour paramètres 3 entiers :  </p>
 <ul>
@@ -1619,7 +1699,39 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
             <span class="o">...</span> <span class="o">+=</span> <span class="o">...</span>
     <span class="k">return</span> <span class="o">...</span> <span class="o">/</span> <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
+<details class="tip">
+<summary>Correction Q2.</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">def</span> <span class="nf">empirique_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nb_iter</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_iter</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">tirage</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">if</span> <span class="n">tirage</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class="hll">    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">nb_iter</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q3.</strong> Comparer ces deux fonctions avec (par exemple) <code>lamb</code> égal à 10, <code>k</code> égal à 7 et une valeur <code>nb_iter</code> que vous adapterez.</p>
+<details class="tip">
+<summary>Correction Q3.</summary>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">formule_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="mf">0.09007922571921598</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">empirique_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="mf">0.090022</span>
+</code></pre></div>
+On constate une similitude des valeurs renvoyées. Cela prouve que la fonction Python <code>rd.poisson</code> est correctement implémentée...</p>
+</details>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  4</p>
@@ -1655,7 +1767,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">17 mars 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 mars 2023</span>
       
     
   </small>
