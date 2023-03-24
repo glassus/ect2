@@ -5,10 +5,11 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD09](./TD09/TD09/) : retour du SQL, régression, simulations
+    - [TD10](./TD10/TD10/) : SQL, régression, simulations, suite et fin
 
 
 !!! note "Séances précédentes"
+    - [TD09](./TD09/TD09/) : retour du SQL, régression, simulations
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
     - [TD07](./TD07/TD07/) : Suite des lois de probabilités
     - [TD06](./TD06/TD06/) : lois de probabilités (et un soupçon de SQL)
