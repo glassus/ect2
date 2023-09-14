@@ -5,9 +5,9 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD10](./TD10/TD10/) : SQL, régression, simulations, suite et fin
+    - :arrow_right: [TD01](./TD01/TD01/) : révision des structures élémentaires
 
-
+{#
 !!! note "Séances précédentes"
     - [TD09](./TD09/TD09/) : retour du SQL, régression, simulations
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
@@ -18,8 +18,14 @@ test: ok
     - [TD03](./TD03/TD03/) : retour sur les simulations
     - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
+#}
 
-### 2. Python en ligne sans installation
+### 2. L'informatique en ECT
+- Vous pouvez retrouver [ici](Programmes/1A/) la partie informatique du programme de mathématiques des deux années d'ECT.
+
+- Vous pouvez retrouver [ici](Memento_Python/commandes/) un rappel de toutes les commandes Python exigibles au concours.
+
+### 3. Python en ligne sans installation
 
 Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/){. target="_blank"} :
 
