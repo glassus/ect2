@@ -1677,7 +1677,16 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
 <div class="tabbed-block">
 <p>Afficher une suite de 50 nombres (pseudo-)aléatoires dans l'intervalle <span class="arithmatex">\([0;1[\)</span>.</p>
 </div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+</div>
 </div>
 </div>
 </div>
