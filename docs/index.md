@@ -9,7 +9,7 @@ test: ok
 
 
 !!! note "Séances précédentes"
-    -[TD01](./TD01/TD01/) : révision des structures élémentaires
+    [TD01](./TD01/TD01/) : révision des structures élémentaires
 {#
 !!! note "Séances précédentes"
     - [TD09](./TD09/TD09/) : retour du SQL, régression, simulations
