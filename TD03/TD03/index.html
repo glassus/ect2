@@ -1515,58 +1515,10 @@
 <li><span class="arithmatex">\(]p;1]\)</span> (échec) :</li>
 </ul>
 <p><img alt="image" class="center" src="../data/unif.png" /></p>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice 1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction Q1</label><label for="__tabbed_1_3">Correction Q2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
-<ol>
-<li>Créer une fonction <code>tirage()</code> renvoyant la valeur 1 si la boule tirée est blanche, et la valeur 0 si la boule tirée est noire.</li>
-<li>Simuler 100 000 fois cette expérience aléatoire et afficher la fréquence d'apparition d'une boule blanche. </li>
-</ol>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="k">def</span> <span class="nf">tirage</span><span class="p">():</span>
-    <span class="n">val_alea</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">val_alea</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nb_tirages</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
-<span class="n">somme_blanches</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_tirages</span><span class="p">):</span>
-    <span class="n">somme_blanches</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">somme_blanches</span> <span class="o">/</span> <span class="n">nb_tirages</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice 2</p>
+<div class="admonition example">
+<p class="admonition-title">Exercice  1</p>
 <p><em>inspiré par Ecricome 2018</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction Q1</label><label for="__tabbed_2_3">Correction Q2</label><label for="__tabbed_2_4">Correction Q3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction Q1</label><label for="__tabbed_1_3">Correction Q2</label><label for="__tabbed_1_4">Correction Q3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère une urne <span class="arithmatex">\(U\)</span> contenant deux boules blanches et une boule noire indiscernables au toucher, ainsi qu’une urne <span class="arithmatex">\(V\)</span> contenant une boule blanche et trois boules noires, elles aussi indiscernables au toucher. On effectue une suite de tirages d’une boule dans ces urnes en procédant comme suit :</p>
@@ -1626,79 +1578,16 @@
 <strong>Q2.</strong> Écrire une fonction <code>freq(n)</code> qui renvoie la valeur moyenne du nombre de boules blanches tirées sur <code>n</code> expériences réalisées.</p>
 <p><strong>Q3.</strong> En déduire <span class="arithmatex">\(E(X_2)\)</span> et retrouver ce résultat par un calcul théorique.</p>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="k">def</span> <span class="nf">simulation</span><span class="p">():</span>
-    <span class="n">tirage1</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">tirage1</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="n">X</span> <span class="o">=</span> <span class="n">res1</span> <span class="o">+</span> <span class="n">res2</span>
-    <span class="k">return</span> <span class="n">X</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">compteur</span> <span class="o">+=</span> <span class="n">simulation</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">compteur</span> <span class="o">/</span> <span class="n">n</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p>Expérimentalement :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-<span class="mf">1.055416</span>
-</code></pre></div></p>
-<p>Théoriquement, en faisant un arbre de probalités,</p>
-<div class="arithmatex">\[E(X_2) = 2 \times \dfrac{2}{6} +  1 \times \dfrac{1}{2} +  1 \times \dfrac{2}{9} = \dfrac{57}{54}\]</div>
-</div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
 </div>
 </div>
 </div>
 <h2 id="2-retour-sur-le-while">2. Retour sur le <code>while</code>.<a class="headerlink" href="#2-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice 3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
@@ -1720,44 +1609,51 @@
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">prop</span> <span class="o">!=</span> <span class="n">nb_secret</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">prop</span> <span class="o">&gt;</span> <span class="n">nb_secret</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop grand&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trop petit&quot;</span><span class="p">)</span>
-    <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bravo !&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</div>
+<div class="tabbed-block"></div>
 </div>
 </div>
 </div>
 <h2 id="3-retour-sur-les-suites">3. Retour sur les suites<a class="headerlink" href="#3-retour-sur-les-suites" title="Permanent link">⚓︎</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice 4</p>
+<p>L'étude des suites donne lieu à <strong>deux approches</strong> radicalement différentes :</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 1</strong> : à l'aide une seule variable «simple»</p>
+<p>Chaque terme est calculé successivement à partir du précédent dans une seule et unique variable «simple». Cette variable est initialisée avec le 1er terme.</p>
+<p><em>Exemple :</em> </p>
+<p>le n-ième terme de la suite définie par <span class="arithmatex">\(u_{n+1}=2u_n + 1\)</span> et <span class="arithmatex">\(u_0 = 3\)</span> sera calculé par:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">terme_de_rang_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># attention au n+1</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre></div></td></tr></table></div>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> Avantages : simplicité, rapidité, peu d'espace-mémoire / <img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4db.svg" title=":name_badge:" /> Inconvénients : aucun accès à tous les termes de la suite !</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 2</strong> : à l'aide une  variable de type liste</p>
+<p>Chaque terme est calculé successivement à partir du précédent et <strong>stocké</strong> dans une liste. Cette liste est souvent préparée au préalable, remplie de 0 qui seront peu à peu par les termes de la suite.</p>
+<p><em>Exemple :</em> </p>
+<p>Les n premiers termes de la suite définie par <span class="arithmatex">\(u_{n+1}=2u_n + 1\)</span> et <span class="arithmatex">\(u_0 = 3\)</span> seront calculés par:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">n_premiers_termes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># on commence à l&#39;indice 0 donc il faut n+1 cases</span>
+    <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># attention au n+1</span>
+        <span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre></div></td></tr></table></div>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>Avantages</strong> : tous les termes sont disponibles (on peut les cumuler, les tracer...)</p>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4db.svg" title=":name_badge:" /> <strong>Inconvénients</strong> : lenteur, complexité, place mémoire.</p>
+<div class="admonition example">
+<p class="admonition-title">Exercice  3</p>
 <p><em>extrait du sujet 0 Ecricome</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label><label for="__tabbed_4_3">Correction Q2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction Q1</label><label for="__tabbed_3_3">Correction Q2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On considère la suite <span class="arithmatex">\((u_n)_{n \in \mathbb{N}^*}\)</span> définie par <span class="arithmatex">\(u_1=\dfrac{2}{3}\)</span> et, <span class="arithmatex">\(\forall n \in \mathbb{N}^*, u_{n+1}=\dfrac{n+1}{3n}u_n\)</span>.</p>
@@ -1776,28 +1672,15 @@
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<p><span class="arithmatex">\(u_2=\dfrac{4}{9}\)</span> et <span class="arithmatex">\(u_3 = \dfrac{2}{9}\)</span></p>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
-    <span class="k">return</span> <span class="n">u</span>
-</code></pre></div></td></tr></table></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
 </div>
 </div>
 </div>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice 5</p>
+<div class="admonition example">
+<p class="admonition-title">Exercice  4</p>
 <p><em>inspiré du sujet Ecricome 2019</em></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Correction Q1</label><label for="__tabbed_5_3">Correction Q2</label><label for="__tabbed_5_4">Correction Q3</label><label for="__tabbed_5_5">Correction Q4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction Q1</label><label for="__tabbed_4_3">Correction Q2</label><label for="__tabbed_4_4">Correction Q3</label><label for="__tabbed_4_5">Correction Q4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Soit <span class="arithmatex">\(g\)</span> la fonction numérique réelle définie sur l'intervalle <span class="arithmatex">\(]0;+\infty[\)</span> par :</p>
@@ -1828,61 +1711,60 @@
 <p><strong>Q3.</strong> Exécutez le script précédent et observez le graphique obtenu.</p>
 <p><strong>Q4.</strong> Sur ce même graphique, tracez la courbe représentative de la fonction <span class="arithmatex">\(\ln\)</span>.</p>
 </div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  5</p>
+<p><em>inspiré du sujet ESCP 2023</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Énoncé</label><label for="__tabbed_5_2">Correction</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
+<p>On pose <span class="arithmatex">\(u_{1}=\dfrac{1}{2}\)</span> et, pour tout entier naturel <span class="arithmatex">\(n\)</span> non
+nul :</p>
+<div class="arithmatex">\[u_{n+1}=\frac{u_{n}}{2(n+1)u_{n}+1}\]</div>
+<p>Compléter la fonction ci-dessous afin qu'elle renvoie la valeur de <span class="arithmatex">\(u_n\)</span> à l'appel de <code>suite(n)</code> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<p>L'expression <code>S = np.cumsum(u)</code> permet de calculer le vecteur de sommes cumulées de la suite <span class="arithmatex">\(u\)</span>.</p>
+<div class="tabbed-block"></div>
 </div>
-<div class="tabbed-block">
-<p><img alt="image" class="center" src="../data/ex6_1.png" /></p>
 </div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  6</p>
+<p><em>inspiré du sujet Ecricome 2023</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Énoncé</label><label for="__tabbed_6_2">Correction</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-
-
-<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
-    <span class="n">u</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<p>On considère la suite <span class="arithmatex">\(\left(u_n\right)_{n \geqslant 1}\)</span> définie par : </p>
+<div class="arithmatex">\[ u_1 \in[0,1],\quad\text{ et }
+\forall n \in \mathbb{N}^*,  u_{n+1}=\dfrac{5}{12} u_n+\dfrac{1}{3}\]</div>
+<p>Compléter la fonction suivante, qui prend en entrée un entier naturel non nul <code>n</code>  et un réel <code>u1</code>  de <span class="arithmatex">\([0,1]\)</span> correspondant au terme initial <span class="arithmatex">\(u_1\)</span> de la suite, et renvoie le terme <span class="arithmatex">\(u_n\)</span>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> 
 </code></pre></div></td></tr></table></div>
-<p><img alt="image" class="center" src="../data/ex6_2.png" /></p>
 </div>
+<div class="tabbed-block"></div>
 </div>
 </div>
 </div>
@@ -1892,7 +1774,7 @@
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">20 janvier 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">12 octobre 2023</span>
       
     
   </small>
