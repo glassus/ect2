@@ -5,7 +5,7 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - :arrow_right: [TD03](./TD03/TD03/) : retour sur les simulations
+    - :arrow_right: [TD03](./TD03/TD03/) : suites et simulations
 
 
 !!! note "Séances précédentes"
