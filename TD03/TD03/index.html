@@ -1721,7 +1721,7 @@
 <div class="tabbed-block">
 <p>On considère la suite <span class="arithmatex">\((u_n)_{n \in \mathbb{N}^*}\)</span> définie par <span class="arithmatex">\(u_1=\dfrac{2}{3}\)</span> et, <span class="arithmatex">\(\forall n \in \mathbb{N}^*, u_{n+1}=\dfrac{n+1}{3n}u_n\)</span>.</p>
 <ol>
-<li>Calculer <span class="arithmatex">\(u_1\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</li>
+<li>Calculer <span class="arithmatex">\(u_2\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</li>
 <li>Compléter la fonction Python ci-desous qui prend en entrée la valeur <span class="arithmatex">\(n\)</span> et renvoie la valeur de <span class="arithmatex">\(u_n\)</span>.</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1735,8 +1735,21 @@
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block"></div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(u_2=\dfrac{4}{9}\)</span> et <span class="arithmatex">\(u_3 = \dfrac{2}{9}\)</span></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre></div></td></tr></table></div>
+</div>
 </div>
 </div>
 </div>
