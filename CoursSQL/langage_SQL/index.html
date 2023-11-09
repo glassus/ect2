@@ -1607,7 +1607,9 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <p class="admonition-title">Requête filtrée : SELECT, FROM, WHERE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1623,7 +1625,9 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <p class="admonition-title">Requête avec plusieurs possibilités : WHERE ... IN... <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span><span class="w"> </span><span class="mi">1991</span><span class="p">,</span><span class="w"> </span><span class="mi">1992</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span><span class="w"> </span><span class="mi">1991</span><span class="p">,</span><span class="w"> </span><span class="mi">1992</span><span class="p">);</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1638,9 +1642,9 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <p class="admonition-title">Requête avec booléens : AND - OR <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w">   </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1970</span><span class="w"> </span><span class="k">AND</span>
-<span class="w">                                </span><span class="n">annee</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1980</span><span class="w"> </span><span class="k">AND</span>
-<span class="w">                                </span><span class="n">editeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dargaud&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w">  </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1970</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1980</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">editeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dargaud&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1655,7 +1659,9 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <p class="admonition-title">Requête approchée : LIKE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Astérix%&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Astérix%&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1671,7 +1677,9 @@ Le symbole <code>%</code> est un joker qui peut symboliser n'importe quelle cha�
 <p class="admonition-title">Plusieurs colonnes <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1686,7 +1694,9 @@ Le symbole <code>%</code> est un joker qui peut symboliser n'importe quelle cha�
 <p class="admonition-title">Toutes les colonnes : * <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1702,7 +1712,9 @@ L'astérisque <code>*</code> est un joker (<em>wildcard</em> en anglais).</p>
 <p class="admonition-title">Renommer les colonnes : AS <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">titre_du_livre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">titre_du_livre</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1990</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1722,8 +1734,9 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <p class="admonition-title">Compter : COUNT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1738,8 +1751,9 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <p class="admonition-title">Additionner : SUM <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">somme</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">somme</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1755,8 +1769,9 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <p class="admonition-title">Faire une moyenne : AVG <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">moyenne</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">moyenne</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1772,8 +1787,9 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <p class="admonition-title">Trouver les extremums : MIN, MAX <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">minimum</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                            </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">minimum</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1789,9 +1805,10 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <ul>
 <li>
 <p><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span>
-<span class="w">                </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -1810,10 +1827,11 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 <li>
 <p><strong>Utilisation de LIMIT :</strong> Le mot-clé LIMIT (suivi d'un nombre) permet de limiter le nombre de résultats affichés.<br />
 Ainsi la requête<br />
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
-<span class="w">                </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span>
-<span class="w">                </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span>
-<span class="w">                </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">&quot;%Astérix%&quot;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 permet d'obtenir les renseignements sur l'Astérix le plus récent.                    </p>
 </li>
@@ -1824,7 +1842,8 @@ permet d'obtenir les renseignements sur l'Astérix le plus récent.             
 <p class="admonition-title">Suppression des doublons : DISTINCT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">editeur</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">editeur</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1848,8 +1867,9 @@ Souvenons-nous du diagramme de la base de données.</p>
 <p class="admonition-title">Jointure de 2 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">code_barre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">retour</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span>
-<span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">isbn</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">code_barre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">retour</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">isbn</span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> 
 Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le nom de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.</li>
@@ -1872,9 +1892,10 @@ Il est donc très important de spécifier ce sur quoi les deux tables vont se re
 <p class="admonition-title">Jointure de 3 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">retour</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span>
-<span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">isbn</span>
-<span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">usager</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">code_barre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">code_barre</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">retour</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emprunt</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">isbn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">isbn</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">usager</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">code_barre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">code_barre</span><span class="p">;</span>
 </code></pre></div></li>
 <li>
 <p><strong>Traduction :</strong> 
@@ -1952,9 +1973,10 @@ C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé 
 <ul>
 <li>
 <p><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span>
-<span class="w">                        </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
-<span class="w">                        </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span>
+<span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -2036,7 +2058,7 @@ et le résultat serait : </p>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">13 janvier 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">9 novembre 2023</span>
       
     
   </small>
