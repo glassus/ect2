@@ -5,6 +5,8 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
+    - :arrow_right: [Cours sur le modèle relationnel](./CoursSQL/modele_relationnel/)
+    - :arrow_right: [Cours sur le langage SQL](./CoursSQL/langage_SQL/)
     - :arrow_right: [TD04](./TD04/TD04/) : découverte du langage SQL
 
 
