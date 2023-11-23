@@ -1182,7 +1182,7 @@
         
   
   <span class="md-ellipsis">
-    TD05 : SQL, jointures, modifications, créations
+    TD05 : SQL (modifications et jointures), retour au Python
   </span>
   
 
@@ -1990,7 +1990,8 @@ C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé 
 <ul>
 <li>
 <p><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Denis&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span>
+<span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Denis&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -2010,7 +2011,8 @@ La déclaration de la table et l'insertion des valeurs serait :
 <span class="w">        </span><span class="n">Histoire</span><span class="w"> </span><span class="nb">INTEGER</span>
 <span class="w">        </span><span class="p">);</span>
 
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">Maths</span><span class="p">,</span><span class="w"> </span><span class="n">Anglais</span><span class="p">,</span><span class="w"> </span><span class="n">NSI</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="p">(</span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">Maths</span><span class="p">,</span><span class="w"> </span><span class="n">Anglais</span><span class="p">,</span><span class="w"> </span><span class="n">NSI</span><span class="p">)</span>
+<span class="k">VALUES</span>
 <span class="w">    </span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">),</span>
 <span class="w">    </span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
 <span class="w">    </span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span>
@@ -2026,7 +2028,9 @@ et le résultat serait : </p>
 <p>Pour modifier la note de Maths d'Alice :</p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">Maths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span>
+<span class="k">SET</span><span class="w"> </span><span class="n">Maths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 </ul>
 </div>
@@ -2036,7 +2040,8 @@ et le résultat serait : </p>
 <p>Pour supprimer totalement la ligne concernant Charles :</p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table_notes</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Charles&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 </ul>
 </div>
@@ -2058,7 +2063,7 @@ et le résultat serait : </p>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">9 novembre 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">23 novembre 2023</span>
       
     
   </small>

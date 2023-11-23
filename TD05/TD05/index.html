@@ -22,7 +22,7 @@
     
     
       
-        <title>TD05 : SQL, jointures, modifications, créations - ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux</title>
+        <title>TD05 : SQL (modifications et jointures), retour au Python - ECT2 Informatique - Lycée Nicolas Brémontier -  Bordeaux</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
 <script src="https://glassus.github.io/ect2//js/sqlite_ide.js"></script>
 
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#td05-sql-jointures-modifications-creations" class="md-skip">
+        <a href="#td05-sql-modifications-et-jointures-retour-au-python" class="md-skip">
           Aller au contenu
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD05 : SQL, jointures, modifications, créations
+              TD05 : SQL (modifications et jointures), retour au Python
             
           </span>
         </div>
@@ -1092,15 +1092,59 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TD05 : SQL (modifications et jointures), retour au Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    TD05 : SQL, jointures, modifications, créations
+    TD05 : SQL (modifications et jointures), retour au Python
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sql-modifications-et-jointures" class="md-nav__link">
+    1. SQL : Modifications et jointures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" class="md-nav__link">
+    2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1445,10 +1489,38 @@
                   
 
 
-<h1 id="td05-sql-jointures-modifications-creations">TD05 : SQL, jointures, modifications, créations<a class="headerlink" href="#td05-sql-jointures-modifications-creations" title="Permanent link">⚓︎</a></h1>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a href="../../CoursSQL/langage_SQL/">Cours de SQL</a>.</p>
+<h1 id="td05-sql-modifications-et-jointures-retour-au-python">TD05 : SQL (modifications et jointures), retour au Python<a class="headerlink" href="#td05-sql-modifications-et-jointures-retour-au-python" title="Permanent link">⚓︎</a></h1>
+<h2 id="1-sql-modifications-et-jointures">1. SQL : Modifications et jointures<a class="headerlink" href="#1-sql-modifications-et-jointures" title="Permanent link">⚓︎</a></h2>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a href="../../CoursSQL/langage_SQL/#13-des-recherches-croisees-sur-les-tables-les-jointures">Cours de SQL</a>, notamment la partie sur les jointures et les modifications de table.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  1</p>
+<p>Gestion d'un réseau d'agences de location de voitures. <br />
+<em>D'après le travail de J. Le Coupanec (Académie de Rennes)</em></p>
+<p>La base de données <a href="../data/locations.db">locations.db</a> contient les tables <code>Agences</code>,<code>Locations</code>, <code>Vehicules</code>.
+<img alt="" src="../data/diag_locations.png" /></p>
+
+<div id="ide1" >
+<label for='sqlcommands'><strong>Requête :</strong></label>
+<br>
+<textarea id="sqlcommands" class="sqlcommands"></textarea>
+<button id="execute" class="sqlbutton execute">Exécuter</button>
+<div id="error" class="sqlerror"></div>
+<pre id="output" class="sqloutput"></pre>
+</div>
+<script>
+  onElementLoaded("div#ide1").then(() => {
+    const ide = document.querySelector("div#ide1");
+    load(ide, 'https:/glassus.github.io/ect2/TD04/data/locations.db', '', '', );
+}).catch(() => {});
+</script>
+<p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient</p>
+<p><strong>Q2</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>.</p>
+<p><strong>Q3</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.</p>
+<p><strong>Q4</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules.</p>
+<p><strong>Q5</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ?</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice  2</p>
 <p><em>Extrait du <a class="" href="../data/Sujet-Zero2-2023-math-appli.pdf" target="_blank">sujet 0 n°2 Ecricome ECG Mathématiques Appliquées</a></em></p>
 <p>On dispose d’une base de données comportant deux tables <code>vehicule</code> et <code>annonce</code> décrites ci-dessous. </p>
 <p>La table <code>vehicule</code> recense des informations sur les modèles de véhicules en vente sur le marché. Elle est composée
@@ -1472,243 +1544,139 @@ utilisé dans la table vehicules.  </li>
 <li><code>prix_occasion</code> (de type <code>INTEGER</code>) : prix de vente du véhicule d’occasion.</li>
 </ul>
 <p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables <code>vehicule</code> et <code>annonce</code>, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
-<details class="tip">
-<summary>Correction</summary>
-<ul>
-<li>Table <code>vehicule</code> : <code>id_vehicule</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque véhicule.</li>
-<li>Table <code>annonce</code> : <ul>
-<li><code>id_annonce</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque annonce.</li>
-<li><code>id_vehicule</code> est une clé étrangère car c'est une clé primaire de la table <code>vehicule</code>. </li>
-</ul>
-</li>
-</ul>
-</details>
 <p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>. </p>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">modele</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dubreuil Motors&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q3.</strong> Expliquer le fonctionnement de la requête SQL suivante et préciser l’effet éventuel de cette requête sur chacune des tables <code>vehicule</code> et <code>annonce</code>.
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">annonce</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">prix_occasion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prix_neuf</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
-<span class="k">AND</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
-</code></pre></div></p>
-<details class="tip">
-<summary>Correction</summary>
-<p>Cette requête met à jour la table <code>annonce</code>. On change le <code>prix_occasion</code> (qui devient égal au <code>prix neuf</code>) toutes les voitures dont on a repéré que le <code>prix_occasion</code> était supérieur au <code>prix_neuf</code>, ce qui n'est pas normal. L'identification entre les deux tables se fait grâce à la ligne <code>vehicule.id_vehicule = annonce.id_vehicule</code>.<br />
-<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Cette manière de procéder (action sur deux tables sans jointure) est très fortement déconseillée. Cette question n'aurait pas dû être posée.</p>
-</details>
-<p><strong>Q4.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
+<p><strong>Q3.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
 <ul>
 <li>l’identifiant de l’annonce <code>id_annonce</code>.</li>
 <li>le kilométrage <code>km</code>,</li>
 <li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
 <li>le prix de l’annonce d’occasion <code>prix_occasion</code>.</li>
 </ul>
-<details class="tip">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
-</code></pre></div>
-</details>
 </div>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice  2</p>
-<p><em>Questions interactives à réaliser sur le site sqlzoo.net.</em></p>
-<p><strong>Q1.</strong> Travail sur JOIN, (base de données Euro2012) <img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://sqlzoo.net/wiki/The_JOIN_operation" target="_blank">ici</a>.</p>
-<details class="note">
-<summary>correction</summary>
-<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
-<span class="cm">Sixth section of sqlzoo, Join</span>
-<span class="cm">*/</span>
-
-
-<span class="c1">--#1</span>
-<span class="cm">/*</span>
-<span class="cm">The first example shows the goal scored by &#39;Bender&#39;.</span>
-
-<span class="cm">Show matchid and player name for all goals scored by Germany.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">matchid</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">goal</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">teamid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GER&#39;</span>
-
-<span class="c1">--#2</span>
-<span class="cm">/*</span>
-<span class="cm">From the previous query you can see that Lars Bender&#39;s goal was scored in game 1012. Notice that the column matchid in the goal table corresponds to the id column in the game table.</span>
-
-<span class="cm">Show id, stadium, team1, team2 for game 1012</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="n">stadium</span><span class="p">,</span><span class="n">team1</span><span class="p">,</span><span class="n">team2</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1012</span>
-
-<span class="c1">--#3</span>
-<span class="cm">/*</span>
-<span class="cm">You can combine the two steps into a single query with a JOIN. You will get all the game details and all the goal details if you use</span>
-
-<span class="cm">SELECT *</span>
-<span class="cm">  FROM game JOIN goal ON (id=matchid)</span>
-<span class="cm">Show the player, teamid and mdate and for every German goal. teamid=&#39;GER&#39;</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">teamid</span><span class="p">,</span><span class="w"> </span><span class="n">mdate</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">matchid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">teamid</span><span class="o">=</span><span class="s1">&#39;GER&#39;</span><span class="p">)</span>
-
-<span class="c1">--#4</span>
-<span class="cm">/*</span>
-<span class="cm">Use the same JOIN as in the previous question.</span>
-
-<span class="cm">Show the team1, team2 and player for every goal scored by a player called Mario player LIKE &#39;Mario%&#39;</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">team1</span><span class="p">,</span><span class="w"> </span><span class="n">team2</span><span class="p">,</span><span class="w"> </span><span class="n">player</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">matchid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;Mario%&#39;</span><span class="p">)</span>
-
-<span class="c1">--#5</span>
-<span class="cm">/*</span>
-<span class="cm">The table eteam gives details of every national team including the coach. You can JOIN goal to eteam using the phrase goal JOIN eteam on teamid=id</span>
-
-<span class="cm">Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtime&lt;=10</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">teamid</span><span class="p">,</span><span class="w"> </span><span class="n">coach</span><span class="p">,</span><span class="w"> </span><span class="n">gtime</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">goal</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">eteam</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">teamid</span><span class="o">=</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">gtime</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1">--#6</span>
-<span class="cm">/*</span>
-<span class="cm">To JOIN game with eteam you could use either</span>
-<span class="cm">game JOIN eteam ON (team1=eteam.id) or game JOIN eteam ON (team2=eteam.id)</span>
-
-<span class="cm">Notice that because id is a column name in both game and eteam you must specify eteam.id instead of just id</span>
-
-<span class="cm">List the the dates of the matches and the name of the team in which &#39;Fernando Santos&#39; was the team1 coach.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span><span class="w"> </span><span class="n">teamname</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">eteam</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">team1</span><span class="o">=</span><span class="n">eteam</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">coach</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Santos&#39;</span><span class="p">)</span>
-
-<span class="c1">--#7</span>
-<span class="cm">/*</span>
-<span class="cm">List the player for every goal scored in a game where the stadium was &#39;National Stadium, Warsaw&#39;</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">player</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">goal</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">game</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">matchid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">stadium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;National Stadium, Warsaw&#39;</span><span class="p">)</span>
-
-<span class="c1">--#8</span>
-<span class="cm">/*</span>
-<span class="cm">The example query shows all goals scored in the Germany-Greece quarterfinal.</span>
-<span class="cm">Instead show the name of all players who scored a goal against Germany.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">matchid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="p">((</span><span class="n">team1</span><span class="o">=</span><span class="s1">&#39;GER&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">team2</span><span class="o">=</span><span class="s1">&#39;GER&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">teamid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;GER&#39;</span><span class="p">)</span>
-
-<span class="c1">--#9</span>
-<span class="cm">/*</span>
-<span class="cm">Show teamname and the total number of goals scored.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">teamname</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">eteam</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="n">teamid</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">teamname</span>
-
-<span class="c1">--#10</span>
-<span class="cm">/*</span>
-<span class="cm">Show the stadium and the number of goals scored in each stadium.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">stadium</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">goals</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">matchid</span><span class="p">)</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">stadium</span>
-
-<span class="c1">--#11</span>
-<span class="cm">/*</span>
-<span class="cm">For every match involving &#39;POL&#39;, show the matchid, date and the number of goals scored.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">matchid</span><span class="p">,</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">player</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">goals</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">matchid</span><span class="o">=</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">team1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;POL&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">team2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;POL&#39;</span><span class="p">))</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">matchid</span><span class="p">,</span><span class="w"> </span><span class="n">mdate</span>
-
-<span class="c1">--#12</span>
-<span class="cm">/*</span>
-<span class="cm">For every match where &#39;GER&#39; scored, show matchid, match date and the number of goals scored by &#39;GER&#39;</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">game</span>
-<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">matchid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">team1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GER&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">team2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GER&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">teamid</span><span class="o">=</span><span class="s1">&#39;GER&#39;</span><span class="p">)</span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">mdate</span>
-
-<span class="c1">--#13</span>
-<span class="cm">/*</span>
-<span class="cm">List every match with the goals scored by each team as shown. This will use &quot;CASE WHEN&quot; which has not been explained in any previous exercises.</span>
-<span class="cm">mdate   team1   score1  team2   score2</span>
-<span class="cm">1 July 2012 ESP 4   ITA 0</span>
-<span class="cm">10 June 2012    ESP 1   ITA 1</span>
-<span class="cm">10 June 2012    IRL 1   CRO 3</span>
-<span class="cm">...</span>
-<span class="cm">Notice in the query given every goal is listed. If it was a team1 goal then a 1 appears in score1, otherwise there is a 0.</span>
-<span class="cm">You could SUM this column to get a count of the goals scored by team1. Sort your result by mdate, matchid, team1 and team2.</span>
-<span class="cm">*/</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span>
-<span class="w">       </span><span class="n">team1</span><span class="p">,</span>
-<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">teamid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">score1</span><span class="p">,</span>
-<span class="w">       </span><span class="n">team2</span><span class="p">,</span>
-<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">teamid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">team2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">score2</span><span class="w"> </span><span class="k">FROM</span>
-<span class="w">    </span><span class="n">game</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matchid</span><span class="p">)</span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span><span class="n">team1</span><span class="p">,</span><span class="n">team2</span>
-<span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">mdate</span><span class="p">,</span><span class="w"> </span><span class="n">matchid</span><span class="p">,</span><span class="w"> </span><span class="n">team1</span><span class="p">,</span><span class="w"> </span><span class="n">team2</span>
-</code></pre></div>
-</details>
+<h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
+<p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
+Ceci nécessite systématiquement la présence des deux lignes suivantes au début de chaque script :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>   
+</code></pre></div></td></tr></table></div></p>
+<ul>
+<li>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
+<ul>
+<li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1]\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
+<li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
+</ul>
+</li>
+<li>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+</li>
+<li>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
+</li>
+</ul>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
-<p>Gestion d'un réseau d'agences de location de voitures. <br />
-<em>D'après le travail de J. Le Coupanec (Académie de Rennes)</em></p>
-<p>La base de données <a href="../data/locations.db">locations.db</a> contient les tables <code>Agences</code>,<code>Locations</code>, <code>Vehicules</code>.
-<img alt="" src="../data/diag_locations.png" /></p>
+<p>Un gardien est devant une porte fermée : il possède un trousseau de 10 clés dont une seule ouvre la porte. Comme il fait nuit, le gardien essaie les clés au hasard, sans se souvenir quelle clé il vient de tester.</p>
+<p>Soit <span class="arithmatex">\(X\)</span> la variable aléatoire qui compte le nombre d’essais jusqu’à ce que la porte s’ouvre.</p>
 <ol>
-<li>Répondez aux <a class="" href="https://colbert.bzh/sql/tp.html?html=locations_1&amp;db=locations" target="_blank">9 questions</a> sur la relation Agence. (Travail sur SELECT)</li>
-<li>Répondez aux <a class="" href="https://colbert.bzh/sql/tp.html?html=locations_2&amp;db=locations" target="_blank">11 questions</a> sur la relation Véhicules. (Travail sur SELECT plus des fonctions d'agrégation)</li>
-<li>Répondez aux <a class="" href="https://colbert.bzh/sql/tp.html?html=locations_3&amp;db=locations" target="_blank">12 questions</a> sur la relation Locations. (Travail sur des jointures)</li>
-<li>Répondez aux <a class="" href="https://colbert.bzh/sql/tp.html?html=locations_4&amp;db=locations" target="_blank">17 questions</a> sur la relation Véhicules. (Travail sur UPDATE, INSERT, DELETE)</li>
+<li>
+<p>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</p>
+</li>
+<li>
+<p>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</p>
+</li>
 </ol>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  4</p>
-<p>Championnat de France de Football 2015-2016</p>
-<p><em>D'après le travail de J. Le Coupanec (Académie de Rennes)</em></p>
-<p>La base de données <a href="../data/soccer.db">soccer.db</a> contient les tables <code>Team</code>,<code>Match</code>, <code>Event</code>, <code>Player</code>.  </p>
-<p><img alt="" src="../data/soccer_diag.png" /></p>
-<ol>
-<li>Répondez à ces <a class="" href="https://colbert.bzh/sql/tp.html?html=soccer_1&amp;db=soccer" target="_blank">12 questions</a> générales.</li>
-<li>Répondez à ces <a class="" href="https://colbert.bzh/sql/tp.html?html=soccer_2&amp;db=soccer" target="_blank">11 questions</a> sur l'équipe de Lorient.</li>
-</ol>
+<p><em>d'après ECT2 Mathématiques-Informatique, éditions Ellipses.</em></p>
+<p>Un opérateur d'un centre d'appel doit joindre 100 clients par téléphone. La probabilité qu'il joigne un client donné est <span class="arithmatex">\(\dfrac{1}{8}\)</span>.</p>
+<p>Le matin, il lance une première série de 100 appels.<br />
+L'après-midi, il relance une série d'appels, uniquement vers les clients qu'il n'a pas réussi à joindre le matin.</p>
+<p>Compléter le script ci-dessous, pour qu'il simule cette expérience et affiche le nombre de clients que le vendeur a réussi à contacter à la fin de la journée.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="c1"># à vous</span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  5</p>
-<p>Cet exercice en ligne est proposé le Knight Lab de l'université américaine Northwerstern University.</p>
-<p><img alt="" class="center" src="../data/murdermystery.png" width="50%" /></p>
-<p><strong>Le point de départ de l'histoire</strong> : un meurtre a été commis dans la ville de SQL City le 15 janvier 2018.</p>
-<p>À partir de ce point de départ et d'une base de données dont le diagramme est donné ci-dessous, il s'agit de trouver le meurtrier.</p>
-<p><img alt="" class="center" src="../data/schema.png" width="100%" /></p>
-<p>Rendez-vous sur <a href="https://mystery.knightlab.com/walkthrough.html" target="_blank">cette page</a>, et bonne enquête à coups de requêtes !</p>
-<ul>
-<li>
-<p>Vous devez travailler sur le site officiel (tout en bas). Attention pour valider votre réponse, il faudra vous rendre dans la zone «Check your solution».</p>
-</li>
-<li>
-<p>Vous pouvez trouver des éléments de correction <a href="https://gist.github.com/glassus/bbce06fec9e733c88e1085fc8c3a73ab" target="_blank">ici</a>...</p>
-</li>
-</ul>
+<p><em>d'après BCE ESC 2020</em></p>
+<p>On effectue une succession de lancers (supposés indépendants) d'une pièce de monnaie équilibrée pour laquelle la probabilité d'obtenir «pile» vaut <span class="arithmatex">\(\frac{1}{2}\)</span> et celle d'obtenir «face» vaut aussi <span class="arithmatex">\(\frac{1}{2}\)</span>.</p>
+<p>On considère aussi la variable aléatoire <span class="arithmatex">\(X\)</span>, égale au rang d'apparition d'un premier «pile», et la variable aléatoire <span class="arithmatex">\(Y\)</span>, égale au rang d'apparition du premier «face».</p>
+<p>On décide de coder «pile» par 1 et «face» par 0.</p>
+<p>Compléter le script Python suivant afin qu'il permette le calcul et l'affichage des valeurs prises par les variables aléatoires <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> lors de l'expérience réalisée dans cet exercice.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Exercice  6</p>
+<p><em>d'après BCE ESC 2020</em></p>
+<p>Un mobile se déplace sur les points à coordonnées entières positives d'un axe d'origine <span class="arithmatex">\(O\)</span>.<br />
+Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se déplace selon la règle suivante : s'il est sur le point d'abscisse <span class="arithmatex">\(k-1\)</span> (<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) à l'instant <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \in \mathbb{N}\)</span>), alors, à l'instant <span class="arithmatex">\(n+1\)</span>, il sera sur le point d'abscisse <span class="arithmatex">\(k\)</span> avec la probabilité <span class="arithmatex">\(\frac{k}{k+1}\)</span>, ou sur le point d'abscisse 0 avec la probabilité <span class="arithmatex">\(\frac{1}{k+1}\)</span>.</p>
+<p>On note <span class="arithmatex">\(U\)</span> l'instant auquel le mobile se trouve pour la première fois à l'origine (sans compter son positionnement de départ) et on admet que <span class="arithmatex">\(U\)</span> est une variable aléatoire. </p>
+<p>Compléter les commandes du script Python suivant afin qu'il calcule et affiche la valeur prise par <span class="arithmatex">\(U\)</span> lors de l'expérience aléatoire étudiée.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hasard</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">hasard</span> <span class="o">&lt;</span> <span class="o">...</span><span class="p">:</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">hasard</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U a pris la valeur&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 </div>
 
   <hr>
@@ -1716,7 +1684,7 @@ utilisé dans la table vehicules.  </li>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">13 janvier 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">23 novembre 2023</span>
       
     
   </small>
