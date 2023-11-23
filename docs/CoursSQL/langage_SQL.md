@@ -457,7 +457,8 @@ Essayons d'insérer un 4ème enregistrement ayant le même ```id``` qu'un autre 
 
 - **Commande :** 
 ```sql
-INSERT INTO table_notes VALUES  (3, 'Denis', 18, 10, 12);
+INSERT INTO table_notes 
+VALUES  (3, 'Denis', 18, 10, 12);
 ``` 
 
 - **Résultat :**  
@@ -476,7 +477,8 @@ CREATE TABLE table_notes (
         Histoire INTEGER
         );
 
-INSERT INTO Table_notes (Nom, Maths, Anglais, NSI) VALUES
+INSERT INTO Table_notes (Nom, Maths, Anglais, NSI)
+VALUES
 	('Alice', 16, 11, 17),
 	('Bob', 12, 15, 10),
 	('Charles', 9, 11, 18);
@@ -495,7 +497,9 @@ L'attribut ```id``` est donc géré automatiquement par le SGBD.
 
     - **Commande :** 
     ```sql
-    UPDATE Table_notes SET Maths = 18 WHERE Nom = 'Alice';
+    UPDATE Table_notes 
+    SET Maths = 18 
+    WHERE Nom = 'Alice';
     ``` 
 
 #### 2.5 Exemple 19 
@@ -505,7 +509,8 @@ L'attribut ```id``` est donc géré automatiquement par le SGBD.
 
     - **Commande :** 
     ```sql
-    DELETE FROM Table_notes WHERE Nom = 'Charles';
+    DELETE FROM Table_notes 
+    WHERE Nom = 'Charles';
     ``` 
 
 Si une autre table contient par exemple l'attribut ```id```  comme clé étrangère, et si l'```id```  de Charles fait partie de cette table, le SGBD refusera de supprimer cette ligne, afin de ne pas violer la contrainte de référence.
