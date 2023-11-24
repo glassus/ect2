@@ -1578,14 +1578,39 @@ utilisé dans la table vehicules.  </li>
 <li><code>prix_occasion</code> (de type <code>INTEGER</code>) : prix de vente du véhicule d’occasion.</li>
 </ul>
 <p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables <code>vehicule</code> et <code>annonce</code>, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
+<details class="success">
+<summary>Correction</summary>
+<ul>
+<li>Table <code>vehicule</code> : <code>id_vehicule</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque véhicule.</li>
+<li>Table <code>annonce</code> : <ul>
+<li><code>id_annonce</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque annonce.</li>
+<li><code>id_vehicule</code> est une clé étrangère car c'est une clé primaire de la table <code>vehicule</code>.</li>
+</ul>
+</li>
+</ul>
+</details>
 <p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>. </p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">modele</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dubreuil Motors&#39;</span>
+</code></pre></div>
+</details>
 <p><strong>Q3.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
 <ul>
 <li>l’identifiant de l’annonce <code>id_annonce</code>.</li>
 <li>le kilométrage <code>km</code>,</li>
 <li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
-<li>le prix de l’annonce d’occasion <code>prix_occasion</code>.</li>
+<li>le prix de l’annonce d’occasion <code>prix_occasion</code>. </li>
 </ul>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
+</code></pre></div>
+</details>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
