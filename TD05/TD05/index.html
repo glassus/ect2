@@ -1604,6 +1604,13 @@ utilisé dans la table vehicules.  </li>
 <li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
 <li>le prix de l’annonce d’occasion <code>prix_occasion</code>. </li>
 </ul>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
+</code></pre></div>
+</details>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
