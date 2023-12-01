@@ -1514,44 +1514,10 @@
 }).catch(() => {});
 </script>
 <p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Agences</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ville</span><span class="o">=</span><span class="s1">&#39;Lorient&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q2</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DF-269-EF&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q3</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AA-654-BA&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q4</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DB-458-EK&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Renault Captur&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">17203</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<p><strong>Q5</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ?</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Vehicules</span><span class="p">.</span><span class="n">nom</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Locations</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Vehicules</span><span class="p">.</span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Locations</span><span class="p">.</span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Locations</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-11-08&#39;</span>
-</code></pre></div>
-</details>
+<p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ?</p>
+<p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>.</p>
+<p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.</p>
+<p><strong>Q5</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  2</p>
@@ -1578,25 +1544,7 @@ utilisé dans la table vehicules.  </li>
 <li><code>prix_occasion</code> (de type <code>INTEGER</code>) : prix de vente du véhicule d’occasion.</li>
 </ul>
 <p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables <code>vehicule</code> et <code>annonce</code>, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
-<details class="success">
-<summary>Correction</summary>
-<ul>
-<li>Table <code>vehicule</code> : <code>id_vehicule</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque véhicule.</li>
-<li>Table <code>annonce</code> : <ul>
-<li><code>id_annonce</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque annonce.</li>
-<li><code>id_vehicule</code> est une clé étrangère car c'est une clé primaire de la table <code>vehicule</code>.</li>
-</ul>
-</li>
-</ul>
-</details>
 <p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>. </p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">modele</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dubreuil Motors&#39;</span>
-</code></pre></div>
-</details>
 <p><strong>Q3.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
 <ul>
 <li>l’identifiant de l’annonce <code>id_annonce</code>.</li>
@@ -1604,13 +1552,6 @@ utilisé dans la table vehicules.  </li>
 <li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
 <li>le prix de l’annonce d’occasion <code>prix_occasion</code>. </li>
 </ul>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
-</code></pre></div>
-</details>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
@@ -1645,11 +1586,6 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <ol>
 <li>
 <p>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</p>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(X\)</span> suit une loi géométrique de paramètre <span class="arithmatex">\(p=\frac{1}{10}=0,1\)</span>.</p>
-<p>Donc <span class="arithmatex">\(E(X) = \frac{1}{p} = \frac{1}{0.1} = 10\)</span></p>
-</details>
 </li>
 <li>
 <p>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</p>
@@ -1756,7 +1692,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">26 novembre 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">1 décembre 2023</span>
       
     
   </small>
