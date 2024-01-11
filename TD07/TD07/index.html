@@ -1537,7 +1537,7 @@
 </div>
 </div>
 <div class="admonition note">
-<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
 Ceci nécessite systématiquement la présence des deux lignes suivantes au début de chaque script :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1546,23 +1546,23 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 </code></pre></div></td></tr></table></div></p>
 <ul>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
 <ul>
 <li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1]\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
 <li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
 </ul>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi exponentielle</strong> : <code>rd.exponential(1/lambda)</code> renvoie un réel qui suit une loi exponentielle de paramètre <code>lambda</code>.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi exponentielle</strong> : <code>rd.exponential(1/lambda)</code> renvoie un réel qui suit une loi exponentielle de paramètre <code>lambda</code>.</p>
 </li>
 </ul>
-<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
+<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
 <p><strong>Exemple :</strong><br />
 Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera :
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1573,9 +1573,9 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="mi">1</span>
 </code></pre></div>
-<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
+<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
 </div>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  2</p>
 <p><strong>Q1.</strong> Simuler dans une variable <code>X</code> 50 lancers de dé.
