@@ -1673,15 +1673,33 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
 \left\{
 \begin{array}[l]{l}
 0 \qquad \text{ si } x&lt;0 \\
-x e^{-x} \quad \text{   si } x&gt;0
+x e^{-x} \quad \text{   si } x \geqslant 0
 \end{array}
 \right.
 \]</div>
 <p><strong>Q3.</strong> À l'aide d'une intégration par parties, montrer que pour tout réel <span class="arithmatex">\(A&gt;0\)</span> :</p>
 <div class="arithmatex">\[ \int_0^A g(x)dx = 1-e^{-A}-Ae^{-A}\]</div>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(\int_0^A g(x)dx = \big[ -x e^{-x} \big]_0^A - \int_0^A -e^{-x}dx=-Ae^{-A}-\big[e^{-x} \big]_0^A=-Ae^{-A}-e^{-A}+1=1-e^{-A}-Ae^{-A}\)</span></p>
+</details>
 <p><strong>Q4.</strong> Vérifier que <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(\int_{-\infty}^{+\infty} g(x)dx = \int_{0}^{+\infty} g(x)dx = \lim\limits_{A \to + \infty} \int_0^A g(x)dx = \lim\limits_{A \to + \infty} 1-e^{-A}-Ae^{-A}=1\)</span></p>
+<p>Donc <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
+</details>
 <p><strong>Q5.</strong> Calculer <span class="arithmatex">\(P(V \leqslant 2)\)</span>. En déduire la valeur de <span class="arithmatex">\(P(V&gt;2)\)</span>.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(P(V \leqslant 2)=\int_{-\infty}^{2} g(x)dx=\int_{0}^{2} g(x)dx=1-e^{-2}-2e^{-2}\)</span>.<br />
+Donc <span class="arithmatex">\(P(V&gt;2)=1-P(V \leqslant 2)=e^{-2}+2e^{-2}=3e^{-2} \approx 0,406\)</span></p>
+</details>
 <p><strong>Q6.</strong> Ce résultat est-il cohérent avec les résultats Python de la question 2. ?</p>
+<details class="success">
+<summary>Correction</summary>
+<p>La valeur théorique de <span class="arithmatex">\(P(V&gt;2)\)</span> est conforme aux valeurs empiriques trouvées par simulation à la question 1 et 2.</p>
+</details>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
