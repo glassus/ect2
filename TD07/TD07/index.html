@@ -1531,7 +1531,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
 <span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Henry Fonda&#39;</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Henry Fonda&#39;</span>
 </code></pre></div>
 </details>
 </div>
@@ -1603,7 +1603,7 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
 
 <span class="k">def</span> <span class="nf">simul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-    <span class="n">Y</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="n">X</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
         <span class="k">if</span> <span class="o">...</span> <span class="o">&gt;</span> <span class="o">...</span><span class="p">:</span>
@@ -1611,6 +1611,31 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
     <span class="k">return</span> <span class="n">T</span>
 </code></pre></div></td></tr></table></div>
 <strong>Q1.</strong> Compléter le code de la fonction <code>simul</code> pour qu'elle construise un vecteur <code>T</code> contenant 10000 réalisations de la variable aléatoire <span class="arithmatex">\(T\)</span>.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">def</span> <span class="nf">simul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+<span class="hll">        <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+</span><span class="hll">            <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span>    <span class="k">return</span> <span class="n">T</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p>Dans toute la suite de l'exercice, on suppose <span class="arithmatex">\(a=b=\frac{1}{2}\)</span>, et on suppose que la variable aléatoire <span class="arithmatex">\(Z\)</span> suit une loi exponentielle, de paramètre 1, la variable aléatoire <span class="arithmatex">\(Z\)</span> étant indépendante de <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span>.</p>
 <p>On s'intéresse à <span class="arithmatex">\(V=T+Z\)</span> qui représente le temps total passé par le client <span class="arithmatex">\(C\)</span> dans la poste, attente et service compris.</p>
 <p>On s'intéresse à la fonction Python suivante :</p>
