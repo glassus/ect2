@@ -1473,6 +1473,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">director</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2002</span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1492,6 +1499,14 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="k">year</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Steven Spielberg&#39;</span>
+<span class="k">AND</span><span class="w">  </span><span class="n">metacritic_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">80</span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1751,7 +1766,7 @@ pour l’échange suivant.</p>
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">18 janvier 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">19 janvier 2024</span>
       
     
   </small>
