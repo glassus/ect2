@@ -1526,6 +1526,14 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Henry Fonda&#39;</span>
+</code></pre></div>
+</details>
 </div>
 </div>
 <div class="admonition note">
