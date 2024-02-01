@@ -1532,12 +1532,6 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;France&#39;</span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1573,13 +1567,6 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Intouchables&#39;</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Intouchables&#39;</span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1615,12 +1602,6 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Carl Theodor Dreyer&#39;</span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
@@ -1640,13 +1621,6 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">director</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mathieu Kassovitz&#39;</span><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2000</span><span class="w">   </span>
-</code></pre></div>
-</details>
 </div>
 </div>
 <h2 id="2-retour-sur-les-matrices">2. Retour sur les matrices<a class="headerlink" href="#2-retour-sur-les-matrices" title="Permanent link">⚓︎</a></h2>
@@ -1729,38 +1703,7 @@ Le calcul du produit matriciel <span class="arithmatex">\(A \times X\)</span> se
 1  \\
 0 
 \end{pmatrix}\)</span></p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
-<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> Par des calculs en Python, montrer que les vecteurs <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> sont des vecteurs propres de la matrice <span class="arithmatex">\(B\)</span>, et préciser pour chacun la valeur propre associée.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X1</span><span class="p">)</span>
-<span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span>  <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
-<span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X3</span><span class="p">)</span>
-<span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-</code></pre></div>
-On en déduit que :</p>
-<ul>
-<li><span class="arithmatex">\(BX_1 = 2X_1\)</span>, donc <span class="arithmatex">\(X_1\)</span> est un vecteur propre associé à la valeur propre 2.</li>
-<li><span class="arithmatex">\(BX_2 = X_2\)</span>, donc <span class="arithmatex">\(X_2\)</span> est un vecteur propre associé à la valeur propre 1.</li>
-<li><span class="arithmatex">\(BX_3 = 3X_3\)</span>, donc <span class="arithmatex">\(X_3\)</span> est un vecteur propre associé à la valeur propre 3.</li>
-</ul>
-</details>
 <p><strong>Q3.</strong> On considère le script Python suivant :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1793,19 +1736,6 @@ On en déduit que :</p>
  <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span><span class="p">]]</span>
 </code></pre></div></p>
 <p>Que peut-on en conjecturer sur la matrice <span class="arithmatex">\(P\)</span> ? sur la matrice <span class="arithmatex">\(D\)</span> ?</p>
-<details class="success">
-<summary>Correction</summary>
-<ul>
-<li>
-<p>On remarque que la matrice <span class="arithmatex">\(R\)</span> est une matrice nulle. Comme <span class="arithmatex">\(R=PQ-I\)</span>, cela signifie que <span class="arithmatex">\(PQ=I\)</span> et donc que <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(Q\)</span> sont deux matrices inverses.  </p>
-</li>
-<li>
-<p>On remarque que la matrice <span class="arithmatex">\(S\)</span> est égale à la matrice <span class="arithmatex">\(D\)</span>. Donc <span class="arithmatex">\(D=QBP=P^{-1}BP\)</span>.<br />
-Or la matrice <span class="arithmatex">\(P\)</span> est formée des trois vecteurs propres <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> de la matrice <span class="arithmatex">\(B\)</span>, c'est donc sa matrice de passage. Le calcul <span class="arithmatex">\(P^{-1}BP\)</span> va donc donner la matrice diagonale associée à <span class="arithmatex">\(B\)</span>.<br />
-On reconnaît d'ailleurs que <span class="arithmatex">\(D\)</span> est bien formée des 3 valeurs propres trouvées à la question précédente.</p>
-</li>
-</ul>
-</details>
 </div>
 <h2 id="3-regression-lineaire">3. Régression linéaire<a class="headerlink" href="#3-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -1932,92 +1862,9 @@ L'évolution de la population mondiale depuis 1950 est donnée dans le tableau c
 <p>On note <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> les variables égales respectivement à l'année et au nombre d'habitants dans le monde (en milliards). On note <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> les séries statistiques respectivement associées.</p>
 <p><strong>Q1.</strong> Écrire les commandes Python permettant de représenter le nuage de points associé à la série double <span class="arithmatex">\((x,y)\)</span> et marquer le point moyen du nuage par une croix rouge.</p>
 <p>On pourra utiliser la liste <code>[2.54, 2.77, 3.03, 3.34, 3.70, 4.08, 4.46, 4.87, 5.33, 5.74, 6.14, 6.54, 6.96, 7.38, 7.80]</code> pour créer la série <span class="arithmatex">\(y\)</span>. </p>
-<details class="success">
-<summary>Correction</summary>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.54</span><span class="p">,</span> <span class="mf">2.77</span><span class="p">,</span> <span class="mf">3.03</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.70</span><span class="p">,</span> <span class="mf">4.08</span><span class="p">,</span> <span class="mf">4.46</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">5.33</span><span class="p">,</span> <span class="mf">5.74</span><span class="p">,</span> <span class="mf">6.14</span><span class="p">,</span> <span class="mf">6.54</span><span class="p">,</span> <span class="mf">6.96</span><span class="p">,</span> <span class="mf">7.38</span><span class="p">,</span> <span class="mf">7.80</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)],</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> 
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<img alt="image" class="center" src="../data/Figure_3.png" />         </p>
-</details>
 <p><strong>Q2.</strong> Prévoir le signe du coefficient de corrélation linéaire de la série double <span class="arithmatex">\((x,y)\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<p>Plus l'année augmente, plus la population augmente : <span class="arithmatex">\(\rho\)</span> sera donc positif.</p>
-</details>
 <p><strong>Q3.</strong> Calculer le coefficient de corrélation linéaire et tracer la droite de régression.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.54</span><span class="p">,</span> <span class="mf">2.77</span><span class="p">,</span> <span class="mf">3.03</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.70</span><span class="p">,</span> <span class="mf">4.08</span><span class="p">,</span> <span class="mf">4.46</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">5.33</span><span class="p">,</span> <span class="mf">5.74</span><span class="p">,</span> <span class="mf">6.14</span><span class="p">,</span> <span class="mf">6.54</span><span class="p">,</span> <span class="mf">6.96</span><span class="p">,</span> <span class="mf">7.38</span><span class="p">,</span> <span class="mf">7.80</span><span class="p">])</span>
-
-
-<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)],</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<p>Coefficient de corrélation linéaire :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">coeff</span>
-<span class="mf">0.9979169799754183</span>
-</code></pre></div></p>
-<p><img alt="image" class="center" src="../data/Figure_4.png" />        </p>
-</details>
 <p><strong>Q4.</strong> À l'aide des coefficients <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)</span> de la droite de régression, conjecturer la population mondiale en 2050 et vérifier la prévision de l'ONU.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="mf">0.07745714285714277</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="o">-</span><span class="mf">148.77376190476173</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2050</span> <span class="o">+</span> <span class="n">b</span>
-<span class="mf">10.013380952380942</span>
-</code></pre></div>
-<p>La prévision de l'ONU est donc compatible avec notre simulation.        </p>
-</details>
 </div>
 <h2 id="4-retour-sur-les-simulations">4. Retour sur les simulations<a class="headerlink" href="#4-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -2093,33 +1940,6 @@ pour l’échange suivant.</p>
     <span class="o">...</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> 
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">points</span> <span class="o">=</span> <span class="n">a</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> 
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  5</p>
