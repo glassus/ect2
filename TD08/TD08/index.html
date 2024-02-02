@@ -1746,6 +1746,22 @@ Le calcul du produit matriciel <span class="arithmatex">\(A \times X\)</span> se
 </code></pre></div></td></tr></table></div>
 </details>
 <p><strong>Q2.</strong> Par des calculs en Python, montrer que les vecteurs <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> sont des vecteurs propres de la matrice <span class="arithmatex">\(B\)</span>, et préciser pour chacun la valeur propre associée.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span>  <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X3</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</code></pre></div>
+On en déduit que :</p>
+<ul>
+<li><span class="arithmatex">\(BX_1 = 2X_1\)</span>, donc <span class="arithmatex">\(X_1\)</span> est un vecteur propre associé à la valeur propre 2.</li>
+<li><span class="arithmatex">\(BX_2 = X_2\)</span>, donc <span class="arithmatex">\(X_2\)</span> est un vecteur propre associé à la valeur propre 1.</li>
+<li><span class="arithmatex">\(BX_3 = 3X_3\)</span>, donc <span class="arithmatex">\(X_3\)</span> est un vecteur propre associé à la valeur propre 3.</li>
+</ul>
+</details>
 <p><strong>Q3.</strong> On considère le script Python suivant :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1778,6 +1794,19 @@ Le calcul du produit matriciel <span class="arithmatex">\(A \times X\)</span> se
  <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span><span class="p">]]</span>
 </code></pre></div></p>
 <p>Que peut-on en conjecturer sur la matrice <span class="arithmatex">\(P\)</span> ? sur la matrice <span class="arithmatex">\(D\)</span> ?</p>
+<details class="success">
+<summary>Correction</summary>
+<ul>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(R\)</span> est une matrice nulle. Comme <span class="arithmatex">\(R=PQ-I\)</span>, cela signifie que <span class="arithmatex">\(PQ=I\)</span> et donc que <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(Q\)</span> sont deux matrices inverses.  </p>
+</li>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(S\)</span> est égale à la matrice <span class="arithmatex">\(D\)</span>. Donc <span class="arithmatex">\(D=QBP=P^{-1}BP\)</span>.<br />
+Or la matrice <span class="arithmatex">\(P\)</span> est formée des trois vecteurs propres <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> de la matrice <span class="arithmatex">\(B\)</span>, c'est donc sa matrice de passage. Le calcul <span class="arithmatex">\(P^{-1}BP\)</span> va donc donner la matrice diagonale associée à <span class="arithmatex">\(B\)</span>.<br />
+On reconnaît d'ailleurs que <span class="arithmatex">\(D\)</span> est bien formée des 3 valeurs propres trouvées à la question précédente.</p>
+</li>
+</ul>
+</details>
 </div>
 <h2 id="3-regression-lineaire">3. Régression linéaire<a class="headerlink" href="#3-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
