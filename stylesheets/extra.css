@@ -67,3 +67,14 @@ td {
 [data-md-color-scheme="slate"] .md-typeset__table tr:nth-child(2n) {
     background-color: hsla(var(--md-hue), 25%, 25%, 1)
 }
+
+.emoji {
+    display: inline-block;
+    height: 1.4em;
+    pointer-events: none;
+    width: auto;
+    transform: translate(0, 30em);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
