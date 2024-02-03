@@ -27,16 +27,14 @@ test: ok
     - [TD04](./TD04/TD04/) : découverte du langage SQL
     - 
     - 
-    - [TD01](./TD01/TD01/) : révision des structures élémentaires
+    - [TD01](./TD01/TD01/) : révision des structures élémentaires df
 #}
 
 ### 2. L'informatique en ECT
 - Vous pouvez retrouver [ici](Programmes/1A/) la partie informatique du programme de mathématiques des deux années d'ECT.
 
 - Vous pouvez retrouver [ici](Memento_Python/commandes/) un rappel de toutes les commandes Python exigibles au concours.
-
 ### 3. Python en ligne sans installation
-
 Vous pouvez utiliser l'excellente solution [Basthon](https://console.basthon.fr/){. target="_blank"} :
 
 [![image](data/basthon.png){: .center width=60%}](https://console.basthon.fr/){. target="_blank"}
