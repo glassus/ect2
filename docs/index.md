@@ -5,11 +5,12 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - :arrow_right: [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
+    - :arrow_right: [TD09](./TD09/TD09/) : SQL, régression, simulations
     
 
 
 !!! note "Séances précédentes"
+    - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
     - [TD07](./TD07/TD07/) : SQL, simulations et dichotomie
     - [TD06](./TD06/TD06/) : lois de probabilités (et la fin du SQL)
     - [TD05](./TD05/TD05/) : SQL 2ème partie, modifications et jointures
@@ -19,7 +20,7 @@ test: ok
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
 {#
 !!! note "Séances précédentes"
-    - [TD09](./TD09/TD09/) : retour du SQL, régression, simulations
+    
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
     - [TD07](./TD07/TD07/) : Suite des lois de probabilités
     - [TD06](./TD06/TD06/) : lois de probabilités (et un soupçon de SQL)

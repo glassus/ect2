@@ -110,3 +110,8 @@ extra_css:
 
 
 copyright:  CC BY-SA / G.Lassus
+
+
+validation:
+  absolute_links: ignore
+  unrecognized_links: ignore
