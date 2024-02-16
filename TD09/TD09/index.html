@@ -1683,6 +1683,13 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rose&#39;</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
