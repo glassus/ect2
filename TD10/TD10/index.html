@@ -1591,6 +1591,10 @@
 <li><code>points</code> : nombre de points marqués (type <code>INT</code> )</li>
 </ul>
 <p><strong>Q1.</strong> Quelle sera la clé primaire de cette table ?  </p>
+<details class="success">
+<summary>Correction</summary>
+<p>La clé primaire de cette table est <code>id_joueur</code> car c'est un attribut qui identifie de manière unique chaque joueur. </p>
+</details>
 <p><strong>Q2.</strong> Écrire la requête SQL permettant la création de cette table <code>tournoi</code>. </p>
 <script>var rugby = new Worker(path + "/js/worker.sql-wasm.js");</script>
 <div id="ide1" >
@@ -1607,6 +1611,17 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tournoi</span><span class="w"> </span><span class="p">(</span>
+<span class="n">id_joueur</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="n">prenom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="err">é</span><span class="n">quipe</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="n">points</span><span class="w"> </span><span class="nb">INTEGER</span>
+<span class="p">);</span>
+</code></pre></div>
+</details>
 <p><strong>Q3.</strong> Insérer dans cette table le joueur Finn Russell (Ecosse) qui a marqué 32 points. On lui attribuera un <code>id_joueur</code> égal à 1. </p>
 
 <div id="ide2" >
