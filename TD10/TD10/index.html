@@ -1734,6 +1734,14 @@
 </code></pre></div></p>
 <p>va classer tous les joueurs par ordre alphabétique de leur nom. Si on remplace le <code>ASC</code> (qui signifie ASCendant) par <code>DESC</code> (qui signifie DESCendant) on aurait l'ordre inverse.</p>
 <p>Établir le classement des meilleurs marqueurs de points de ce tournoi 2023.  </p>
+<p>!{ sqlide titre="Votre code SQL :"  base="CoursSQL/data/rugby.db", espace="rugby"}!}</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tournoi</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="k">DESC</span>
+</code></pre></div>
+</details>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -1873,6 +1881,58 @@ dans le code précédent. On obtient alors :
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">4775</span><span class="p">,</span> <span class="mi">1350</span><span class="p">,</span> <span class="mi">5680</span><span class="p">,</span> <span class="mi">5872</span><span class="p">,</span> <span class="mi">7964</span><span class="p">,</span> <span class="mi">3072</span><span class="p">,</span> <span class="mi">1942</span><span class="p">,</span> <span class="mi">8802</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">83</span><span class="p">]</span>
 </code></pre></div></p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4775</span><span class="p">,</span> <span class="mi">1350</span><span class="p">,</span> <span class="mi">5680</span><span class="p">,</span> <span class="mi">5872</span><span class="p">,</span> <span class="mi">7964</span><span class="p">,</span> <span class="mi">3072</span><span class="p">,</span> <span class="mi">1942</span><span class="p">,</span> <span class="mi">8802</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">63</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">83</span><span class="p">])</span>
+
+
+<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="image" class="center" src="../data/exo2.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mf">0.004978235291745592</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="mf">39.07172126169925</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">7000</span><span class="o">+</span><span class="n">b</span>
+<span class="mf">73.91936830391839</span>
+</code></pre></div>
+<p>On peut estimer à 74 % le taux nécessaire de scolarisation des moins de 24 ans .        </p>
+</details>
 </div>
 <h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
