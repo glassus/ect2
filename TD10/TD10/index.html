@@ -1983,6 +1983,17 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
 <p><strong>Q1.</strong> Écrire une fonction <code>tirage</code> qui renvoie un nombre entier entre 0 et 10 inclus, suivant une loi uniforme.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">def</span> <span class="nf">tirage</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q2.</strong> Écrire une fonction <code>moyenne_tirages</code> qui prend pour paramètre un entier <code>n</code> et qui renvoie la valeur moyenne de la fonction <code>tirage</code> sur <code>n</code> tirages.</p>
 <p><strong>Q3.</strong> Les instructions ci-dessous permettent de tracer l'histogramme des valeurs que prend <code>moyenne_tirages(5)</code> lorsqu'on la répète 100 fois.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
