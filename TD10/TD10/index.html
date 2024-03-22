@@ -1719,6 +1719,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tournoi</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="err">é</span><span class="n">quipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ecosse&#39;</span>
+</code></pre></div>
+</details>
 <p><strong>Q5.</strong> (Hors-Programme) L'instruction <code>ORDER BY</code> permet de classer les enregistrements d'une table suivant l'ordre (alphabétique, ou numérique) d'un de ses attributs.</p>
 <p>Ainsi la requête
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
