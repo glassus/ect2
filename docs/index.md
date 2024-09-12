@@ -5,11 +5,12 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - :arrow_right: [TD10](./TD10/TD10/) : retour du SQL, régression, simulations, suite et fin
+    - :arrow_right: [TD01](./TD01/TD01/) : révision des structures élémentaires
     
 
-
+{#
 !!! note "Séances précédentes"
+    - [TD10](./TD10/TD10/) : retour du SQL, régression, simulations, suite et fin
     - [TD09](./TD09/TD09/) : SQL, régression, simulations
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
     - [TD07](./TD07/TD07/) : SQL, simulations et dichotomie
@@ -19,6 +20,8 @@ test: ok
     - [TD03](./TD03/TD03/) : suites et simulations
     - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
+
+#}
 {#
 !!! note "Séances précédentes"
     
