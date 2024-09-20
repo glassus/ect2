@@ -829,6 +829,20 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
 </code></pre></div>
 Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</code> et de <code>b</code>. </p>
+<details class="success">
+<summary>Correction</summary>
+<ol>
+<li>Méthode universelle, avec une variable temporaire :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+</code></pre></div></li>
+<li>Méthode rapide (spécifique à Python) :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</code></pre></div></li>
+</ol>
+<p><a class="" href="https://glassus.github.io/premiere_nsi/T1_Demarrer_en_Python/1.1_Variables/cours/" target="_blank">En savoir plus sur les variables</a>        </p>
+</details>
 </div>
 <h2 id="2-boucles-bornees-boucles-for">2. Boucles bornées : boucles <code class="highlight"><span class="k">for</span></code><a class="headerlink" href="#2-boucles-bornees-boucles-for" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
