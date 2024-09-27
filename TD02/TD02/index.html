@@ -1233,6 +1233,27 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <p class="admonition-title">Exercice  4</p>
 <p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
 <p><strong>Q1.</strong> Créer une fonction <code>tirage()</code> renvoyant la valeur 1 si la boule tirée est blanche, et la valeur 0 si la boule tirée est noire.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="k">def</span> <span class="nf">tirage</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q2.</strong> Simuler 100 000 fois cette expérience aléatoire et afficher la fréquence d'apparition d'une boule blanche. </p>
 </div>
 <div class="admonition example">
