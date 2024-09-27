@@ -999,6 +999,10 @@
     <span class="k">return</span> <span class="n">c</span><span class="o">/</span><span class="n">n</span>
 </code></pre></div></p>
 <p>Remarque : l'instruction <code class="highlight"><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span></code> aurait pu avantageusement être remplacée par <code class="highlight"><span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span></code>.  </p>
+<details class="success">
+<summary>Correction</summary>
+<p>Pour une valeur <code>val</code> rentrée en paramètre, il renvoie la fréquence d'apparition de cette valeur lorsqu'on lance 100 fois 2 dés et qu'on observe leur somme.         </p>
+</details>
 </div>
 <h2 id="3-utilisation-de-matplotlib">3. Utilisation de <code>matplotlib</code><a class="headerlink" href="#3-utilisation-de-matplotlib" title="Permanent link">⚓︎</a></h2>
 <p><code>matplotlib</code> est une bibliothèque permettant le tracé de graphiques. Elle sera systématiquement importée par :</p>
@@ -1139,6 +1143,59 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
 <p>Tracer le diagramme en barres de la fonction <code>mystere</code> de l'exercice 1, pour des valeurs allant entre 0 et 12.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">mystere</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">c</span><span class="o">/</span><span class="n">n</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
+    <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">mystere</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
 <h2 id="5-retour-sur-le-while">5. Retour sur le <code>while</code>.<a class="headerlink" href="#5-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
