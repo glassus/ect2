@@ -5,8 +5,12 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - :arrow_right: [TD01](./TD01/TD01/) : révision des structures élémentaires
-    
+    - :arrow_right: [TD02](./TD02/TD02/) : premières simulations
+
+
+!!! note "Séances précédentes"
+    - [TD01](./TD01/TD01/) : révision des structures élémentaires
+
 
 {#
 !!! note "Séances précédentes"
