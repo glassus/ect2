@@ -1248,6 +1248,21 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <p>On considère une urne comportant 3 boules blanches et 5 boules noires. </p>
 <p><strong>Q1.</strong> Créer une fonction <code>tirage()</code> renvoyant la valeur 1 si la boule tirée est blanche, et la valeur 0 si la boule tirée est noire.</p>
 <p><strong>Q2.</strong> Simuler 100 000 fois cette expérience aléatoire et afficher la fréquence d'apparition d'une boule blanche. </p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">nb_tirages</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span>
+<span class="n">somme_blanches</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_tirages</span><span class="p">):</span>
+    <span class="n">somme_blanches</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">somme_blanches</span> <span class="o">/</span> <span class="n">nb_tirages</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
