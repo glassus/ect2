@@ -915,27 +915,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-rappels-sur-les-experiences-de-bernoulli" class="md-nav__link">
+  <a href="#2-modelisations-dune-suite" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Rappels sur les expériences de Bernoulli
+      2. Modélisation(s) d'une suite
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-retour-sur-le-while" class="md-nav__link">
+  <a href="#3-un-peu-de-while" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Retour sur le while.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-retour-sur-les-suites" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Retour sur les suites
+      3. Un peu de while...
     </span>
   </a>
   
@@ -975,7 +966,6 @@
 
 <h1 id="td03-retour-sur-les-simulations">TD03 : Retour sur les simulations<a class="headerlink" href="#td03-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h1>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
-<h2 id="1-rappels-sur-les-experiences-de-bernoulli">1. Rappels sur les expériences de Bernoulli<a class="headerlink" href="#1-rappels-sur-les-experiences-de-bernoulli" title="Permanent link">⚓︎</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">rappel de la syntaxe d'importation de <code>numpy.random</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -983,15 +973,6 @@
 <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<p>Comme l'instruction <code>rd.random()</code> renvoie un nombre aléatoire entre 0 et 1, une variable aléatoire suivant une loi de probabilité de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> peut être simulée par un test d'appartenance de <code>rd.random()</code> à l'intervalle :</p>
-<ul>
-<li><span class="arithmatex">\([0;p]\)</span> (succès)</li>
-</ul>
-<p>ou</p>
-<ul>
-<li><span class="arithmatex">\(]p;1]\)</span> (échec) :</li>
-</ul>
-<p><img alt="image" class="center" src="../data/unif.png" /></p>
 <div class="admonition example">
 <p class="admonition-title">Exercice  1</p>
 <p><em>inspiré par Ecricome 2018</em></p>
@@ -1049,132 +1030,10 @@
     <span class="n">X</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">X</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="k">def</span> <span class="nf">simulation</span><span class="p">():</span>
-    <span class="n">tirage1</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">tirage1</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">res1</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="hll">        <span class="n">tirage2</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</span>        <span class="k">if</span> <span class="n">tirage2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-<span class="hll">            <span class="n">res2</span> <span class="o">=</span> <span class="mi">1</span>
-</span>        <span class="k">else</span><span class="p">:</span>
-<span class="hll">            <span class="n">res2</span> <span class="o">=</span> <span class="mi">0</span>
-</span>
-<span class="hll">    <span class="n">X</span> <span class="o">=</span> <span class="n">res1</span> <span class="o">+</span> <span class="n">res2</span>
-</span>    <span class="k">return</span> <span class="n">X</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> Écrire une fonction <code>freq(n)</code> qui renvoie la valeur moyenne du nombre de boules blanches tirées sur <code>n</code> expériences réalisées.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">compteur</span> <span class="o">+=</span> <span class="n">simulation</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">compteur</span> <span class="o">/</span> <span class="n">n</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q3.</strong> En déduire <span class="arithmatex">\(E(X_2)\)</span> et retrouver ce résultat par un calcul théorique.</p>
-<details class="success">
-<summary>Correction</summary>
-<p>Expérimentalement :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-<span class="mf">1.055416</span>
-</code></pre></div></p>
-<p>Théoriquement, en faisant un arbre de probabilités,</p>
-<div class="arithmatex">\[E(X_2) = 2 \times \dfrac{2}{12} +  1 \times \dfrac{6}{12} +  1 \times \dfrac{2}{9} = \dfrac{38}{36}=\dfrac{19}{18}\]</div>
-</details>
 </div>
-<h2 id="2-retour-sur-le-while">2. Retour sur le <code>while</code>.<a class="headerlink" href="#2-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Exercice  2</p>
-<p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="o">...</span>
-
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
-<span class="k">while</span> <span class="o">...</span>
-    <span class="o">...</span>
-</code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;proposition ? &#39;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">prop</span> <span class="o">!=</span> <span class="n">nb_secret</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">prop</span> <span class="o">&gt;</span> <span class="n">nb_secret</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;trop grand&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;trop petit&#39;</span><span class="p">)</span>
-    <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;proposition ? &#39;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bravo !&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
-</div>
-<h2 id="3-retour-sur-les-suites">3. Retour sur les suites<a class="headerlink" href="#3-retour-sur-les-suites" title="Permanent link">⚓︎</a></h2>
+<h2 id="2-modelisations-dune-suite">2. Modélisation(s) d'une suite<a class="headerlink" href="#2-modelisations-dune-suite" title="Permanent link">⚓︎</a></h2>
 <p>L'étude des suites donne lieu à <strong>deux approches</strong> radicalement différentes :</p>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 1</strong> : à l'aide une seule variable «simple»</p>
 <p>Chaque terme est calculé successivement à partir du précédent dans une seule et unique variable «simple». Cette variable est initialisée avec le 1er terme.</p>
@@ -1190,8 +1049,8 @@
         <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> Avantages : simplicité, rapidité, peu d'espace-mémoire </p>
-<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> Inconvénients : aucun accès à tous les termes de la suite !</p>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : simplicité, rapidité, peu d'espace-mémoire </p>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : aucun accès à tous les termes de la suite !</p>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 2</strong> : à l'aide une  variable de type liste</p>
 <p>Chaque terme est calculé successivement à partir du précédent et <strong>stocké</strong> dans une liste. Cette liste est souvent préparée au préalable, remplie de 0 qui seront peu à peu remplacés par les termes de la suite.</p>
 <p><em>Exemple :</em> </p>
@@ -1210,21 +1069,19 @@
         <span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>Avantages</strong> : tous les termes sont disponibles (on peut les cumuler, les tracer...)</p>
-<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> <strong>Inconvénients</strong> : lenteur, complexité, place mémoire.</p>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : tous les termes sont disponibles (on peut les cumuler, les tracer...)</p>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : lenteur, complexité, place mémoire.</p>
 <div class="admonition example">
-<p class="admonition-title">Exercice  3</p>
+<p class="admonition-title">Exercice  2</p>
 <p><em>extrait du sujet 0 Ecricome</em></p>
 <p>On considère la suite <span class="arithmatex">\((u_n)_{n \in \mathbb{N}^*}\)</span> définie par <span class="arithmatex">\(u_1=\dfrac{2}{3}\)</span> et, <span class="arithmatex">\(\forall n \in \mathbb{N}^*, u_{n+1}=\dfrac{n+1}{3n}u_n\)</span>.</p>
 <ol>
-<li>Calculer <span class="arithmatex">\(u_2\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</li>
-</ol>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(u_2=\dfrac{4}{9}\)</span> et <span class="arithmatex">\(u_3 = \dfrac{2}{9}\)</span>        </p>
-</details>
-<ol>
-<li>Compléter la fonction Python ci-desous qui prend en entrée la valeur <span class="arithmatex">\(n\)</span> et renvoie la valeur de <span class="arithmatex">\(u_n\)</span>.</li>
+<li>
+<p>Calculer <span class="arithmatex">\(u_2\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</p>
+</li>
+<li>
+<p>Compléter la fonction Python ci-desous qui prend en entrée la valeur <span class="arithmatex">\(n\)</span> et renvoie la valeur de <span class="arithmatex">\(u_n\)</span>.</p>
+</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1236,35 +1093,13 @@
         <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
-    <span class="k">return</span> <span class="n">u</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  4</p>
+<p class="admonition-title">Exercice  3</p>
 <p><em>inspiré du sujet Ecricome 2019</em></p>
 <p>Soit <span class="arithmatex">\(g\)</span> la fonction numérique réelle définie sur l'intervalle <span class="arithmatex">\(]0;+\infty[\)</span> par :</p>
 <div class="arithmatex">\[ g(x)=2x-1+\ln \left( \frac{x}{x+1} \right) \]</div>
 <p><strong>Q1.</strong> Écrire en Python une fonction <code>g</code> représentant la fonction mathématique <span class="arithmatex">\(g\)</span>. On rappelle que la fonction <span class="arithmatex">\(ln\)</span> s'écrit avec <code>np.log</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p>Le script Python ci-dessous construit un vecteur ligne contenant les 50 premiers termes de la suite <span class="arithmatex">\((u_n)_{n \geqslant 1}\)</span>, définie par :</p>
 <div class="arithmatex">\[u_n = 2n-1-g(n)\]</div>
 <p>pour <span class="arithmatex">\(n \geqslant 1\)</span>.</p>
@@ -1295,61 +1130,11 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Q2.</strong> Interpréter le contenu de la ligne 9 dans le contexte de l'énoncé.</p>
-<details class="success">
-<summary>Correction</summary>
-<p>L'expression <code>S = np.cumsum(u)</code> permet de calculer le vecteur de sommes cumulées de la suite <span class="arithmatex">\(u\)</span>.        </p>
-</details>
 <p><strong>Q3.</strong> Exécutez le script précédent et observez le graphique obtenu.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><img alt="image" class="center" src="../data/ex6_1.png" />        </p>
-</details>
 <p><strong>Q4.</strong> Sur ce même graphique, tracez la courbe représentative de la fonction <span class="arithmatex">\(\ln\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-
-
-<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
-    <span class="n">u</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">g</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-
-<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<p><img alt="image" class="center" src="../data/ex6_2.png" />        </p>
-</details>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  5</p>
+<p class="admonition-title">Exercice  4</p>
 <p><em>inspiré du sujet ESCP 2023</em></p>
 <p>On pose <span class="arithmatex">\(u_{1}=\dfrac{1}{2}\)</span> et, pour tout entier naturel <span class="arithmatex">\(n\)</span> non
 nul :</p>
@@ -1365,22 +1150,9 @@ nul :</p>
         <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> 
-        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">u</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  6</p>
+<p class="admonition-title">Exercice  5</p>
 <p><em>inspiré du sujet Ecricome 2023</em></p>
 <p>On considère la suite <span class="arithmatex">\(\left(u_n\right)_{n \geqslant 1}\)</span> définie par : </p>
 <div class="arithmatex">\[ u_1 \in[0,1],\quad\text{ et }
@@ -1396,19 +1168,28 @@ nul :</p>
         <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
     <span class="k">return</span> 
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
+</div>
+<h2 id="3-un-peu-de-while">3. Un peu de <code>while</code>...<a class="headerlink" href="#3-un-peu-de-while" title="Permanent link">⚓︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Exercice  6</p>
+<p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">u1</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">u1</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">return</span> <span class="n">u</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="n">nb_secret</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="o">...</span>
+    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-</details>
 </div>
 
 
