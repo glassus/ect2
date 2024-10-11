@@ -1092,6 +1092,15 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <p><strong>Q3.</strong> En déduire <span class="arithmatex">\(E(X_2)\)</span> et retrouver ce résultat par un calcul théorique.</p>
+<details class="success">
+<summary>Correction</summary>
+<p>Expérimentalement :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">freq</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="mf">1.055416</span>
+</code></pre></div></p>
+<p>Théoriquement, en faisant un arbre de probabilités,</p>
+<div class="arithmatex">\[E(X_2) = 2 \times \dfrac{2}{12} +  1 \times \dfrac{6}{12} +  1 \times \dfrac{2}{9} = \dfrac{38}{36}=\dfrac{19}{18}\]</div>
+</details>
 </div>
 <h2 id="2-modelisations-dune-suite">2. Modélisation(s) d'une suite<a class="headerlink" href="#2-modelisations-dune-suite" title="Permanent link">⚓︎</a></h2>
 <p>L'étude des suites donne lieu à <strong>deux approches</strong> radicalement différentes :</p>
@@ -1136,12 +1145,14 @@
 <p><em>extrait du sujet 0 Ecricome</em></p>
 <p>On considère la suite <span class="arithmatex">\((u_n)_{n \in \mathbb{N}^*}\)</span> définie par <span class="arithmatex">\(u_1=\dfrac{2}{3}\)</span> et, <span class="arithmatex">\(\forall n \in \mathbb{N}^*, u_{n+1}=\dfrac{n+1}{3n}u_n\)</span>.</p>
 <ol>
-<li>
-<p>Calculer <span class="arithmatex">\(u_2\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</p>
-</li>
-<li>
-<p>Compléter la fonction Python ci-desous qui prend en entrée la valeur <span class="arithmatex">\(n\)</span> et renvoie la valeur de <span class="arithmatex">\(u_n\)</span>.</p>
-</li>
+<li>Calculer <span class="arithmatex">\(u_2\)</span> et <span class="arithmatex">\(u_3\)</span>. Donner les résultats sous forme de fraction irréductible.</li>
+</ol>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(u_2=\dfrac{4}{9}\)</span> et <span class="arithmatex">\(u_3 = \dfrac{2}{9}\)</span>        </p>
+</details>
+<ol>
+<li>Compléter la fonction Python ci-dessous qui prend en entrée la valeur <span class="arithmatex">\(n\)</span> et renvoie la valeur de <span class="arithmatex">\(u_n\)</span>.</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
