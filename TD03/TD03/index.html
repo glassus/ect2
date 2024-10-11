@@ -1228,6 +1228,10 @@
 <p>L'expression <code>S = np.cumsum(u)</code> permet de calculer le vecteur des sommes cumulées de la suite <span class="arithmatex">\(u\)</span>.        </p>
 </details>
 <p><strong>Q3.</strong> Exécutez le script précédent et observez le graphique obtenu.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><img alt="image" class="center" src="../data/ex6_1.png" />        </p>
+</details>
 <p><strong>Q4.</strong> Sur ce même graphique, tracez la courbe représentative de la fonction <span class="arithmatex">\(\ln\)</span>.</p>
 <details class="success">
 <summary>Correction</summary>
@@ -1289,6 +1293,19 @@ nul :</p>
         <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> 
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
