@@ -1223,9 +1223,44 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Q2.</strong> Interpréter le contenu de la ligne 9 dans le contexte de l'énoncé.</p>
-<p><strong>Q3.</strong> Exécutez le script précédent et observez le graphique obtenu.</p>
-<p><strong>Q4.</strong> Sur ce même graphique, tracez la courbe représentative de la fonction <span class="arithmatex">\(\ln\)</span>.</p>
 </div>
+<p>s</p>
+<div class="highlight"><pre><span></span><code>??? success &quot;Correction&quot; 
+    L&#39;expression ```S = np.cumsum(u)``` permet de calculer le vecteur des sommes cumulées de la suite $u$.
+
+
+**Q3.** Exécutez le script précédent et observez le graphique obtenu.
+
+
+
+**Q4.** Sur ce même graphique, tracez la courbe représentative de la fonction $\ln$.
+
+
+??? success &quot;Correction&quot; 
+    ```python linenums=&#39;1&#39;
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    def g(x):
+        return 2*x - 1 + np.log(x / (x+1))
+
+
+    u = np.zeros(50)
+    for n in range(1,50):
+        u[n] = 2*n - 1 - g(n)
+
+
+    S = np.cumsum(u)
+    X = np.arange(50)
+
+    plt.clf()
+    plt.plot(X,S)
+    plt.plot(X, np.log(X))
+    plt.show()
+    ```
+
+    ![image](data/ex6_2.png){: .center}
+</code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
 <p><em>inspiré du sujet ESCP 2023</em></p>
