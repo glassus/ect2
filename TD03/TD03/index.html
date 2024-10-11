@@ -1164,6 +1164,19 @@
         <span class="n">u</span> <span class="o">=</span> <span class="o">...</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">suite</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
+    <span class="k">return</span> <span class="n">u</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
@@ -1171,6 +1184,15 @@
 <p>Soit <span class="arithmatex">\(g\)</span> la fonction numérique réelle définie sur l'intervalle <span class="arithmatex">\(]0;+\infty[\)</span> par :</p>
 <div class="arithmatex">\[ g(x)=2x-1+\ln \left( \frac{x}{x+1} \right) \]</div>
 <p><strong>Q1.</strong> Écrire en Python une fonction <code>g</code> représentant la fonction mathématique <span class="arithmatex">\(g\)</span>. On rappelle que la fonction <span class="arithmatex">\(ln\)</span> s'écrit avec <code>np.log</code>.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p>Le script Python ci-dessous construit un vecteur ligne contenant les 50 premiers termes de la suite <span class="arithmatex">\((u_n)_{n \geqslant 1}\)</span>, définie par :</p>
 <div class="arithmatex">\[u_n = 2n-1-g(n)\]</div>
 <p>pour <span class="arithmatex">\(n \geqslant 1\)</span>.</p>
