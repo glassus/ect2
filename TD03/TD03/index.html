@@ -1078,6 +1078,19 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <p><strong>Q2.</strong> Écrire une fonction <code>freq(n)</code> qui renvoie la valeur moyenne du nombre de boules blanches tirées sur <code>n</code> expériences réalisées.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">compteur</span> <span class="o">+=</span> <span class="n">simulation</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">compteur</span> <span class="o">/</span> <span class="n">n</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q3.</strong> En déduire <span class="arithmatex">\(E(X_2)\)</span> et retrouver ce résultat par un calcul théorique.</p>
 </div>
 <h2 id="2-modelisations-dune-suite">2. Modélisation(s) d'une suite<a class="headerlink" href="#2-modelisations-dune-suite" title="Permanent link">⚓︎</a></h2>
