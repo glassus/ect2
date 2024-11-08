@@ -27,24 +27,25 @@ Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement 
 Dans toute la suite, nous allons travailler avec la base de données ```livres.db```.
 
 ### 1.0 Différents moyens d'interroger la base de données
-**Pré-requis :** téléchargez la base de données [livres.db](data/livres.db).
 
-??? abstract "1. En ligne avec ```sqliteonline.com``` "
-    - Rendez vous sur [https://sqliteonline.com/](https://sqliteonline.com/)
-    - Par File / OpenDB, ouvrez le fichier  ```livres.db``` précédemment téléchargé.
-    - Écrivez votre requête plus cliquez sur Run.  
-    ![](data/sqlonline.png)
+Nous allons utiliser une méthode en ligne directement sur ce site.
 
+Mais il est aussi possible :
 
-!!! abstract "2. Directement sur ce site"
-    - Rendez vous sur la page [SQL en ligne](../sqlenligne/){. target="_blank"}
-    []()
-    - Écrivez la requête dans le champ prévu pour votre base.
+- de télécharger un SGBD, comme [DB Browser for SQL lite](https://sqlitebrowser.org/){. target="_blank"}.
+- d'utilise un service en ligne, comme [https://sqliteonline.com/](https://sqliteonline.com/){. target="_blank"}
+
+Il vous faudra dans les deux cas donner notre base de données de travail : [livres.db](data/livres.db).
+
+Mais nous allons préférer :
+!!! success ":star: travail sur notre propre site :star:"
+    - Ouvrez dans un nouvel onglet la page [SQL en ligne](../sqlenligne/){. target="_blank"}
+    - Réduisez la fenêtre pour travailler sur 2 fenêtres en même temps : ce cours et la fenêtre SQL en ligne
+
 
 
 --------
 
-Dans toute la suite, les manipulations sont à faire en interrogeant la base de données ```livres.db```, avec l'une des méthodes indiquées ci-dessus.
 
 Voici le diagramme relationnel de cette base :
 ![](data/ERD_livres.png){: .center}
@@ -64,7 +65,8 @@ Voici le diagramme relationnel de cette base :
 !!! note "Requête basique : SELECT, FROM :heart:"
     - **Commande :** 
     ```sql
-    SELECT titre FROM livre ;
+    SELECT titre
+    FROM livre ;
     ``` 
     - **Traduction :** 
 

@@ -45,11 +45,11 @@ Par exemple, la clé primaire de la relation des personnes nées en France pourr
 
  Observons, dans notre relation précédente, ce qui peut être une clé primaire et ce qui ne peut pas l'être.
 
-- Titre : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même titre.
-- Auteur : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même auteur.
-- Éditeur : cet attribut ne peut **pas** jouer le rôle de clé primaire. En effet, la donnée de l'attribut «Actes Sud» renvoie vers 4 livres différents.
-- ISBN : (International Standard Book Number) cet attribut est un numéro unique spécifique à chaque livre : il peut jouer le rôle de clé primaire.
-- Code : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.
+- `Titre` : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même titre.
+- `Auteur` : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même auteur.
+- `Éditeur` : cet attribut ne peut **pas** jouer le rôle de clé primaire. En effet, la donnée de l'attribut «Actes Sud» renvoie vers 4 livres différents.
+- `ISBN` : (International Standard Book Number) cet attribut est un numéro unique spécifique à chaque livre : il peut jouer le rôle de clé primaire.
+- `code` : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.
 
 
 ## 3. Clé Étrangère
@@ -72,16 +72,16 @@ Ajoutons maintenant les relations ci-dessous :
 | 845           | DURAND | Michel |
 | 125           | MARTIN | Jean   |
 
-L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs».
+L'attribut `id_emprunteur` est une clé primaire de la relation `Emprunteurs`.
 
 
 **Notion de clé étrangère** 
 
 Y-a-t-il une clé primaire dans la relation «Emprunts» ? 
 
-«id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**. 
+`id_emprunteur` est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**. 
 
 !!! note "Clé étrangère :heart:"
     Une clé étrangère (**FOREIGN KEY**) est une clé primaire d'une autre relation.
 
-«code» est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation emprunt, car un même livre pourra être pris à différentes dates.
+`code` est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation «Emprunts», car un même livre pourra être pris à différentes dates.
