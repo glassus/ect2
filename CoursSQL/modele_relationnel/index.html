@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -335,6 +335,24 @@
           
   
   TD03
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TD04/TD04/" class="md-tabs__link">
+          
+  
+  TD04
 
         </a>
       </li>
@@ -959,6 +977,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD04
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            TD04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TD04 : Découverte du langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -991,7 +1077,7 @@ le modèle relationnel est à ce jour le modèle de base de données le plus uti
 <p>Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 <img alt="" src="../data/rel_livres.png" /></p>
 <div class="admonition aide">
-<p class="admonition-title">Vocabulaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Vocabulaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>relation</strong>, ou <strong>table</strong> : c'est l'endroit où sont rangées les données. L'ordre des lignes (que l'on appelera des enregistrements) n'a pas d'importance.</li>
 <li><strong>enregistrement</strong>, ou <strong>tuple</strong>, ou <strong>n-uplet</strong>, ou <strong>t-uplet</strong>, ou <strong>vecteur</strong> : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour». 
@@ -1001,24 +1087,24 @@ Le nombre d'enregistrements d'une relation s'appelle son <strong>cardinal</stron
 <li><strong>domaine</strong> : le domaine désigne «le type» (au sens type <code>Int</code>, <code>Float</code>, <code>String</code>).    <br />
 L'attribut «Éditeur» est une chaîne de caractères, son domaine est donc <code>String</code>.<br />
 Par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. Son domaine est donc <code>Int</code>.</li>
-<li><strong>schéma</strong> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif.<br />
+<li><strong>schéma</strong> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif.<br />
 Ici notre schéma serait :<br />
 <code>((Code, Entier), (Titre, Chaîne de caractères), (Auteur, Chaîne de caractères), (Éditeur, Chaîne de caractères), (ISBN, Entier))</code> </li>
 </ul>
 </div>
 <h2 id="2-cle-primaire">2. Clé Primaire<a class="headerlink" href="#2-cle-primaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Clé primaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Clé primaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Une clé primaire (<strong>PRIMARY KEY</strong>) est un attribut (ou une réunion d'attributs) <strong>dont la connaissance suffit à identifier avec certitude un unique enregistrement</strong>.</p>
 </div>
 <p>Par exemple, la clé primaire de la relation des personnes nées en France pourrait être leur <a href="https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France" target="_blank">numéro de Sécurité Sociale</a>.</p>
 <p>Observons, dans notre relation précédente, ce qui peut être une clé primaire et ce qui ne peut pas l'être.</p>
 <ul>
-<li>Titre : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même titre.</li>
-<li>Auteur : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même auteur.</li>
-<li>Éditeur : cet attribut ne peut <strong>pas</strong> jouer le rôle de clé primaire. En effet, la donnée de l'attribut «Actes Sud» renvoie vers 4 livres différents.</li>
-<li>ISBN : (International Standard Book Number) cet attribut est un numéro unique spécifique à chaque livre : il peut jouer le rôle de clé primaire.</li>
-<li>Code : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.</li>
+<li><code>Titre</code> : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même titre.</li>
+<li><code>Auteur</code> : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même auteur.</li>
+<li><code>Éditeur</code> : cet attribut ne peut <strong>pas</strong> jouer le rôle de clé primaire. En effet, la donnée de l'attribut «Actes Sud» renvoie vers 4 livres différents.</li>
+<li><code>ISBN</code> : (International Standard Book Number) cet attribut est un numéro unique spécifique à chaque livre : il peut jouer le rôle de clé primaire.</li>
+<li><code>code</code> : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.</li>
 </ul>
 <h2 id="3-cle-etrangere">3. Clé Étrangère<a class="headerlink" href="#3-cle-etrangere" title="Permanent link">⚓︎</a></h2>
 <p>Ajoutons maintenant les relations ci-dessous :</p>
@@ -1092,15 +1178,15 @@ Ici notre schéma serait :<br />
 </tr>
 </tbody>
 </table>
-<p>L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs».</p>
+<p>L'attribut <code>id_emprunteur</code> est une clé primaire de la relation <code>Emprunteurs</code>.</p>
 <p><strong>Notion de clé étrangère</strong> </p>
 <p>Y-a-t-il une clé primaire dans la relation «Emprunts» ? </p>
-<p>«id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une <strong>clé étrangère</strong>. </p>
+<p><code>id_emprunteur</code> est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une <strong>clé étrangère</strong>. </p>
 <div class="admonition note">
-<p class="admonition-title">Clé étrangère <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Clé étrangère <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Une clé étrangère (<strong>FOREIGN KEY</strong>) est une clé primaire d'une autre relation.</p>
 </div>
-<p>«code» est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation emprunt, car un même livre pourra être pris à différentes dates.</p>
+<p><code>code</code> est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation «Emprunts», car un même livre pourra être pris à différentes dates.</p>
 
 
 
@@ -1121,7 +1207,7 @@ Ici notre schéma serait :<br />
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 novembre 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">8 novembre 2024</span>
   </span>
 
     

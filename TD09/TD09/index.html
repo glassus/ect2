@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -333,6 +333,24 @@
           
   
   TD03
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TD04/TD04/" class="md-tabs__link">
+          
+  
+  TD04
 
         </a>
       </li>
@@ -887,6 +905,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD04
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            TD04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TD04 : Découverte du langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1094,20 +1180,20 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Coefficient de corrélation linéaire de deux variables aléatoires</p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Définition</strong><br />
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Définition</strong><br />
 Le coefficient de corrélation linéaire de deux variables aléatoires <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> est le réel <span class="arithmatex">\(\rho(X,Y)\)</span> donné par la formule :</p>
 <div class="arithmatex">\[\rho(X,Y) = \dfrac{Cov(X,Y)}{\sqrt{V(X)}\sqrt{V(Y)}}\]</div>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Interprétation</strong>   </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Interprétation</strong>   </p>
 <ul>
 <li>Si <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> sont indépendantes, alors <span class="arithmatex">\(\rho(X,Y) = 0\)</span></li>
 <li>Si <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> sont liées par une combinaison linéaire (ex : <span class="arithmatex">\(Y = 3X+2\)</span>), alors <span class="arithmatex">\(\rho(X,Y) = \pm 1\)</span></li>
 </ul>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Utilisation en statistiques</strong> <br />
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Utilisation en statistiques</strong> <br />
 Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> de 1, on peut conjecturer que le phénomène observé est prédictible. Le tracé de la droite de régression permet alors de faire des prévisions.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Syntaxe Python <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Calcul du coefficient de corrélation :</strong> <code>np.corrcoef(x,y)[0,1]</code></p>
+<p class="admonition-title">Syntaxe Python <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Calcul du coefficient de corrélation :</strong> <code>np.corrcoef(x,y)[0,1]</code></p>
 <p>Considérons le code suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1145,19 +1231,19 @@ Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> de 1, on pe
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>Le tracé laisse apparaître une distribution des points qui semblent être situés autour d'une droite. Ceci est confirmé par le calcul du coefficient de corrélation linéaire (<img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <strong>calculé par l'instruction</strong> <code>np.corrcoef(x,y)[0,1]</code> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> )</p>
+<p>Le tracé laisse apparaître une distribution des points qui semblent être situés autour d'une droite. Ceci est confirmé par le calcul du coefficient de corrélation linéaire (<img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <strong>calculé par l'instruction</strong> <code>np.corrcoef(x,y)[0,1]</code> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> )</p>
 <p><img alt="image" class="center" src="../data/Figure_1.png" /></p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Calcul et tracé du point moyen :</strong> <code>np.mean(x)</code></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Calcul et tracé du point moyen :</strong> <code>np.mean(x)</code></p>
 <p>La fonction <code>np.mean(x)</code> permet de calculer la valeur moyenne d'un ensemble de valeurs stockées dans la variable <code>x</code>.</p>
 <p>Le point moyen d'une série statistique double peut donc se tracer par :
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)],</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> 
 </code></pre></div></p>
 <p><img alt="image" class="center" src="../data/Figure_8.png" /></p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Tracé de la droite de régression :</strong> <code>a, b = np.polyfit(x, y, 1)</code></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Tracé de la droite de régression :</strong> <code>a, b = np.polyfit(x, y, 1)</code></p>
 <ul>
 <li>Le calcul du coefficient directeur <code>a</code> et de l'ordonnée à l'origine <code>b</code> de la droite de régression se fait par la commande </li>
 </ul>
-<p><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <code>a, b = np.polyfit(x, y, 1)</code> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <code>a, b = np.polyfit(x, y, 1)</code> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li>Le tracé de la droite se fait par <code>plt.plot(x, a*x + b)</code></li>
 </ul>
@@ -1245,7 +1331,7 @@ On peut donc estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra e
 </details>
 </div>
 <div class="admonition note">
-<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> Hors Programme <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></p>
+<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> Hors Programme <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></p>
 <p>Le nuage de points obtenu en <strong>Q2</strong> ne donne absolument pas envie de faire un ajustement linéaire : la forme du nuage ne ressemble pas du tout à une droite.</p>
 <p>Par contre, elle ressemble à une parabole... </p>
 <p>Peut-on ajuster cette série statistique avec un polynôme de degré 2 ? Essayons !
@@ -1286,7 +1372,7 @@ Il faut pour cela se servir de la fonction <code>polyfit</code> et lui demander 
 </code></pre></div>
 On peut alors estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra environ 383. </p>
 <p><strong>Mais alors, en augmentant le degré, ne peut-on pas obtenir un ajustement parfait ???</strong></p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> Réponse : si, on peut, mais c'est mal.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> Réponse : si, on peut, mais c'est mal.</p>
 <p><strong>Exemple</strong></p>
 <p>Prenons ce nuage de points :
 <img alt="image" class="center" src="../data/over1.png" /></p>
@@ -1298,12 +1384,12 @@ On peut alors estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra 
 <p>Traçons donc la courbe du polynôme <code>a*x**6 + b*x**5 + c*x**4 + d*x**3 + e*x**2 + f*x + g</code> :</p>
 <p><img alt="image" class="center" src="../data/over3.png" /></p>
 <p>C'est parfait pour les valeurs données... mais très bizarre dès qu'on sort de ces valeurs.</p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> À trop vouloir coller aux valeurs données, on a perdu le «sens» de la série statistique, et nos prévisions risquent d'être totalement fausses. On appelle ce phénomène l'<strong>overfitting</strong>, ou <strong>sur-apprentissage</strong> en Intelligence Artificielle.<br />
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> À trop vouloir coller aux valeurs données, on a perdu le «sens» de la série statistique, et nos prévisions risquent d'être totalement fausses. On appelle ce phénomène l'<strong>overfitting</strong>, ou <strong>sur-apprentissage</strong> en Intelligence Artificielle.<br />
 Une interprétation dans la vie courante pourrait être que lorsque vous savez <strong>trop parfaitement</strong> quelque chose, il y a un risque d'en perdre le sens et donc de ne pas pouvoir s'adapter en cas de léger décalage par rapport à ce que vous attendez.</p>
 </div>
 <h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
-<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
 Ceci nécessite systématiquement la présence des deux lignes suivantes au début de chaque script :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1312,26 +1398,26 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 </code></pre></div></td></tr></table></div></p>
 <ul>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
 <ul>
 <li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1]\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
 <li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
 </ul>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi exponentielle</strong> : <code>rd.exponential(1/lambda)</code> renvoie un réel qui suit une loi exponentielle de paramètre <code>lambda</code>.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi exponentielle</strong> : <code>rd.exponential(1/lambda)</code> renvoie un réel qui suit une loi exponentielle de paramètre <code>lambda</code>.</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi de Poisson</strong> : <code>rd.poisson(lambda)</code> renvoie un entier qui suit une loi de Poisson de paramètre <code>lambda</code>.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi de Poisson</strong> : <code>rd.poisson(lambda)</code> renvoie un entier qui suit une loi de Poisson de paramètre <code>lambda</code>.</p>
 </li>
 </ul>
-<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
+<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
 <p><strong>Exemple :</strong><br />
 Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera :
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1342,9 +1428,9 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="mi">1</span>
 </code></pre></div>
-<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
+<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
 </div>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  3</p>
 <p>On se propose dans cet exercice de retrouver empiriquement la formule théorique du calcul de probabilités d'une variable <span class="arithmatex">\(X\)</span> suivant une loi de Poisson de paramètre <span class="arithmatex">\(\lambda\)</span> :</p>

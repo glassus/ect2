@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -335,6 +335,24 @@
           
   
   TD03
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TD04/TD04/" class="md-tabs__link">
+          
+  
+  TD04
 
         </a>
       </li>
@@ -1001,6 +1019,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD04
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            TD04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TD04 : Découverte du langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1031,26 +1117,22 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <h2 id="1-introduction-au-langage-sql">1. Introduction au langage SQL<a class="headerlink" href="#1-introduction-au-langage-sql" title="Permanent link">⚓︎</a></h2>
 <p>Dans toute la suite, nous allons travailler avec la base de données <code>livres.db</code>.</p>
 <h3 id="10-differents-moyens-dinterroger-la-base-de-donnees">1.0 Différents moyens d'interroger la base de données<a class="headerlink" href="#10-differents-moyens-dinterroger-la-base-de-donnees" title="Permanent link">⚓︎</a></h3>
-<p><strong>Pré-requis :</strong> téléchargez la base de données <a href="../data/livres.db">livres.db</a>.</p>
-<details class="abstract">
-<summary>1. En ligne avec <code>sqliteonline.com</code> </summary>
+<p>Nous allons utiliser une méthode en ligne directement sur ce site.</p>
+<p>Mais il est aussi possible :</p>
 <ul>
-<li>Rendez vous sur <a href="https://sqliteonline.com/">https://sqliteonline.com/</a></li>
-<li>Par File / OpenDB, ouvrez le fichier  <code>livres.db</code> précédemment téléchargé.</li>
-<li>Écrivez votre requête plus cliquez sur Run.<br />
-<img alt="" src="../data/sqlonline.png" /></li>
+<li>de télécharger un SGBD, comme <a class="" href="https://sqlitebrowser.org/" target="_blank">DB Browser for SQL lite</a>.</li>
+<li>d'utilise un service en ligne, comme <a class="" href="https://sqliteonline.com/" target="_blank">https://sqliteonline.com/</a></li>
 </ul>
-</details>
-<div class="admonition abstract">
-<p class="admonition-title">2. Directement sur ce site</p>
+<p>Il vous faudra dans les deux cas donner notre base de données de travail : <a href="../data/livres.db">livres.db</a>.</p>
+<p>Mais nous allons préférer :</p>
+<div class="admonition success">
+<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> travail sur notre propre site <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /></p>
 <ul>
-<li>Rendez vous sur la page <a class="" href="../sqlenligne/" target="_blank">SQL en ligne</a>
-<a href=""></a></li>
-<li>Écrivez la requête dans le champ prévu pour votre base.</li>
+<li>Ouvrez dans un nouvel onglet la page <a class="" href="../sqlenligne/" target="_blank">SQL en ligne</a></li>
+<li>Réduisez la fenêtre pour travailler sur 2 fenêtres en même temps : ce cours et la fenêtre SQL en ligne</li>
 </ul>
 </div>
 <hr />
-<p>Dans toute la suite, les manipulations sont à faire en interrogeant la base de données <code>livres.db</code>, avec l'une des méthodes indiquées ci-dessus.</p>
 <p>Voici le diagramme relationnel de cette base :
 <img alt="" class="center" src="../data/ERD_livres.png" /></p>
 <ul>
@@ -1063,10 +1145,11 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <h3 id="11-selection-de-donnees">1.1. Sélection de données<a class="headerlink" href="#11-selection-de-donnees" title="Permanent link">⚓︎</a></h3>
 <h4 id="110-exemple-0">1.1.0 Exemple 0<a class="headerlink" href="#110-exemple-0" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Requête basique : SELECT, FROM <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Requête basique : SELECT, FROM <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span><span class="p">;</span>
 </code></pre></div></li>
 <li><strong>Traduction :</strong> </li>
 </ul>
@@ -1091,7 +1174,7 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 </ul>
 <h4 id="111-exemple-1">1.1.1 Exemple 1<a class="headerlink" href="#111-exemple-1" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Requête filtrée : SELECT, FROM, WHERE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Requête filtrée : SELECT, FROM, WHERE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
@@ -1109,7 +1192,7 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 <p>Le mot-clé WHERE doit être suivi d'un booléen. Les opérateurs classiques <code>=</code> , <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> peuvent être utilisés, mais aussi le mot-clé IN :</p>
 <h4 id="111bis-exemple-1bis">1.1.1bis Exemple 1bis<a class="headerlink" href="#111bis-exemple-1bis" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Requête avec plusieurs possibilités : WHERE ... IN... <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Requête avec plusieurs possibilités : WHERE ... IN... <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
@@ -1126,7 +1209,7 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 </div>
 <h4 id="112-exemple-2">1.1.2 Exemple 2<a class="headerlink" href="#112-exemple-2" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Requête avec booléens : AND - OR <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Requête avec booléens : AND - OR <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
@@ -1143,7 +1226,7 @@ Par l'intermédiaire de <strong>requêtes</strong>, l'utilisateur va consulter o
 </div>
 <h4 id="113-exemple-3">1.1.3 Exemple 3<a class="headerlink" href="#113-exemple-3" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Requête approchée : LIKE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Requête approchée : LIKE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span>
@@ -1161,7 +1244,7 @@ Le symbole <code>%</code> est un joker qui peut symboliser n'importe quelle cha�
 </div>
 <h4 id="114-exemple-4">1.1.4 Exemple 4<a class="headerlink" href="#114-exemple-4" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Plusieurs colonnes <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Plusieurs colonnes <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">isbn</span><span class="w"> </span>
@@ -1178,7 +1261,7 @@ Le symbole <code>%</code> est un joker qui peut symboliser n'importe quelle cha�
 </div>
 <h4 id="115-exemple-5">1.1.5 Exemple 5<a class="headerlink" href="#115-exemple-5" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Toutes les colonnes : * <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Toutes les colonnes : * <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
@@ -1196,7 +1279,7 @@ L'astérisque <code>*</code> est un joker (<em>wildcard</em> en anglais).</p>
 </div>
 <h4 id="116-exemple-6">1.1.6 Exemple 6<a class="headerlink" href="#116-exemple-6" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Renommer les colonnes : AS <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Renommer les colonnes : AS <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">titre_du_livre</span><span class="w"> </span>
@@ -1218,7 +1301,7 @@ L'alias <code>AS</code> sera souvent utilisé pour raccourcir un nom, notamment 
 Nous allons maintenant effectuer des opérations à partir des données sélectionnées. On appelle ces opérations des <strong>opérations d'agrégation</strong>.</p>
 <h4 id="121-exemple-7">1.2.1 Exemple 7<a class="headerlink" href="#121-exemple-7" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Compter : COUNT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Compter : COUNT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"> </span>
@@ -1235,7 +1318,7 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 </div>
 <h4 id="122-exemple-8">1.2.2 Exemple 8<a class="headerlink" href="#122-exemple-8" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Additionner : SUM <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Additionner : SUM <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">somme</span><span class="w"> </span>
@@ -1253,7 +1336,7 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 </div>
 <h4 id="123-exemple-9">1.2.3 Exemple 9<a class="headerlink" href="#123-exemple-9" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Faire une moyenne : AVG <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Faire une moyenne : AVG <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">moyenne</span>
@@ -1271,7 +1354,7 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 </div>
 <h4 id="124-exemple-10">1.2.4 Exemple 10<a class="headerlink" href="#124-exemple-10" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Trouver les extremums : MIN, MAX <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Trouver les extremums : MIN, MAX <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">minimum</span>
@@ -1288,7 +1371,7 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
 </div>
 <h4 id="125-exemple-11">1.2.5 Exemple 11<a class="headerlink" href="#125-exemple-11" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Classer des valeurs : ORDER BY, ASC, DESC, LIMIT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Classer des valeurs : ORDER BY, ASC, DESC, LIMIT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li>
 <p><strong>Commande :</strong> 
@@ -1326,7 +1409,7 @@ permet d'obtenir les renseignements sur l'Astérix le plus récent.             
 </div>
 <h4 id="125-exemple-12">1.2.5 Exemple 12<a class="headerlink" href="#125-exemple-12" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Suppression des doublons : DISTINCT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Suppression des doublons : DISTINCT <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">editeur</span><span class="w"> </span>
@@ -1351,7 +1434,7 @@ Souvenons-nous du diagramme de la base de données.</p>
 <p>Pour que la table «emprunt» soit lisible, il faudrait (dans un premier temps) que l'on affiche à la place de l'ISBN le titre de l'ouvrage. Or ce titre est disponible dans la table «livres».  On va donc procéder à une <strong>jointure</strong> de ces deux tables.</p>
 <h4 id="131-exemple-13">1.3.1 Exemple 13<a class="headerlink" href="#131-exemple-13" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Jointure de 2 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Jointure de 2 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">livre</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">code_barre</span><span class="p">,</span><span class="w"> </span><span class="n">emprunt</span><span class="p">.</span><span class="n">retour</span>
@@ -1376,7 +1459,7 @@ Il est donc très important de spécifier ce sur quoi les deux tables vont se re
 <h4 id="132-exemple-14">1.3.2 Exemple 14<a class="headerlink" href="#132-exemple-14" title="Permanent link">⚓︎</a></h4>
 <p>Le résultat précédent a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure, en invitant maintenant les deux tables «livre» et «usager».</p>
 <div class="admonition note">
-<p class="admonition-title">Jointure de 3 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Jointure de 3 tables : INNER JOIN <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">retour</span>
@@ -1434,7 +1517,7 @@ Notez ici que des alias sont donnés aux tables (par <strong>AS</strong>) afin d
 <p>Pour cela vous pouvez travailler sur <a class="" href="http://127.0.0.1:8000/ect2/CoursSQL/sqlenligne/#2-votre-propre-base-de-donnees" target="_blank">cette page</a>.</p>
 <h4 id="21-exemple-15">2.1 Exemple 15<a class="headerlink" href="#21-exemple-15" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Création d'une table : CREATE TABLE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Création d'une table : CREATE TABLE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>Commande :</strong> 
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">table_notes</span><span class="w"> </span><span class="p">(</span>
@@ -1456,7 +1539,7 @@ C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé 
 </div>
 <h4 id="22-exemple-16">2.2 Exemple 16<a class="headerlink" href="#22-exemple-16" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Insertion de valeurs : INSERT INTO, VALUES <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Insertion de valeurs : INSERT INTO, VALUES <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li>
 <p><strong>Commande :</strong> 
@@ -1511,7 +1594,7 @@ et le résultat serait : </p>
 <p>L'attribut <code>id</code> est donc géré automatiquement par le SGBD.</p>
 <h4 id="24-exemple-18">2.4 Exemple 18<a class="headerlink" href="#24-exemple-18" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Modification d'une valeur UPDATE, SET <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Modification d'une valeur UPDATE, SET <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Pour modifier la note de Maths d'Alice :</p>
 <ul>
 <li><strong>Commande :</strong> 
@@ -1523,7 +1606,7 @@ et le résultat serait : </p>
 </div>
 <h4 id="25-exemple-19">2.5 Exemple 19<a class="headerlink" href="#25-exemple-19" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Suppression d'un enregistrement : DELETE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Suppression d'un enregistrement : DELETE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Pour supprimer totalement la ligne concernant Charles :</p>
 <ul>
 <li><strong>Commande :</strong> 
@@ -1535,7 +1618,7 @@ et le résultat serait : </p>
 <p>Si une autre table contient par exemple l'attribut <code>id</code>  comme clé étrangère, et si l'<code>id</code>  de Charles fait partie de cette table, le SGBD refusera de supprimer cette ligne, afin de ne pas violer la contrainte de référence.</p>
 <h4 id="26-exemple-20">2.6 Exemple 20<a class="headerlink" href="#26-exemple-20" title="Permanent link">⚓︎</a></h4>
 <div class="admonition note">
-<p class="admonition-title">Suppression totale d'une table : DROP TABLE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Suppression totale d'une table : DROP TABLE <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Pour supprimer totalement et défitivement la table :</p>
 <ul>
 <li><strong>Commande :</strong> 
@@ -1564,7 +1647,7 @@ et le résultat serait : </p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">23 novembre 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">8 novembre 2024</span>
   </span>
 
     

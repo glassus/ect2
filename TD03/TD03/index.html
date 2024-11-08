@@ -14,9 +14,11 @@
         <link rel="prev" href="../../TD02/TD02/">
       
       
+        <link rel="next" href="../../TD04/TD04/">
+      
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -333,6 +335,24 @@
           
   
   TD03
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TD04/TD04/" class="md-tabs__link">
+          
+  
+  TD04
 
         </a>
       </li>
@@ -948,6 +968,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD04
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            TD04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TD04 : Découverte du langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -965,7 +1053,7 @@
 
 
 <h1 id="td03-suites-et-simulations">TD03 : suites et simulations<a class="headerlink" href="#td03-suites-et-simulations" title="Permanent link">⚓︎</a></h1>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
 <div class="admonition tip">
 <p class="admonition-title">rappel de la syntaxe d'importation de <code>numpy.random</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1091,7 +1179,7 @@
 </div>
 <h2 id="2-modelisations-dune-suite">2. Modélisation(s) d'une suite<a class="headerlink" href="#2-modelisations-dune-suite" title="Permanent link">⚓︎</a></h2>
 <p>L'étude des suites donne lieu à <strong>deux approches</strong> radicalement différentes :</p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 1</strong> : à l'aide une seule variable «simple»</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 1</strong> : à l'aide une seule variable «simple»</p>
 <p>Chaque terme est calculé successivement à partir du précédent dans une seule et unique variable «simple». Cette variable est initialisée avec le 1er terme.</p>
 <p><em>Exemple :</em> </p>
 <p>le n-ième terme de la suite définie par <span class="arithmatex">\(u_{n+1}=2u_n + 1\)</span> et <span class="arithmatex">\(u_0 = 3\)</span> sera calculé par:
@@ -1105,9 +1193,9 @@
         <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : simplicité, rapidité, peu d'espace-mémoire </p>
-<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : aucun accès à tous les termes de la suite !</p>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 2</strong> : à l'aide une  variable de type liste</p>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : simplicité, rapidité, peu d'espace-mémoire </p>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : aucun accès à tous les termes de la suite !</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Approche 2</strong> : à l'aide une  variable de type liste</p>
 <p>Chaque terme est calculé successivement à partir du précédent et <strong>stocké</strong> dans une liste. Cette liste est souvent préparée au préalable, remplie de 0 qui seront peu à peu remplacés par les termes de la suite.</p>
 <p><em>Exemple :</em> </p>
 <p>Les n premiers termes de la suite définie par <span class="arithmatex">\(u_{n+1}=2u_n + 1\)</span> et <span class="arithmatex">\(u_0 = 3\)</span> seront calculés par:
@@ -1125,8 +1213,8 @@
         <span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">u</span>
 </code></pre></div></td></tr></table></div>
-<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : tous les termes sont disponibles (on peut les cumuler, les tracer...)</p>
-<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : lenteur, complexité, place mémoire.</p>
+<img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> <em>Avantages</em> : tous les termes sont disponibles (on peut les cumuler, les tracer...)</p>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4db.svg" title=":name_badge:" /> <em>Inconvénients</em> : lenteur, complexité, place mémoire.</p>
 <div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
 <p><em>extrait du sujet 0 Ecricome</em></p>
