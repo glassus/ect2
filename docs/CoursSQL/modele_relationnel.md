@@ -72,7 +72,7 @@ Ajoutons maintenant les relations ci-dessous :
 | 845           | DURAND | Michel |
 | 125           | MARTIN | Jean   |
 
-L'attribut `id_emprunteur` est une clé primaire de la relation `Emprunteurs`.
+L'attribut `id_emprunteur` est une clé primaire de la relation «Emprunteurs».
 
 
 **Notion de clé étrangère** 

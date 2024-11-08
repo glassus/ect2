@@ -30,16 +30,16 @@ Dans toute la suite, nous allons travailler avec la base de données ```livres.d
 
 Nous allons utiliser une méthode en ligne directement sur ce site.
 
-Mais il est aussi possible :
+??? note "autres possibilités"
 
-- de télécharger un SGBD, comme [DB Browser for SQL lite](https://sqlitebrowser.org/){. target="_blank"}.
-- d'utilise un service en ligne, comme [https://sqliteonline.com/](https://sqliteonline.com/){. target="_blank"}
+    - de télécharger un SGBD, comme [DB Browser for SQL lite](https://sqlitebrowser.org/){. target="_blank"}.
+    - d'utilise un service en ligne, comme [https://sqliteonline.com/](https://sqliteonline.com/){. target="_blank"}
 
-Il vous faudra dans les deux cas donner notre base de données de travail : [livres.db](data/livres.db).
+    Il vous faudra dans les deux cas donner notre base de données de travail : [livres.db](data/livres.db).
 
-Mais nous allons préférer :
-!!! success ":star: travail sur notre propre site :star:"
-    - Ouvrez dans un nouvel onglet la page [SQL en ligne](../sqlenligne/){. target="_blank"}
+
+!!! success ":star: Comment interroger notre base de données :star:"
+    - Ouvrez dans un nouvel onglet la page [SQL en ligne](../sqlenligne/){. target="_blank"}.
     - Réduisez la fenêtre pour travailler sur 2 fenêtres en même temps : ce cours et la fenêtre SQL en ligne
 
 
