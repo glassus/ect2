@@ -58,11 +58,11 @@ Ajoutons maintenant les relations ci-dessous :
 
  **Relation «Emprunts»** 
 
-| id_emprunteur | date       | Nom    | Prénom | titre             | auteur          | code |
-|---------------|------------|--------|--------|-------------------|-----------------|------|
-| 845           | 12/10/2020 | DURAND | Michel | Au revoir là-haut | Pierre LEMAITRE | 942  |
-| 125           | 13/10/2020 | MARTIN | Jean   | Pas pleurer       | Lydie SALVAYRE  | 1023 |
-| 125           | 13/10/2020 | MARTIN | Jean   | Boussole          | Mathias ENARD   | 486  |
+| id_emprunteur | date       | code |
+|---------------|------------|------|
+| 845           | 12/10/2020 | 942  |
+| 125           | 13/10/2020 | 1023 |
+| 125           | 13/10/2020 | 486  |
 
  **Relation «Emprunteurs»** 
 
