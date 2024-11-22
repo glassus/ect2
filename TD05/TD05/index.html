@@ -14,11 +14,9 @@
         <link rel="prev" href="../../TD04/TD04/">
       
       
-        <link rel="next" href="../../TD06/TD06/">
-      
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -351,6 +349,26 @@
           
   
   TD04
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  TD05
 
         </a>
       </li>
@@ -973,6 +991,135 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TD05
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            TD05
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TD05 : SQL (modifications et jointures), retour au Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TD05 : SQL (modifications et jointures), retour au Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sql-modifications-et-jointures" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. SQL : Modifications et jointures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1013,45 +1160,11 @@
     load(ide, 'https:/glassus.github.io/ect2/TD04/data/locations.db', '', '', );
 }).catch(() => {});
 </script>
-<p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Agences</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ville</span><span class="o">=</span><span class="s1">&#39;Lorient&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ?</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Vehicules</span><span class="p">.</span><span class="n">nom</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Locations</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Vehicules</span><span class="p">.</span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Locations</span><span class="p">.</span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Locations</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-11-08&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DF-269-EF&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AA-654-BA&#39;</span>
-</code></pre></div>
-</details>
-<p><strong>Q5</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Vehicules</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DB-458-EK&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Renault Captur&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">17203</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-</details>
+<p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#111-exemple-1" target="_blank">cours sur SELECT FROM WHERE</a>)</p>
+<p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ? (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#131-exemple-13" target="_blank">cours sur INNER JOIN</a>)</p>
+<p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-18" target="_blank">cours sur UPDATE</a>)</p>
+<p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.(<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-19" target="_blank">cours sur DELETE</a>)</p>
+<p><strong>Q5</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#22-exemple-16" target="_blank">cours sur INSERT INTO</a>)</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Exercice  2</p>
@@ -1078,25 +1191,7 @@ utilisé dans la table vehicules.  </li>
 <li><code>prix_occasion</code> (de type <code>INTEGER</code>) : prix de vente du véhicule d’occasion.</li>
 </ul>
 <p><strong>Q1.</strong> En justifiant brièvement, identifier une clef primaire dans chacune des tables <code>vehicule</code> et <code>annonce</code>, ainsi qu’une clef étrangère dans la table <code>annonce</code>.  </p>
-<details class="success">
-<summary>Correction</summary>
-<ul>
-<li>Table <code>vehicule</code> : <code>id_vehicule</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque véhicule.</li>
-<li>Table <code>annonce</code> : <ul>
-<li><code>id_annonce</code> peut jouer le rôle de clé primaire car il identifie de manière unique chaque annonce.</li>
-<li><code>id_vehicule</code> est une clé étrangère car c'est une clé primaire de la table <code>vehicule</code>.</li>
-</ul>
-</li>
-</ul>
-</details>
-<p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>Dubreuil Motors</code>. </p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">modele</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">vehicule</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Dubreuil Motors&#39;</span>
-</code></pre></div>
-</details>
+<p><strong>Q2.</strong> Écrire une requête SQL permettant d’extraire les noms de tous les modèles de véhicules mis en vente par le constructeur <code>'Dubreuil Motors'</code>. </p>
 <p><strong>Q3.</strong> À l’aide d’une jointure, écrire une requête SQL permettant d’obtenir, sur une même table, la liste de toutes les annonces de la table <code>annonce</code> avec les attributs suivants :</p>
 <ul>
 <li>l’identifiant de l’annonce <code>id_annonce</code>.</li>
@@ -1104,13 +1199,6 @@ utilisé dans la table vehicules.  </li>
 <li>le prix de vente du véhicule neuf <code>prix_neuf</code>, </li>
 <li>le prix de l’annonce d’occasion <code>prix_occasion</code>. </li>
 </ul>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_annonce</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">km</span><span class="p">,</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">prix_neuf</span><span class="p">,</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">prix_occasion</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">annonce</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">vehicule</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">vehicule</span><span class="p">.</span><span class="n">id_vehicule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">annonce</span><span class="p">.</span><span class="n">id_vehicule</span>
-</code></pre></div>
-</details>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
@@ -1145,11 +1233,6 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 <ol>
 <li>
 <p>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</p>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(X\)</span> suit une loi géométrique de paramètre <span class="arithmatex">\(p=\frac{1}{10}=0,1\)</span>.</p>
-<p>Donc <span class="arithmatex">\(E(X) = \frac{1}{p} = \frac{1}{0.1} = 10\)</span></p>
-</details>
 </li>
 <li>
 <p>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</p>
@@ -1270,7 +1353,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">1 décembre 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">22 novembre 2024</span>
   </span>
 
     
