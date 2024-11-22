@@ -1161,6 +1161,13 @@
 }).catch(() => {});
 </script>
 <p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#111-exemple-1" target="_blank">cours sur SELECT FROM WHERE</a>)</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Agences</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ville</span><span class="o">=</span><span class="s1">&#39;Lorient&#39;</span>
+</code></pre></div>
+</details>
 <p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ? (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#131-exemple-13" target="_blank">cours sur INNER JOIN</a>)</p>
 <p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-18" target="_blank">cours sur UPDATE</a>)</p>
 <p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.(<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-19" target="_blank">cours sur DELETE</a>)</p>
