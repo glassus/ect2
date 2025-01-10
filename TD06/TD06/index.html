@@ -1597,6 +1597,29 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U a pris la valeur&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hasard</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="hll"><span class="k">while</span> <span class="n">hasard</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+</span>    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="hll">    <span class="n">hasard</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U a pris la valeur&#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
