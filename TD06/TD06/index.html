@@ -1662,6 +1662,43 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
+
+<span class="hll"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class="hll"><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class="hll"><span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span class="k">if</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">lancer</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="hll">        <span class="n">lancer</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
