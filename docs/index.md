@@ -5,10 +5,11 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - :arrow_right: [TD06](./TD06/TD06/) : lois de probabilités (et la fin du SQL)
+    - :arrow_right: [TD07](./TD07/TD07/) : SQL, simulations et dichotomie
 
 
 !!! note "Séances précédentes"
+    - [TD06](./TD06/TD06/) : lois de probabilités (et la fin du SQL)
     - [TD05](./TD05/TD05/) : SQL 2ème partie, modifications et jointures
     - [TD04](./TD04/TD04/) : découverte du langage SQL
     - [TD03](./TD03/TD03/) : suites et simulations
