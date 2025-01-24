@@ -1506,7 +1506,16 @@ x e^{-x} \quad \text{   si } x \geqslant 0
 <p>Donc <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
 </details>
 <p><strong>Q5.</strong> Calculer <span class="arithmatex">\(P(V \leqslant 2)\)</span>. En déduire la valeur de <span class="arithmatex">\(P(V&gt;2)\)</span>.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(P(V \leqslant 2)=\int_{-\infty}^{2} g(x)dx=\int_{0}^{2} g(x)dx=1-e^{-2}-2e^{-2}\)</span>.<br />
+Donc <span class="arithmatex">\(P(V&gt;2)=1-P(V \leqslant 2)=e^{-2}+2e^{-2}=3e^{-2} \approx 0,406\)</span></p>
+</details>
 <p><strong>Q6.</strong> Ce résultat est-il cohérent avec les résultats Python de la question 2. ?</p>
+<details class="success">
+<summary>Correction</summary>
+<p>La valeur théorique de <span class="arithmatex">\(P(V&gt;2)\)</span> est conforme aux valeurs empiriques trouvées par simulation à la question 1 et 2.</p>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
@@ -1542,6 +1551,37 @@ x e^{-x} \quad \text{   si } x \geqslant 0
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p><strong>Q2.</strong> Montrer que l'équation <span class="arithmatex">\(f(x) = 0\)</span> admet une solution unique <span class="arithmatex">\(\alpha\)</span> sur l'intervalle <span class="arithmatex">\([0,2]\)</span>.</p>
 <p><strong>Q3.</strong> Compléter le code ci-dessous pour qu'il affiche, avec une précision de <span class="arithmatex">\(10^{-3}\)</span>, la valeur de <span class="arithmatex">\(\alpha\)</span>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
