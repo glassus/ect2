@@ -1494,7 +1494,17 @@ x e^{-x} \quad \text{   si } x \geqslant 0
 \]</div>
 <p><strong>Q3.</strong> À l'aide d'une intégration par parties, montrer que pour tout réel <span class="arithmatex">\(A&gt;0\)</span> :</p>
 <div class="arithmatex">\[ \int_0^A g(x)dx = 1-e^{-A}-Ae^{-A}\]</div>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(\int_0^A g(x)dx = \big[ -x e^{-x} \big]_0^A - \int_0^A -e^{-x}dx=-Ae^{-A}-\big[e^{-x} \big]_0^A=-Ae^{-A}-e^{-A}+1=1-e^{-A}-Ae^{-A}\)</span></p>
+</details>
 <p><strong>Q4.</strong> Vérifier que <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><span class="arithmatex">\(\int_{-\infty}^{+\infty} g(x)dx = \int_{0}^{+\infty} g(x)dx = \lim\limits_{A \to + \infty} \int_0^A g(x)dx = \lim\limits_{A \to + \infty} 1-e^{-A}-Ae^{-A}=1\)</span></p>
+<p>De plus, <span class="arithmatex">\(g\)</span> est bien positive et continue (elle est continue en 0).</p>
+<p>Donc <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
+</details>
 <p><strong>Q5.</strong> Calculer <span class="arithmatex">\(P(V \leqslant 2)\)</span>. En déduire la valeur de <span class="arithmatex">\(P(V&gt;2)\)</span>.</p>
 <p><strong>Q6.</strong> Ce résultat est-il cohérent avec les résultats Python de la question 2. ?</p>
 </div>
