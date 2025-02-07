@@ -1512,6 +1512,13 @@
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/cinema.db', '', '', cinema);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">movies</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Intouchables&#39;</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Intouchables&#39;</span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
