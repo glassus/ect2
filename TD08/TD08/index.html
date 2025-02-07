@@ -1686,6 +1686,22 @@ Le calcul du produit matriciel <span class="arithmatex">\(A \times X\)</span> se
 </code></pre></div></td></tr></table></div>
 </details>
 <p><strong>Q2.</strong> Par des calculs en Python, montrer que les vecteurs <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> sont des vecteurs propres de la matrice <span class="arithmatex">\(B\)</span>, et préciser pour chacun la valeur propre associée.</p>
+<details class="success">
+<summary>Correction</summary>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span>  <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X3</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</code></pre></div>
+On en déduit que :</p>
+<ul>
+<li><span class="arithmatex">\(BX_1 = 2X_1\)</span>, donc <span class="arithmatex">\(X_1\)</span> est un vecteur propre associé à la valeur propre 2.</li>
+<li><span class="arithmatex">\(BX_2 = X_2\)</span>, donc <span class="arithmatex">\(X_2\)</span> est un vecteur propre associé à la valeur propre 1.</li>
+<li><span class="arithmatex">\(BX_3 = 3X_3\)</span>, donc <span class="arithmatex">\(X_3\)</span> est un vecteur propre associé à la valeur propre 3.</li>
+</ul>
+</details>
 <details class="tip">
 <summary>De l'intérêt de bien calculer les valeurs propres et vecteurs propres</summary>
 <ul>
