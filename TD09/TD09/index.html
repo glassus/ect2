@@ -1723,7 +1723,18 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>protection : le statut protégé ou non de l’espèce (1 si protégée ; 0 sinon).</li>
 </ul>
 <p><strong>Q1.</strong> Identifier la clef primaire de la table <code>poissons</code>.</p>
+<details class="success">
+<summary>Correction</summary>
+<p>La clé primaire de la table <code>poissons</code> est l'attribut <code>id</code> car il est dit dans l'énoncé qu'il permet d'identifier une espèce de manière unique.</p>
+</details>
 <p><strong>Q2.</strong> Une étude du lac a été effectuée et il a été constaté une modification de la taille moyenne des goujons, valant désormais 610 mm. Écrire une requête SQL permettant de mettre à jour la base de données concernant la taille moyenne des goujons (dont l’attribut espece est <code>"goujon"</code>).</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">poissons</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">taille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">610</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">espece</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;goujon&#39;</span>
+</code></pre></div>
+</details>
 <p><strong>Q3.</strong> Écrire une requête SQL permettant d’afficher la liste des poissons que les pêcheurs peuvent pécher, c’est-à-dire ceux qui ne sont pas protégés et dont la taille moyenne est supérieure ou égale à 125 mm.</p>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
