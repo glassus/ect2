@@ -1673,6 +1673,12 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">personnes</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Berry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Gérard&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">33000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bordeaux&#39;</span><span class="p">)</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1692,6 +1698,14 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">prenom</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Porsche&#39;</span><span class="w">     </span>
+</code></pre></div>
+</details>
 </div>
 </div>
 <div class="admonition example">
