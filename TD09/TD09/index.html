@@ -1736,6 +1736,13 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 </code></pre></div>
 </details>
 <p><strong>Q3.</strong> Écrire une requête SQL permettant d’afficher la liste des poissons que les pêcheurs peuvent pécher, c’est-à-dire ceux qui ne sont pas protégés et dont la taille moyenne est supérieure ou égale à 125 mm.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">espece</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">poissons</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">taille</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">125</span>
+</code></pre></div>
+</details>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
