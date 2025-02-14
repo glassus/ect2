@@ -14,11 +14,9 @@
         <link rel="prev" href="../../TD08/TD08/">
       
       
-        <link rel="next" href="../../TD10/TD10/">
-      
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -31,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -423,6 +421,26 @@
           
   
   TD08
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  TD09
 
         </a>
       </li>
@@ -1344,6 +1362,147 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TD09
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            TD09
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TD09 : SQL, régression, simulations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TD09 : SQL, régression, simulations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-entrainement-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entraînement SQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-retour-sur-la-regression-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Retour sur la régression linéaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-retour-sur-les-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Retour sur les simulations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1363,7 +1522,7 @@
 
 <h1 id="td09-sql-regression-simulations">TD09 : SQL, régression, simulations<a class="headerlink" href="#td09-sql-regression-simulations" title="Permanent link">⚓︎</a></h1>
 <h2 id="1-entrainement-sql">1. Entraînement SQL<a class="headerlink" href="#1-entrainement-sql" title="Permanent link">⚓︎</a></h2>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  1</p>
 <p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
 <p>On étudie une base de données <code>parc</code>, relative à un parc automobile.<br />
@@ -1391,13 +1550,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>Quel rôle joue l'attribut <code>immatriculation</code> dans la table <code>voitures</code> ?  </li>
 <li>Quel rôle joue l'attribut <code>proprietaire</code> dans la table <code>voitures</code> ? </li>
 </ol>
-<details class="success">
-<summary>Correction</summary>
-<ol>
-<li><code>immatriculation</code> est la clé <strong>primaire</strong> la table <code>voitures</code>. </li>
-<li><code>proprietaire</code> une clé <strong>étrangère</strong> de la table <code>voitures</code>, elle fait référence à la clé primaire <code>id</code> de la table <code>personnes</code>.            </li>
-</ol>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 1</p>
@@ -1417,12 +1569,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1442,12 +1588,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1467,18 +1607,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rose&#39;</span><span class="w">     </span>
-</code></pre></div>
-<p>ou bien
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;rose&#39;</span><span class="w">     </span>
-</code></pre></div></p>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
@@ -1514,12 +1642,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Berry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Gérard&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">33000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bordeaux&#39;</span><span class="p">)</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1539,14 +1661,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">prenom</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Porsche&#39;</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
@@ -1561,7 +1675,7 @@ Le coefficient de corrélation linéaire de deux variables aléatoires <span cla
 <li>Si <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span> sont liées par une combinaison linéaire (ex : <span class="arithmatex">\(Y = 3X+2\)</span>), alors <span class="arithmatex">\(\rho(X,Y) = \pm 1\)</span></li>
 </ul>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>Utilisation en statistiques</strong> <br />
-Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> de 1, on peut conjecturer que le phénomène observé est prédictible. Le tracé de la droite de régression permet alors de faire des prévisions.</p>
+Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> (en valeur absolue) de 1, on peut conjecturer que le phénomène observé est prédictible. Le tracé de la droite de régression permet alors de faire des prévisions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Syntaxe Python <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1626,7 +1740,7 @@ Lorsque <span class="arithmatex">\(\rho\)</span> est <em>proche</em> de 1, on pe
 dans le code précédent. On obtient alors :
 <img alt="image" class="center" src="../data/Figure_9.png" /></p>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
 <p>Pour chaque question :</p>
 <ul>
@@ -1639,71 +1753,17 @@ dans le code précédent. On obtient alors :
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </code></pre></div>
-<details class="success">
-<summary>Correction</summary>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-
-<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<img alt="image" class="center" src="../data/Q1.png" />
-<code>r = -0.037</code> donc on ne peut absolument pas tenter un ajustement linéaire.  </p>
-</details>
 <p><strong>Q2.</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">108</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">70</span><span class="p">])</span>
 </code></pre></div>
-<details class="success">
-<summary>Correction</summary>
-<p><img alt="image" class="center" src="../data/Q2.png" />
-<code>r = -0.249</code> donc on ne peut absolument pas tenter un ajustement linéaire.         </p>
-</details>
 <p><strong>Q3.</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">346</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">322</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">301</span><span class="p">,</span> <span class="mi">287</span><span class="p">,</span> <span class="mi">269</span><span class="p">,</span> <span class="mi">272</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">249</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">208</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">158</span><span class="p">])</span>
 </code></pre></div>
-<details class="success">
-<summary>Correction</summary>
-<p><img alt="image" class="center" src="../data/Q3.png" />
-<code>r = -0.993</code> donc il est légitime tenter un ajustement linéaire. </p>
-<p>Insérons (avant le tracé par <code>plt.show()</code>) le code suivant :
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-</code></pre></div></p>
-<p><img alt="image" class="center" src="../data/Q3bis.png" />
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="o">-</span><span class="mf">9.808270676691734</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="mf">347.2285714285715</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">30</span><span class="o">+</span><span class="n">b</span>
-<span class="mf">52.98045112781949</span>
-</code></pre></div>
-On peut donc estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra environ 53. </p>
-</details>
 </div>
-<div class="admonition note">
-<p class="admonition-title"><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> Hors Programme <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></p>
+<details class="note">
+<summary><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> Hors Programme <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> retour sur la question <strong>Q2</strong></summary>
 <p>Le nuage de points obtenu en <strong>Q2</strong> ne donne absolument pas envie de faire un ajustement linéaire : la forme du nuage ne ressemble pas du tout à une droite.</p>
 <p>Par contre, elle ressemble à une parabole... </p>
 <p>Peut-on ajuster cette série statistique avec un polynôme de degré 2 ? Essayons !
@@ -1758,7 +1818,7 @@ On peut alors estimer que quand <code>x</code> vaudra 30, <code>y</code> vaudra 
 <p>C'est parfait pour les valeurs données... mais très bizarre dès qu'on sort de ces valeurs.</p>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> À trop vouloir coller aux valeurs données, on a perdu le «sens» de la série statistique, et nos prévisions risquent d'être totalement fausses. On appelle ce phénomène l'<strong>overfitting</strong>, ou <strong>sur-apprentissage</strong> en Intelligence Artificielle.<br />
 Une interprétation dans la vie courante pourrait être que lorsque vous savez <strong>trop parfaitement</strong> quelque chose, il y a un risque d'en perdre le sens et donc de ne pas pouvoir s'adapter en cas de léger décalage par rapport à ce que vous attendez.</p>
-</div>
+</details>
 <h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
 <p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1803,7 +1863,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
 </div>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
 <p>On se propose dans cet exercice de retrouver empiriquement la formule théorique du calcul de probabilités d'une variable <span class="arithmatex">\(X\)</span> suivant une loi de Poisson de paramètre <span class="arithmatex">\(\lambda\)</span> :</p>
 <div class="arithmatex">\[\forall k \in \mathbb{N}, \qquad P(X=k)=\dfrac{\lambda ^k}{k!} e^{-\lambda}\]</div>
@@ -1821,17 +1881,6 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <span class="k">def</span><span class="w"> </span><span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="o">...**...</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="o">...</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">lamb</span><span class="o">**</span><span class="n">k</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lamb</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> On va maintenant calculer de manière empirique cette probabilité, grâce à la loi des grands nombres.</p>
 <p>Compléter le code ci-dessous afin que la fonction <code>empirique_poisson</code> qui prend pour paramètres 3 entiers :  </p>
 <ul>
@@ -1860,41 +1909,9 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
             <span class="o">...</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
     <span class="k">return</span> <span class="o">...</span> <span class="o">/</span> <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">empirique_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nb_iter</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="hll">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_iter</span><span class="p">):</span>
-</span><span class="hll">        <span class="n">tirage</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
-</span><span class="hll">        <span class="k">if</span> <span class="n">tirage</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
-</span><span class="hll">            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class="hll">    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">nb_iter</span>
-</span></code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q3.</strong> Comparer ces deux fonctions avec (par exemple) <code>lamb</code> égal à 10, <code>k</code> égal à 7 et une valeur <code>nb_iter</code> que vous adapterez.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">formule_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="mf">0.09007922571921598</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">empirique_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-<span class="mf">0.090022</span>
-</code></pre></div>
-On constate une similitude des valeurs renvoyées. Cela prouve que la fonction Python <code>rd.poisson</code> est correctement implémentée... </p>
-</details>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
 <p>Antoine et Béatrice jouent au Badminton. On suppose que lors de chaque échange, le
 joueur qui a le service emporte le point avec une probabilité <span class="arithmatex">\(\dfrac{2}{3}\)</span> et le perd avec une
@@ -1928,35 +1945,8 @@ pour l’échange suivant.</p>
     <span class="o">...</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> 
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">points</span> <span class="o">=</span> <span class="n">a</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> 
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
 <p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
@@ -1995,7 +1985,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">17 mars 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">14 février 2025</span>
   </span>
 
     
