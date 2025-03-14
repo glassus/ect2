@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
@@ -1550,13 +1550,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>Quel rôle joue l'attribut <code>immatriculation</code> dans la table <code>voitures</code> ?  </li>
 <li>Quel rôle joue l'attribut <code>proprietaire</code> dans la table <code>voitures</code> ? </li>
 </ol>
-<details class="success">
-<summary>Correction</summary>
-<ol>
-<li><code>immatriculation</code> est la clé <strong>primaire</strong> la table <code>voitures</code>. </li>
-<li><code>proprietaire</code> une clé <strong>étrangère</strong> de la table <code>voitures</code>, elle fait référence à la clé primaire <code>id</code> de la table <code>personnes</code>.            </li>
-</ol>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 1</p>
@@ -1576,12 +1569,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
@@ -1601,12 +1588,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
@@ -1626,18 +1607,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rose&#39;</span><span class="w">     </span>
-</code></pre></div>
-<p>ou bien
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">voitures</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;rose&#39;</span><span class="w">     </span>
-</code></pre></div></p>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
@@ -1673,12 +1642,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Berry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Gérard&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">33000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bordeaux&#39;</span><span class="p">)</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 5</p>
@@ -1698,14 +1661,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">prenom</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">marque</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Porsche&#39;</span><span class="w">     </span>
-</code></pre></div>
-</details>
 </div>
 </div>
 <div class="admonition example">
@@ -1723,26 +1678,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <li>protection : le statut protégé ou non de l’espèce (1 si protégée ; 0 sinon).</li>
 </ul>
 <p><strong>Q1.</strong> Identifier la clef primaire de la table <code>poissons</code>.</p>
-<details class="success">
-<summary>Correction</summary>
-<p>La clé primaire de la table <code>poissons</code> est l'attribut <code>id</code> car il est dit dans l'énoncé qu'il permet d'identifier une espèce de manière unique.</p>
-</details>
 <p><strong>Q2.</strong> Une étude du lac a été effectuée et il a été constaté une modification de la taille moyenne des goujons, valant désormais 610 mm. Écrire une requête SQL permettant de mettre à jour la base de données concernant la taille moyenne des goujons (dont l’attribut espece est <code>"goujon"</code>).</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">poissons</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">taille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">610</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">espece</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;goujon&#39;</span>
-</code></pre></div>
-</details>
 <p><strong>Q3.</strong> Écrire une requête SQL permettant d’afficher la liste des poissons que les pêcheurs peuvent pécher, c’est-à-dire ceux qui ne sont pas protégés et dont la taille moyenne est supérieure ou égale à 125 mm.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">espece</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">poissons</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">taille</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">125</span>
-</code></pre></div>
-</details>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -1962,17 +1899,6 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <span class="k">def</span><span class="w"> </span><span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="o">...**...</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="o">...</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">formule_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">lamb</span><span class="o">**</span><span class="n">k</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lamb</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> On va maintenant calculer de manière empirique cette probabilité, grâce à la loi des grands nombres.</p>
 <p>Compléter le code ci-dessous afin que la fonction <code>empirique_poisson</code> qui prend pour paramètres 3 entiers :  </p>
 <ul>
@@ -2001,39 +1927,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
             <span class="o">...</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
     <span class="k">return</span> <span class="o">...</span> <span class="o">/</span> <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">empirique_poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nb_iter</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="hll">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_iter</span><span class="p">):</span>
-</span><span class="hll">        <span class="n">tirage</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
-</span><span class="hll">        <span class="k">if</span> <span class="n">tirage</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
-</span><span class="hll">            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class="hll">    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">nb_iter</span>
-</span></code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q3.</strong> Comparer ces deux fonctions avec (par exemple) <code>lamb</code> égal à 10, <code>k</code> égal à 7 et une valeur <code>nb_iter</code> que vous adapterez.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">formule_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="mf">0.09007922571921598</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">empirique_poisson</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-<span class="mf">0.090022</span>
-</code></pre></div>
-On constate une similitude des valeurs renvoyées. Cela prouve que la fonction Python <code>rd.poisson</code> est correctement implémentée... </p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
@@ -2069,33 +1963,6 @@ pour l’échange suivant.</p>
     <span class="o">...</span> <span class="o">=</span> <span class="o">...</span> <span class="o">+</span> <span class="o">...</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> 
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">points</span> <span class="o">=</span> <span class="n">a</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> 
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  6</p>
@@ -2136,7 +2003,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">14 février 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 mars 2025 09:27:16">14 mars 2025</span>
   </span>
 
     
@@ -2204,7 +2071,7 @@ pour l’échange suivant.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "toc.integrate", "header.autohide", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../scripts/mathjax.js"></script>
       
