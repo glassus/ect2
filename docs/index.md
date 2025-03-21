@@ -6,12 +6,13 @@ test: ok
 
 !!! note ":star: Séance en cours :star:"
  
-    - :arrow_right: [TD09](./TD09/TD09/) : SQL, régression, simulations
+    - :arrow_right: [TD10](./TD10/TD10/) : retour du SQL, régression, simulations, suite et fin
 
 
 
 
 !!! note "Séances précédentes"
+    - [TD09](./TD09/TD09/) : SQL, régression, simulations
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
     - [TD07](./TD07/TD07/) : SQL, simulations et dichotomie
     - [TD06](./TD06/TD06/) : lois de probabilités (et la fin du SQL)
