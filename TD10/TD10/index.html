@@ -1619,7 +1619,7 @@
 <li><code>id_joueur</code> : nombre unique identifiant un joueur (type <code>INT</code>)</li>
 <li><code>nom</code> : nom du joueur (type <code>TEXT</code> )</li>
 <li><code>prenom</code>  : prénom du joueur (type <code>TEXT</code> )</li>
-<li><code>équipe</code>  : nom de l'équipe (type <code>TEXT</code> )</li>
+<li><code>equipe</code>  : nom de l'équipe (type <code>TEXT</code> )</li>
 <li><code>points</code> : nombre de points marqués (type <code>INT</code> )</li>
 </ul>
 <p><strong>Q1.</strong> Quelle sera la clé primaire de cette table ?  </p>
@@ -1649,7 +1649,7 @@
 <span class="n">id_joueur</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
 <span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
 <span class="n">prenom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="err">é</span><span class="n">quipe</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="n">equipe</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
 <span class="n">points</span><span class="w"> </span><span class="nb">INTEGER</span>
 <span class="p">);</span>
 </code></pre></div>
@@ -1791,6 +1791,14 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     load(ide, 'https:/glassus.github.io/ect2/CoursSQL/data/parc.db', '', '', parc);
 }).catch(() => {});
 </script>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">prenom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AB123NB&#39;</span><span class="w">    </span>
+</code></pre></div>
+</details>
 </div>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
@@ -2067,7 +2075,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 mars 2025 13:21:16">21 mars 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 mars 2025 13:48:34">21 mars 2025</span>
   </span>
 
     
