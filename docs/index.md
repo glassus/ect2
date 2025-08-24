@@ -6,21 +6,13 @@ test: ok
 
 !!! note ":star: Séance en cours :star:"
  
-    - :arrow_right: [TD10](./TD10/TD10/) : retour du SQL, régression, simulations, suite et fin
+    - :arrow_right: [TD01](./TD01/TD01/) : révision des structures élémentaires
 
 
 
 
 !!! note "Séances précédentes"
-    - [TD09](./TD09/TD09/) : SQL, régression, simulations
-    - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
-    - [TD07](./TD07/TD07/) : SQL, simulations et dichotomie
-    - [TD06](./TD06/TD06/) : lois de probabilités (et la fin du SQL)
-    - [TD05](./TD05/TD05/) : SQL 2ème partie, modifications et jointures
-    - [TD04](./TD04/TD04/) : découverte du langage SQL
-    - [TD03](./TD03/TD03/) : suites et simulations
-    - [TD02](./TD02/TD02/) : premières simulations
-    - [TD01](./TD01/TD01/) : révision des structures élémentaires
+    
 
 
 {#
