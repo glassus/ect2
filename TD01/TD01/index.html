@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -877,33 +877,11 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
 </code></pre></div>
 Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</code> et de <code>b</code>. </p>
-<details class="success">
-<summary>Correction</summary>
-<ol>
-<li>Méthode universelle, avec une variable temporaire :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
-</code></pre></div></li>
-<li>Méthode rapide (spécifique à Python) :
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-</code></pre></div></li>
-</ol>
-<p><a class="" href="https://glassus.github.io/premiere_nsi/T1_Demarrer_en_Python/1.1_Variables/cours/" target="_blank">En savoir plus sur les variables</a>        </p>
-</details>
 </div>
 <h2 id="2-boucles-bornees-boucles-for">2. Boucles bornées : boucles <code class="highlight"><span class="k">for</span></code><a class="headerlink" href="#2-boucles-bornees-boucles-for" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
 <p>Écrire un code affichant 13 fois le mot <code>"bonjour"</code> (sans copier-coller, évidemment...) .</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bonjour&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p><a class="" href="https://glassus.github.io/premiere_nsi/T1_Demarrer_en_Python/1.2_Boucle_for/cours/" target="_blank">En savoir plus sur la boucle <code class="highlight"><span class="k">for</span></code></a></p>
-</details>
 </div>
 <h2 id="3-boucles-non-bornees-boucles-while">3. Boucles non bornées : boucles <code class="highlight"><span class="k">while</span></code><a class="headerlink" href="#3-boucles-non-bornees-boucles-while" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
@@ -926,34 +904,11 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
 <li>ou <code class="highlight"><span class="n">somme</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">k</span></code>  </li>
 </ol>
 <p>Expliquer la signification de la valeur affichée. Vous pouvez détailler le fonctionnement de ce code grâce à <a class="" href="https://pythontutor.com/render.html#code=somme%20%3D%200%0Ak%20%3D%200%0Awhile%20somme%20%3C%203%3A%0A%20%20%20%20k%20%3D%20k%20%2B%201%0A%20%20%20%20somme%20%3D%20somme%20%2B%201/k%0Aprint%28k%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank">PythonTutor</a></p>
-<details class="success">
-<summary>Correction</summary>
-<p>11 est la plus petite valeur de <span class="arithmatex">\(k\)</span> pour laquelle la somme <span class="arithmatex">\(1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{k}\)</span> devient supérieure ou égale à 3.</p>
-<p><a class="" href="" target="_blank">En savoir plus la boucle <code class="highlight"><span class="k">while</span></code> </a>        </p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
 <p>Un capital de 10 000 € est placé au taux annuel de 4 %. </p>
 <p>Écrire le code permettant d'afficher au bout de combien d'années le capital va dépasser 14 000 €.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">capital</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">annee</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">capital</span> <span class="o">&lt;</span> <span class="mi">14000</span><span class="p">:</span>
-    <span class="n">annee</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">capital</span> <span class="o">=</span> <span class="n">capital</span> <span class="o">*</span> <span class="mf">1.04</span> <span class="c1">#(1)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">annee</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<ol>
-<li>ou <code class="highlight"><span class="n">capital</span> <span class="o">*=</span> <span class="mf">1.04</span></code>         </li>
-</ol>
-</details>
 </div>
 <h2 id="4-fonctions-tests">4. Fonctions / tests<a class="headerlink" href="#4-fonctions-tests" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
@@ -969,11 +924,6 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<p>C'est la fonction mathématique <em>valeur absolue</em>.</p>
-<p><a class="" href="https://glassus.github.io/premiere_nsi/T1_Demarrer_en_Python/1.5_Fonctions/cours/" target="_blank">En savoir plus sur les fonctions</a>        </p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  6</p>
@@ -982,37 +932,11 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">maximum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 <span class="mi">7</span>
 </code></pre></div></p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">maximum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">a</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">b</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <h2 id="5-librairie-numpy">5. Librairie <code class="highlight"><span class="n">numpy</span></code><a class="headerlink" href="#5-librairie-numpy" title="Permanent link">⚓︎</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Exercice  7</p>
 <p>Afficher une suite de 50 nombres (pseudo-)aléatoires dans l'intervalle <span class="arithmatex">\([0;1[\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  8</p>
@@ -1033,10 +957,6 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
 
     <span class="k">return</span> <span class="n">c</span><span class="o">/</span><span class="n">n</span>
 </code></pre></div></p>
-<details class="success">
-<summary>Correction</summary>
-<p>Pour une valeur <code>val</code> rentrée en paramètre, il renvoie la fréquence d'apparition de <code>val</code> lors de 100 lancers de 2 dés puis d'ajout de leur valeur. </p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  9</p>
@@ -1079,7 +999,7 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 septembre 2025 13:52:42 UTC">12 septembre 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 septembre 2025 06:24:03 UTC">19 septembre 2025</span>
   </span>
 
     
@@ -1130,7 +1050,7 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
     
     
     <a href="mailto:gilles.lassus@ac-bordeaux.fr" target="_blank" rel="noopener" title="Écrire à l&#39;auteur" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
     </a>
   
 </div>
@@ -1150,7 +1070,7 @@ Proposer une suite d'instructions qui <em>échange</em> les valeurs de <code>a</
       <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "toc.integrate", "header.autohide", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../../scripts/mathjax.js"></script>
       
