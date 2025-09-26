@@ -12,7 +12,7 @@ test: ok
 
 
 !!! note "Séances précédentes"
-- [TD01](./TD01/TD01/) : révision des structures élémentaires
+    - [TD01](./TD01/TD01/) : révision des structures élémentaires
     
 
 
