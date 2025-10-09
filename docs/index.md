@@ -6,12 +6,13 @@ test: ok
 
 !!! note ":star: Séance en cours :star:"
  
-    - :arrow_right: [TD02](./TD02/TD02/) : premières simulations
+    - :arrow_right: [TD03](./TD03/TD03/) : suites et simulations
 
 
 
 
 !!! note "Séances précédentes"
+    - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
     
 
