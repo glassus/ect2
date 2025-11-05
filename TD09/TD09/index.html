@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -345,6 +345,26 @@
   
   
   TD03
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TD04/TD04/" class="md-tabs__link">
+          
+  
+  
+  TD04
 
         </a>
       </li>
@@ -939,6 +959,79 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TD04
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            TD04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD04/TD04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TD04 : Découverte du langage SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -956,6 +1049,7 @@
 
 
 
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
 <script src="https://glassus.github.io/ect2//js/sqlite_ide.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
@@ -1015,8 +1109,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide1").then(() => {
     const ide = document.querySelector("div#ide1");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <details class="success">
 <summary>Correction</summary>
@@ -1039,8 +1133,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide2").then(() => {
     const ide = document.querySelector("div#ide2");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <details class="success">
 <summary>Correction</summary>
@@ -1063,8 +1157,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide3").then(() => {
     const ide = document.querySelector("div#ide3");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <details class="success">
 <summary>Correction</summary>
@@ -1093,8 +1187,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide4").then(() => {
     const ide = document.querySelector("div#ide4");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <p>Pour vérifier si la table a bien été modifiée :</p>
 <div id="ide5" >
@@ -1108,8 +1202,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide5").then(() => {
     const ide = document.querySelector("div#ide5");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <details class="success">
 <summary>Correction</summary>
@@ -1132,8 +1226,8 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
 <script>
   onElementLoaded("div#ide6").then(() => {
     const ide = document.querySelector("div#ide6");
-    load(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
-}).catch(() => {});
+    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
+}).catch(console.error);
 </script>
 <details class="success">
 <summary>Correction</summary>
