@@ -214,6 +214,7 @@ Le mot-clé WHERE doit être suivi d'un booléen. Les opérateurs classiques ```
 **Remarque**  
 L'alias ```AS``` sera souvent utilisé pour raccourcir un nom, notamment lors des jointures de plusieurs tables (voir plus loin).
 
+{#
 ### 1.2. Opérations sur les données : sélection avec agrégation *(non exigible)*
 
 Les requêtes effectuées jusqu'ici ont juste sélectionné des données grâce à différents filtres : aucune action à partir de ces données n'a été effectuée.  
@@ -338,8 +339,9 @@ Nous allons maintenant effectuer des opérations à partir des données sélecti
     - **Résultat :**   
 
     ![](data/ex12.png)
+#}
 
-## 1.3 Des recherches croisées sur les tables : les jointures
+## 1.2 Des recherches croisées sur les tables : les jointures
 
 Observons le contenu de la table «emprunt» :
 
@@ -355,7 +357,7 @@ Souvenons-nous du diagramme de la base de données.
 
  Pour que la table «emprunt» soit lisible, il faudrait (dans un premier temps) que l'on affiche à la place de l'ISBN le titre de l'ouvrage. Or ce titre est disponible dans la table «livres».  On va donc procéder à une **jointure** de ces deux tables.
 
-#### 1.3.1 Exemple 13 
+#### 1.2.1 Exemple 7 
 
 !!! note "Jointure de 2 tables : INNER JOIN :heart:"
     - **Commande :** 
@@ -383,7 +385,7 @@ Il est donc très important de spécifier ce sur quoi les deux tables vont se re
 
 ![](data/ex13.png)
 
-#### 1.3.2 Exemple 14 
+#### 1.2.2 Exemple 8 
 
 
 Le résultat précédent a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure, en invitant maintenant les deux tables «livre» et «usager».
@@ -418,7 +420,7 @@ L'objectif est de créer la table suivante :
 Pour cela vous pouvez travailler sur [cette page](http://127.0.0.1:8000/ect2/CoursSQL/sqlenligne/#2-votre-propre-base-de-donnees){. target="_blank"}.
 
 
-#### 2.1 Exemple 15 
+#### 2.1 Exemple 9 
 
 
 !!! note "Création d'une table : CREATE TABLE :heart:"
@@ -439,7 +441,7 @@ Pour cela vous pouvez travailler sur [cette page](http://127.0.0.1:8000/ect2/Cou
     
 
 
-#### 2.2 Exemple 16 
+#### 2.2 Exemple 10 
 
 !!! note "Insertion de valeurs : INSERT INTO, VALUES :heart:"
     - **Commande :** 
@@ -454,7 +456,7 @@ Pour cela vous pouvez travailler sur [cette page](http://127.0.0.1:8000/ect2/Cou
 
     ![](data/ex16.png)
 
-#### 2.3 Exemple 17 : Intérêt de la clé primaire
+#### 2.3 Exemple 11 : Intérêt de la clé primaire
 Essayons d'insérer un 4ème enregistrement ayant le même ```id``` qu'un autre élève. 
 
 - **Commande :** 
@@ -492,7 +494,7 @@ et le résultat serait :
 L'attribut ```id``` est donc géré automatiquement par le SGBD.
 
 
-#### 2.4 Exemple 18 
+#### 2.4 Exemple 12 
 
 !!! note "Modification d'une valeur UPDATE, SET :heart:"
     Pour modifier la note de Maths d'Alice :
@@ -504,7 +506,7 @@ L'attribut ```id``` est donc géré automatiquement par le SGBD.
     WHERE Nom = 'Alice';
     ``` 
 
-#### 2.5 Exemple 19 
+#### 2.5 Exemple 13 
 
 !!! note "Suppression d'un enregistrement : DELETE :heart:"
     Pour supprimer totalement la ligne concernant Charles :
@@ -518,7 +520,7 @@ L'attribut ```id``` est donc géré automatiquement par le SGBD.
 Si une autre table contient par exemple l'attribut ```id```  comme clé étrangère, et si l'```id```  de Charles fait partie de cette table, le SGBD refusera de supprimer cette ligne, afin de ne pas violer la contrainte de référence.
 
 
-#### 2.6 Exemple 20 
+#### 2.6 Exemple 14 
 
 !!! note "Suppression totale d'une table : DROP TABLE :heart:"
     Pour supprimer totalement et défitivement la table :
