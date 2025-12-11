@@ -6,11 +6,12 @@ test: ok
 
 !!! note ":star: Séance en cours :star:"
  
-    - :arrow_right: [TD05](./TD05/TD05/) : SQL 2ème partie, modifications et jointures
+    - :arrow_right: [TD06](./TD06/TD06/) : Fin du SQL et lois de probabilités
 
 
 
 !!! note "Séances précédentes"
+    - [TD05](./TD05/TD05/) : SQL 2ème partie, modifications et jointures
     - [TD04](./TD04/TD04/) : découverte du langage SQL
     - [TD03](./TD03/TD03/) : suites et simulations
     - [TD02](./TD02/TD02/) : premières simulations
