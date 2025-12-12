@@ -1653,9 +1653,9 @@
 </div>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
 <div class="admonition note">
-<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
 Ceci nécessite systématiquement la présence des deux lignes suivantes au début de chaque script :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1664,20 +1664,20 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 </code></pre></div></td></tr></table></div></p>
 <ul>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
 <ul>
 <li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1[\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
 <li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
 </ul>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
 </li>
 </ul>
-<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
+<p><img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /> Comment renvoyer un <strong>vecteur</strong> plutôt qu'une seule valeur unique ? Il suffit de rajouter le nombre de simulations désirées comme dernier paramètre dans la parenthèse.</p>
 <p><strong>Exemple :</strong><br />
 Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera :
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1688,7 +1688,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="mi">1</span>
 </code></pre></div>
-<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
+<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
@@ -1727,6 +1727,43 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
+<p>Un gardien est devant une porte fermée : il possède un trousseau de 10 clés dont une seule ouvre la porte. Comme il fait nuit, le gardien essaie les clés au hasard, sans se souvenir quelle clé il vient de tester.</p>
+<p>Soit <span class="arithmatex">\(X\)</span> la variable aléatoire qui compte le nombre d’essais jusqu’à ce que la porte s’ouvre.</p>
+<ol>
+<li>
+<p>Que vaut <span class="arithmatex">\(E(X)\)</span> ?</p>
+</li>
+<li>
+<p>Écrire un code qui simule 100000 ouvertures de porte et retrouver la valeur théorique de <span class="arithmatex">\(E(X)\)</span>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
+
+<span class="c1"># à vous</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  4</p>
+<p><em>d'après ECT2 Mathématiques-Informatique, éditions Ellipses.</em></p>
+<p>Un opérateur d'un centre d'appel doit joindre 100 clients par téléphone. La probabilité qu'il joigne un client donné est <span class="arithmatex">\(\dfrac{1}{8}\)</span>.</p>
+<p>Le matin, il lance une première série de 100 appels.<br />
+L'après-midi, il relance une série d'appels, uniquement vers les clients qu'il n'a pas réussi à joindre le matin.</p>
+<p>Compléter le script ci-dessous, pour qu'il simule cette expérience et affiche le nombre de clients que le vendeur a réussi à contacter à la fin de la journée.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
+
+<span class="c1"># à vous</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  5</p>
 <p><em>d'après BCE ESC 2020</em></p>
 <p>Un mobile se déplace sur les points à coordonnées entières positives d'un axe d'origine <span class="arithmatex">\(O\)</span>.<br />
 Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se déplace selon la règle suivante : s'il est sur le point d'abscisse <span class="arithmatex">\(k-1\)</span> (<span class="arithmatex">\(k \in \mathbb{N}^*\)</span>) à l'instant <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(n \in \mathbb{N}\)</span>), alors, à l'instant <span class="arithmatex">\(n+1\)</span>, il sera sur le point d'abscisse <span class="arithmatex">\(k\)</span> avec la probabilité <span class="arithmatex">\(\frac{k}{k+1}\)</span>, ou sur le point d'abscisse 0 avec la probabilité <span class="arithmatex">\(\frac{1}{k+1}\)</span>.</p>
@@ -1754,7 +1791,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  4</p>
+<p class="admonition-title">Exercice  6</p>
 <p><em>d'après BCE ESC 2020</em></p>
 <p>On effectue une succession de lancers (supposés indépendants) d'une pièce de monnaie équilibrée pour laquelle la probabilité d'obtenir «pile» vaut <span class="arithmatex">\(\frac{1}{2}\)</span> et celle d'obtenir «face» vaut aussi <span class="arithmatex">\(\frac{1}{2}\)</span>.</p>
 <p>On considère aussi la variable aléatoire <span class="arithmatex">\(X\)</span>, égale au rang d'apparition d'un premier «pile», et la variable aléatoire <span class="arithmatex">\(Y\)</span>, égale au rang d'apparition du premier «face».</p>
@@ -1796,7 +1833,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Exercice  5</p>
+<p class="admonition-title">Exercice  7</p>
 <p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1836,7 +1873,7 @@ Au départ, le mobile est à l'origine (point d'abscisse 0). Le mobile se dépla
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 décembre 2025 06:25:43 UTC">11 décembre 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="12 décembre 2025 09:22:07 UTC">12 décembre 2025</span>
   </span>
 
     

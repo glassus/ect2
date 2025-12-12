@@ -1473,7 +1473,7 @@
 <script></script>
 <h1 id="td05-sql-modifications-et-jointures-retour-au-python">TD05 : SQL (modifications et jointures), retour au Python<a class="headerlink" href="#td05-sql-modifications-et-jointures-retour-au-python" title="Permanent link">⚓︎</a></h1>
 <h2 id="1-sql-modifications-et-jointures">1. SQL : Modifications et jointures<a class="headerlink" href="#1-sql-modifications-et-jointures" title="Permanent link">⚓︎</a></h2>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a class="" href="../../CoursSQL/langage_SQL/#13-des-recherches-croisees-sur-les-tables-les-jointures" target="_blank">Cours de SQL</a>, notamment la partie sur les jointures et les modifications de table.</p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> Avant de faire ces exercices, il faut avoir lu le <a class="" href="../../CoursSQL/langage_SQL/#13-des-recherches-croisees-sur-les-tables-les-jointures" target="_blank">Cours de SQL</a>, notamment la partie sur les jointures et les modifications de table.</p>
 <div class="admonition example">
 <p class="admonition-title">Exercice  1</p>
 <p>Gestion d'un réseau d'agences de location de voitures. <br />
@@ -1494,7 +1494,7 @@
     new SqlIde(ide, 'https://glassus.github.io/ect2//TD04/data/locations.db', '', '', );
 }).catch(console.error);
 </script>
-<p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#111-exemple-1" target="_blank">cours sur SELECT FROM WHERE</a>)</p>
+<p><strong>Q1</strong>. Afficher le nom et l'adresse de toutes les agences de la ville de Lorient. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#111-exemple-1" target="_blank">cours sur SELECT FROM WHERE</a>)</p>
 <details class="success">
 <summary>Correction</summary>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="w"> </span>
@@ -1502,7 +1502,7 @@
 <span class="k">WHERE</span><span class="w"> </span><span class="n">ville</span><span class="o">=</span><span class="s1">&#39;Lorient&#39;</span>
 </code></pre></div>
 </details>
-<p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ? (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#121-exemple-7" target="_blank">cours sur INNER JOIN</a>)</p>
+<p><strong>Q2</strong>. Quel est le nom du véhicule qui a été loué le 08 novembre 2020 ? (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#121-exemple-7" target="_blank">cours sur INNER JOIN</a>)</p>
 <details class="success">
 <summary>Correction</summary>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Vehicules</span><span class="p">.</span><span class="n">nom</span>
@@ -1511,7 +1511,7 @@
 <span class="k">WHERE</span><span class="w"> </span><span class="n">Locations</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-11-08&#39;</span>
 </code></pre></div>
 </details>
-<p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#24-exemple-12" target="_blank">cours sur UPDATE</a>)</p>
+<p><strong>Q3</strong>. La voiture immatriculée <code>DF-269-EF</code> n'a pas 5 ans mais 7 ans. Effectuer la correction dans la table <code>Vehicules</code>. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#24-exemple-12" target="_blank">cours sur UPDATE</a>)</p>
 <details class="success">
 <summary>Correction</summary>
 <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Vehicules</span>
@@ -1519,14 +1519,14 @@
 <span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DF-269-EF&#39;</span>
 </code></pre></div>
 </details>
-<p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.(<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-13" target="_blank">cours sur DELETE</a>)</p>
+<p><strong>Q4</strong>. La voiture immatriculée <code>AA-654-BA</code> a été accidentée et doit être supprimée de la location. Effectuer sa suppression dans la table <code>Vehicules</code>.(<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#25-exemple-13" target="_blank">cours sur DELETE</a>)</p>
 <details class="success">
 <summary>Correction</summary>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Vehicules</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AA-654-BA&#39;</span>
 </code></pre></div>
 </details>
-<p><strong>Q5</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#22-exemple-10" target="_blank">cours sur INSERT INTO</a>)</p>
+<p><strong>Q5</strong>. Pour la remplacer, l'agence achète un Renault Captur de 17203 km, agé de 1 an, immatriculé DB-458-EK. Enregistrer cet achat dans la table Vehicules. (<img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="../../CoursSQL/langage_SQL/#22-exemple-10" target="_blank">cours sur INSERT INTO</a>)</p>
 <details class="success">
 <summary>Correction</summary>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Vehicules</span>
@@ -1535,7 +1535,7 @@
 </details>
 </div>
 <details class="example">
-<summary>Exercice  2 : <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" />  SQL Murder Mystery  <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2b50.svg" title=":star:" /></summary>
+<summary>Exercice  2 : <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" />  SQL Murder Mystery  <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /> <img alt="⭐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2b50.svg" title=":star:" /></summary>
 <p>Cet exercice en ligne (que vous pouvez retrouver <a href="https://mystery.knightlab.com/walkthrough.html" target="_blank">ici</a>, mais on peut le faire en restant sur cette page) est proposé le Knight Lab de l'université américaine Northwerstern University.</p>
 <p><img alt="" class="center" src="../data/murdermystery.png" width="50%" /></p>
 <p><strong>Le point de départ de l'histoire</strong> : un meurtre a été commis <strong>dans la ville de SQL City le 15 janvier 2018.</strong></p>
@@ -1625,9 +1625,9 @@ utilisé dans la table vehicules.  </li>
 </ul>
 </div>
 <h2 id="2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique">2. Retour au Python : lois de probabilités (uniforme, binomiale, géométrique)<a class="headerlink" href="#2-retour-au-python-lois-de-probabilites-uniforme-binomiale-geometrique" title="Permanent link">⚓︎</a></h2>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
 <div class="admonition note">
-<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Rappel : on utilise les simulateurs de lois du module <code>random</code> de la bibliothèque <code>numpy</code>.<br />
 Ceci nécessite systématiquement la présence des deux lignes suivantes au début de chaque script :
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1636,17 +1636,17 @@ Ceci nécessite systématiquement la présence des deux lignes suivantes au déb
 </code></pre></div></td></tr></table></div></p>
 <ul>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi uniforme</strong> : </p>
 <ul>
 <li><code>rd.random()</code> renvoie un réel dans <span class="arithmatex">\([0;1[\)</span> qui suit une loi uniforme (chaque réel a la même probabilité d'apparition)</li>
 <li><code>rd.randint(a,b)</code> renvoie un entier dans <span class="arithmatex">\([a;b[\)</span> qui suit une loi uniforme (chaque entier a la même probabilité d'apparition). Attention, la valeur <span class="arithmatex">\(b\)</span> n'est pas prise. Ce qui signifie que pour un tirage aléatoire uniforme de 0 et de 1, il faut utiliser l'expression <code>rd.randint(0,2)</code>.</li>
 </ul>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi binomiale</strong> : <code>rd.binomial(n,p)</code> renvoie un entier qui suit une loi binomiale de paramètre <span class="arithmatex">\((n,p)\)</span>. (<span class="arithmatex">\(n\)</span> répétitions d'une épreuve de Bernoulli de paramètre <span class="arithmatex">\(p\)</span>)</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <strong>loi géométrique</strong> : <code>rd.geometric(p)</code> renvoie un entier qui suit une loi géométrique de paramètre <span class="arithmatex">\(p\)</span> (nombre d'expériences de Bernoulli de paramètre <span class="arithmatex">\(p\)</span> avant l'apparition du premier succès)</p>
 </li>
 </ul>
 </div>

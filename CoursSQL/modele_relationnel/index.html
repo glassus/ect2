@@ -1498,7 +1498,7 @@ le modèle relationnel est à ce jour le modèle de base de données le plus uti
 <p>Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 <img alt="" src="../data/rel_livres.png" /></p>
 <div class="admonition aide">
-<p class="admonition-title">Vocabulaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Vocabulaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
 <ul>
 <li><strong>relation</strong>, ou <strong>table</strong> : c'est l'endroit où sont rangées les données. L'ordre des lignes (que l'on appelera des enregistrements) n'a pas d'importance.</li>
 <li><strong>enregistrement</strong>, ou <strong>tuple</strong>, ou <strong>n-uplet</strong>, ou <strong>t-uplet</strong>, ou <strong>vecteur</strong> : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour». 
@@ -1508,14 +1508,14 @@ Le nombre d'enregistrements d'une relation s'appelle son <strong>cardinal</stron
 <li><strong>domaine</strong> : le domaine désigne «le type» (au sens type <code>Int</code>, <code>Float</code>, <code>String</code>).    <br />
 L'attribut «Éditeur» est une chaîne de caractères, son domaine est donc <code>String</code>.<br />
 Par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. Son domaine est donc <code>Int</code>.</li>
-<li><strong>schéma</strong> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif.<br />
+<li><strong>schéma</strong> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif.<br />
 Ici notre schéma serait :<br />
 <code>((Code, Entier), (Titre, Chaîne de caractères), (Auteur, Chaîne de caractères), (Éditeur, Chaîne de caractères), (ISBN, Entier))</code> </li>
 </ul>
 </div>
 <h2 id="2-cle-primaire">2. Clé Primaire<a class="headerlink" href="#2-cle-primaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Clé primaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Clé primaire <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Une clé primaire (<strong>PRIMARY KEY</strong>) est un attribut (ou une réunion d'attributs) <strong>dont la connaissance suffit à identifier avec certitude un unique enregistrement</strong>.</p>
 </div>
 <p>Par exemple, la clé primaire de la relation des personnes nées en France pourrait être leur <a href="https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France" target="_blank">numéro de Sécurité Sociale</a>.</p>
@@ -1588,7 +1588,7 @@ Ici notre schéma serait :<br />
 <p>Y-a-t-il une clé primaire dans la relation «Emprunts» ? </p>
 <p><code>id_emprunteur</code> est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une <strong>clé étrangère</strong>. </p>
 <div class="admonition note">
-<p class="admonition-title">Clé étrangère <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /></p>
+<p class="admonition-title">Clé étrangère <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
 <p>Une clé étrangère (<strong>FOREIGN KEY</strong>) est une clé primaire d'une autre relation.</p>
 </div>
 <p><code>code</code> est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation «Emprunts», car un même livre pourra être pris à différentes dates.</p>
