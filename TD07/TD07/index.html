@@ -14,8 +14,6 @@
         <link rel="prev" href="../../TD06/TD06/">
       
       
-        <link rel="next" href="../../TD08/TD08/">
-      
       
         
       
@@ -407,6 +405,28 @@
   
   
   TD06
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  TD07
 
         </a>
       </li>
@@ -1371,6 +1391,106 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD07
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TD07
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD07 : SQL, simulations et dichotomie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1396,94 +1516,65 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
 <link rel="stylesheet" href="https://glassus.github.io/ect2//css/sqlite_ide.css">
 <script>sqljs_base_path="https://glassus.github.io/ect2/"</script>
-<script>var cinema = new Worker(sqljs_base_path + "/js/worker.sql-wasm.js");</script>
+
 <h1 id="td07-sql-simulations-et-dichotomie">TD07 : SQL, simulations et dichotomie<a class="headerlink" href="#td07-sql-simulations-et-dichotomie" title="Permanent link">⚓︎</a></h1>
 <div class="admonition example">
 <p class="admonition-title">Exercice  1</p>
-<p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
-<p>On étudie une base de données sur le cinéma, qui possède deux tables, <code>movies</code> et <code>actors</code>.</p>
-<p><img alt="image" class="center" src="../data/cap_cinema.png" width="80%" /></p>
+<p><em>Extrait du sujet ESCP 2025</em></p>
+<p>Un zoo dispose d'une base de données composée de deux tables pour suivre l'évolution des différentes
+espèces d'animaux placés dans des enclos. Chaque espèce est séparée en deux catégories : les enfants et les
+adultes.</p>
+<p>Dans un enclos on trouve une seule catégorie d'une seule espèce d'animal. La base de données a le schéma
+suivant :</p>
 <ul>
-<li>la table <code>movies</code> possède un attribut <code>id</code> qui est sa clé primaire.</li>
-<li>la table <code>actors</code> possède un attribut <code>id</code> qui est sa clé primaire. Elle possède aussi un attribut <code>movie_id</code>, qui fait référence à l'attribut <code>id</code> de la table <code>movies</code>. <code>movie_id</code> est donc une clé étrangère.     </li>
+<li>
+<p><code>ANIMAUX(Enclos, Espèce, Catégorie, Effectif, Quantité)</code>  où</p>
+<ul>
+<li><code>Enclos</code> : numéro de l'enclos (type entier) ;  </li>
+<li><code>Espèce</code> : espèce de l'animal (type chaîne) ;</li>
+<li><code>Catégorie</code> : adulte ou enfant (type chaîne) ;</li>
+<li><code>Effectif</code> : nombre d'animaux (type entier) ;</li>
+<li><code>Quantité</code> : quantité de nourriture à donner en kilogramme (type entier) ;</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Question 1</p>
-<p>Afficher le titre et le nom du réalisateur de tous les films sortis en 2002.</p>
-<div id="ide1" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide1").then(() => {
-    const ide = document.querySelector("div#ide1");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
+</li>
+<li>
+<p><code>ALIMENTATION(Espèce, Type, Tarif)</code>  où</p>
+<ul>
+<li><code>Espèce</code> : espèce de l'animal (clé étrangère vers la table <code>ANIMAUX</code>)(type chaîne) ;</li>
+<li><code>Type</code> : type d'alimentation (type chaîne) ;</li>
+<li><code>Tarif</code> : prix au kilogramme (type entier).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Q1.</strong> Quelle clé primaire peut être choisie pour la table <code>ANIMAUX</code>? Justifer votre réponse.</p>
 <details class="success">
 <summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">director</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2002</span>
-</code></pre></div>
+<p>L'attribut <code>Enclos</code> peut être choisi comme clé primaire de la table <code>ANIMAUX</code> car il est dit dans l'énoncé que dans chaque enclos on trouve une seule catégorie d'une seule espèce d'animal.</p>
 </details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 2</p>
-<p>Afficher le titre et l'année de tous les films réalisés par Steven Spielberg, et dont le <code>metacritic_score</code> est strictement supérieur à 80.</p>
-<div id="ide2" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide2").then(() => {
-    const ide = document.querySelector("div#ide2");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
+<p><strong>Q2.</strong> Écrire une requête SQL qui renvoie la liste des types d'alimentation à utiliser dans le zoo.</p>
 <details class="success">
 <summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="k">year</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Steven Spielberg&#39;</span>
-<span class="k">AND</span><span class="w">  </span><span class="n">metacritic_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">80</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">Type</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ALIMENTATION</span>
 </code></pre></div>
 </details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 3</p>
-<p>Afficher le nom de tous les films dans lequel joue l'acteur Henry Fonda.</p>
-<div id="ide3" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide3").then(() => {
-    const ide = document.querySelector("div#ide3");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
+<p><strong>Q3.</strong> Écrire une requête SQL donnant la liste des espèces d'animaux dont le nombre d'adultes est supérieur ou égal à 6.</p>
 <details class="success">
 <summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Henry Fonda&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Espèce</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ANIMAUX</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Catégorie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;adulte&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Effectif</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">6</span>
 </code></pre></div>
 </details>
-</div>
+<p><strong>Q4.</strong> Écrire une requête SQL donnant la liste de l' espèce et de l' effectif des animaux dont le prix au kilogramme d'alimentation est inférieur strictement à 15.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Espèce</span><span class="p">,</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Effectif</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ANIMAUX</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ALIMENTATION</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ALIMENTATION</span><span class="p">.</span><span class="n">Espèce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Espèce</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ALIMENATION</span><span class="p">.</span><span class="n">Tarif</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
+</code></pre></div>
+</details>
 </div>
 <div class="admonition note">
 <p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1851,7 +1942,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 janvier 2025 14:54:58 UTC">24 janvier 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 janvier 2026 09:28:45 UTC">13 janvier 2026</span>
   </span>
 
     
