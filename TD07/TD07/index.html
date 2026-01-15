@@ -1547,34 +1547,9 @@ suivant :</p>
 </li>
 </ul>
 <p><strong>Q1.</strong> Quelle clé primaire peut être choisie pour la table <code>ANIMAUX</code>? Justifer votre réponse.</p>
-<details class="success">
-<summary>Correction</summary>
-<p>L'attribut <code>Enclos</code> peut être choisi comme clé primaire de la table <code>ANIMAUX</code> car il est dit dans l'énoncé que dans chaque enclos on trouve une seule catégorie d'une seule espèce d'animal.</p>
-</details>
 <p><strong>Q2.</strong> Écrire une requête SQL qui renvoie la liste des types d'alimentation à utiliser dans le zoo.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">Type</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ALIMENTATION</span>
-</code></pre></div>
-</details>
 <p><strong>Q3.</strong> Écrire une requête SQL donnant la liste des espèces d'animaux dont le nombre d'adultes est supérieur ou égal à 6.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Espèce</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ANIMAUX</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">Catégorie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;adulte&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Effectif</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">6</span>
-</code></pre></div>
-</details>
-<p><strong>Q4.</strong> Écrire une requête SQL donnant la liste de l' espèce et de l' effectif des animaux dont le prix au kilogramme d'alimentation est inférieur strictement à 15.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Espèce</span><span class="p">,</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Effectif</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ANIMAUX</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ALIMENTATION</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ALIMENTATION</span><span class="p">.</span><span class="n">Espèce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ANIMAUX</span><span class="p">.</span><span class="n">Espèce</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ALIMENATION</span><span class="p">.</span><span class="n">Tarif</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span>
-</code></pre></div>
-</details>
+<p><strong>Q4.</strong> Écrire une requête SQL donnant la liste de l'espèce et de l'effectif des animaux dont le prix au kilogramme d'alimentation est inférieur strictement à 15.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> Syntaxe des lois usuelles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1651,31 +1626,6 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
     <span class="k">return</span> <span class="n">T</span>
 </code></pre></div></td></tr></table></div>
 <strong>Q1.</strong> Compléter le code de la fonction <code>simul</code> pour qu'elle construise un vecteur <code>T</code> contenant 10000 réalisations de la variable aléatoire <span class="arithmatex">\(T\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">simul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-    <span class="n">Y</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="n">X</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-<span class="hll">        <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
-</span><span class="hll">            <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-</span>    <span class="k">return</span> <span class="n">T</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p>Dans toute la suite de l'exercice, on suppose <span class="arithmatex">\(a=b=\frac{1}{2}\)</span>, et on suppose que la variable aléatoire <span class="arithmatex">\(Z\)</span> suit une loi exponentielle, de paramètre 1, la variable aléatoire <span class="arithmatex">\(Z\)</span> étant indépendante de <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span>.</p>
 <p>On s'intéresse à <span class="arithmatex">\(V=T+Z\)</span> qui représente le temps total passé par le client <span class="arithmatex">\(C\)</span> dans la poste, attente et service compris.</p>
 <p>On s'intéresse à la fonction Python suivante :</p>
@@ -1703,10 +1653,6 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
 0.4188
 </code></pre></div>
 <p><strong>Q2.</strong> Que retourne la fonction <code>simul2</code> ? On pourra utiliser la définition de la variable aléatoire <span class="arithmatex">\(V\)</span>.  </p>
-<details class="success">
-<summary>Correction</summary>
-<p>La fonction <code>simul2</code> retourne la fréquence avec laquelle la variable aléatoire <span class="arithmatex">\(V\)</span> prend des valeurs supérieures à 2. Sur une simulation de très grande taille, cette fréquence va donc se rapprocher de la valeur <span class="arithmatex">\(P(V&gt;2)\)</span>.        </p>
-</details>
 <p>On admet que <span class="arithmatex">\(V\)</span> est encore une variable aléatoire à densité, admettant pour densité la fonction <span class="arithmatex">\(g\)</span> définie par  :</p>
 <div class="arithmatex">\[
 \forall x \in \mathbb{R}, \quad g(x)=
@@ -1719,28 +1665,9 @@ x e^{-x} \quad \text{   si } x \geqslant 0
 \]</div>
 <p><strong>Q3.</strong> À l'aide d'une intégration par parties, montrer que pour tout réel <span class="arithmatex">\(A&gt;0\)</span> :</p>
 <div class="arithmatex">\[ \int_0^A g(x)dx = 1-e^{-A}-Ae^{-A}\]</div>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(\int_0^A g(x)dx = \big[ -x e^{-x} \big]_0^A - \int_0^A -e^{-x}dx=-Ae^{-A}-\big[e^{-x} \big]_0^A=-Ae^{-A}-e^{-A}+1=1-e^{-A}-Ae^{-A}\)</span></p>
-</details>
 <p><strong>Q4.</strong> Vérifier que <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(\int_{-\infty}^{+\infty} g(x)dx = \int_{0}^{+\infty} g(x)dx = \lim\limits_{A \to + \infty} \int_0^A g(x)dx = \lim\limits_{A \to + \infty} 1-e^{-A}-Ae^{-A}=1\)</span></p>
-<p>De plus, <span class="arithmatex">\(g\)</span> est bien positive et continue (elle est continue en 0).</p>
-<p>Donc <span class="arithmatex">\(g\)</span> est bien une densité de probabilité.</p>
-</details>
 <p><strong>Q5.</strong> Calculer <span class="arithmatex">\(P(V \leqslant 2)\)</span>. En déduire la valeur de <span class="arithmatex">\(P(V&gt;2)\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(P(V \leqslant 2)=\int_{-\infty}^{2} g(x)dx=\int_{0}^{2} g(x)dx=1-e^{-2}-2e^{-2}\)</span>.<br />
-Donc <span class="arithmatex">\(P(V&gt;2)=1-P(V \leqslant 2)=e^{-2}+2e^{-2}=3e^{-2} \approx 0,406\)</span></p>
-</details>
 <p><strong>Q6.</strong> Ce résultat est-il cohérent avec les résultats Python de la question 2. ?</p>
-<details class="success">
-<summary>Correction</summary>
-<p>La valeur théorique de <span class="arithmatex">\(P(V&gt;2)\)</span> est conforme aux valeurs empiriques trouvées par simulation à la question 1 et 2.</p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
@@ -1776,44 +1703,7 @@ Donc <span class="arithmatex">\(P(V&gt;2)=1-P(V \leqslant 2)=e^{-2}+2e^{-2}=3e^{
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> Montrer que l'équation <span class="arithmatex">\(f(x) = 0\)</span> admet une solution unique <span class="arithmatex">\(\alpha\)</span> sur l'intervalle <span class="arithmatex">\([0,2]\)</span>.</p>
-<details class="success">
-<summary>Correction</summary>
-<p><span class="arithmatex">\(f'(x) = 3x^2 + 2\)</span></p>
-<p><span class="arithmatex">\(f'\)</span> est strictement positive, donc <span class="arithmatex">\(f\)</span> est strictement croissante sur <span class="arithmatex">\(\mathbb{R}\)</span>.
-Comme <span class="arithmatex">\(f(0) = -4\)</span> et <span class="arithmatex">\(f(2) = 6\)</span>, l'équation <span class="arithmatex">\(f(x) = 0\)</span> admet une solution unique sur <span class="arithmatex">\([0,2]\)</span>.</p>
-</details>
 <p><strong>Q3.</strong> Compléter le code ci-dessous pour qu'il affiche, avec une précision de <span class="arithmatex">\(10^{-3}\)</span>, la valeur de <span class="arithmatex">\(\alpha\)</span>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1839,33 +1729,6 @@ Comme <span class="arithmatex">\(f(0) = -4\)</span> et <span class="arithmatex">
         <span class="o">...</span> <span class="o">=</span> <span class="o">...</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">while</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
@@ -1942,7 +1805,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 janvier 2026 09:28:45 UTC">13 janvier 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="15 janvier 2026 08:21:50 UTC">15 janvier 2026</span>
   </span>
 
     
