@@ -1651,6 +1651,31 @@ On fixe <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)<
     <span class="k">return</span> <span class="n">T</span>
 </code></pre></div></td></tr></table></div>
 <strong>Q1.</strong> Compléter le code de la fonction <code>simul</code> pour qu'elle construise un vecteur <code>T</code> contenant 10000 réalisations de la variable aléatoire <span class="arithmatex">\(T\)</span>.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+<span class="hll">        <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+</span><span class="hll">            <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span>    <span class="k">return</span> <span class="n">T</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <p>Dans toute la suite de l'exercice, on suppose <span class="arithmatex">\(a=b=\frac{1}{2}\)</span>, et on suppose que la variable aléatoire <span class="arithmatex">\(Z\)</span> suit une loi exponentielle, de paramètre 1, la variable aléatoire <span class="arithmatex">\(Z\)</span> étant indépendante de <span class="arithmatex">\(X\)</span> et <span class="arithmatex">\(Y\)</span>.</p>
 <p>On s'intéresse à <span class="arithmatex">\(V=T+Z\)</span> qui représente le temps total passé par le client <span class="arithmatex">\(C\)</span> dans la poste, attente et service compris.</p>
 <p>On s'intéresse à la fonction Python suivante :</p>
@@ -1830,7 +1855,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 janvier 2026 13:22:27 UTC">23 janvier 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 janvier 2026 13:37:18 UTC">23 janvier 2026</span>
   </span>
 
     
