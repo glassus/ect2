@@ -14,8 +14,6 @@
         <link rel="prev" href="../../TD07/TD07/">
       
       
-        <link rel="next" href="../../TD09/TD09/">
-      
       
         
       
@@ -427,6 +425,28 @@
   
   
   TD07
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  TD08
 
         </a>
       </li>
@@ -1478,6 +1498,165 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD08
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TD08
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD08 : SQL, matrices, régression, simulations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD08 : SQL, matrices, régression, simulations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-regression-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Régression linéaire
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-retour-sur-les-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Retour sur les simulations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1503,150 +1682,55 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
 <link rel="stylesheet" href="https://glassus.github.io/ect2//css/sqlite_ide.css">
 <script>sqljs_base_path="https://glassus.github.io/ect2/"</script>
-<script>var cinema = new Worker(sqljs_base_path + "/js/worker.sql-wasm.js");</script>
+
 <h1 id="td08-sql-matrices-regression-simulations">TD08 : SQL, matrices, régression, simulations<a class="headerlink" href="#td08-sql-matrices-regression-simulations" title="Permanent link">⚓︎</a></h1>
-<h2 id="1-entrainement-sql">1. Entraînement SQL<a class="headerlink" href="#1-entrainement-sql" title="Permanent link">⚓︎</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Exercice  1</p>
 <p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
-<p>On étudie (encore) une base de données sur le cinéma, qui possède deux tables, <code>movies</code> et <code>actors</code>.</p>
-<p><img alt="image" class="center" src="../data/cap_cinema.png" width="80%" /></p>
-<ul>
-<li>la table <code>movies</code> possède un attribut <code>id</code> qui est sa clé primaire.</li>
-<li>la table <code>actors</code> possède un attribut <code>id</code> qui est sa clé primaire. Elle possède aussi un attribut <code>movie_id</code>, qui fait référence à l'attribut <code>id</code> de la table <code>movies</code>. <code>movie_id</code> est donc une clé étrangère.     </li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Question 1</p>
-<p>Afficher le titre et le nom du réalisateur de tous les films <strong>français</strong>.</p>
-<div id="ide1" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide1").then(() => {
-    const ide = document.querySelector("div#ide1");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
+<div class="admonition example">
+<p class="admonition-title">Exercice  1</p>
+<p><em>extrait d'Ecricome 2025</em></p>
+<p>Un voisin du quartier, vétérinaire, se soucie de la santé des chats qui y vivent et tient à jour une base de données
+qui contient deux tables : <code>chats</code> et <code>propriétaires</code>.</p>
+<p><code>chats = (idchat : INTEGER , nomchat : TEXT , race : TEXT , sexe : TEXT , couleur : TEXT , âge : INTEGER , poids : INTEGER , puce : INTEGER )</code> </p>
+<p><code>propriétaires = (idprop : INTEGER , nomprop : TEXT , adresse : TEXT , nomchat : TEXT , pucechat : INTEGER)</code> </p>
+<p><strong>Q1.</strong> Quel est l'effet de la requête :
+        <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nomchat</span><span class="p">,</span><span class="w"> </span><span class="n">puce</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">chats</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;gris&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sexe</span><span class="o">=</span><span class="s1">&#39;F&#39;</span>
+</code></pre></div></p>
 <details class="success">
 <summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">director</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;France&#39;</span>
+<p>Cette requête va renvoyer le nom et le numéro de la puce de tous les chats femelles de couleur grise.</p>
+</details>
+<p><strong>Q2.</strong> Madame Michel a pour identifiant <code>idprop</code> 1234. Son chat très âgé ayant disparu, elle a acquis un nouveau chat nommé "Niels" dont le numéro de puce est 987654321. Écrire une requête permettant de modifier l'enregistrement adéquat dans la table <code>propriétaires</code>.</p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">propriétaires</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">nomchat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Niels&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">pucechat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">987654321</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">idprop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span>
+</code></pre></div>
+</details>
+<p><strong>Q3.</strong> Niels est un chat de race birmane, de couleur blanche, âgé d'un an et de poids 2 kg. Son identifiant dans la table <code>chats</code> est 457 et son numéro de puce est 987654321.
+Écrire la requête permettant d'enregistrer ces informations dans la table <code>chats</code>. </p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">chats</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">457</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Niels&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;birmane&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blanche&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">987654321</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p><strong>Q4.</strong> On souhaite regrouper les informations contenues dans les deux tables.
+Compléter la requête suivante : 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">chats</span><span class="p">.</span><span class="n">nomchat</span><span class="p">,</span><span class="w"> </span><span class="n">race</span><span class="p">,</span><span class="w"> </span><span class="n">puce</span><span class="p">,</span><span class="w"> </span><span class="n">nomprop</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">...</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">puce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">propriétaires</span><span class="p">.</span><span class="n">pucechat</span>
+</code></pre></div></p>
+<details class="success">
+<summary>Correction</summary>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">chats</span><span class="p">.</span><span class="n">nomchat</span><span class="p">,</span><span class="w"> </span><span class="n">race</span><span class="p">,</span><span class="w"> </span><span class="n">puce</span><span class="p">,</span><span class="w"> </span><span class="n">nomprop</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">chats</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">propriétaires</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">chat</span><span class="p">.</span><span class="n">puce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">propriétaires</span><span class="p">.</span><span class="n">pucechat</span>
 </code></pre></div>
 </details>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Question 2</p>
-<p>Le titre du film «Intouchables» de Nakache et Toledano apparaît comme «The Intouchables». Modifier ce titre pour qu'il apparaisse sous le nom «Intouchables».</p>
-<div id="ide2" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide2").then(() => {
-    const ide = document.querySelector("div#ide2");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
-<p>Vérifier si votre modification est correcte :</p>
-<div id="ide3" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide3").then(() => {
-    const ide = document.querySelector("div#ide3");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Intouchables&#39;</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;The Intouchables&#39;</span>
-</code></pre></div>
-</details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 3</p>
-<p>Le réalisateur Carl Theodor Dreyer est un réalisateur Danois qui est manifestement là par erreur. Supprimer totalement de la table <code>movies</code> tous les films de ce réalisateur.</p>
-<div id="ide4" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide4").then(() => {
-    const ide = document.querySelector("div#ide4");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
-<p>Vérifier si votre modification est correcte :</p>
-<div id="ide5" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide5").then(() => {
-    const ide = document.querySelector("div#ide5");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Carl Theodor Dreyer&#39;</span>
-</code></pre></div>
-</details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 4</p>
-<p>Afficher le titre, le réalisateur et l'année de tous les films dans lesquels a joué l'acteur Mathieu Kassovitz depuis l'année 2000.</p>
-<div id="ide6" >
-<label for='sqlcommands'>Votre code SQL :</label>
-<br>
-<textarea id="sqlcommands" class="sqlcommands"></textarea>
-<button id="execute" class="sqlbutton execute">Exécuter</button>
-<div id="error" class="sqlerror"></div>
-<pre id="output" class="sqloutput"></pre>
-</div>
-<script>
-  onElementLoaded("div#ide6").then(() => {
-    const ide = document.querySelector("div#ide6");
-    new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/cinema.db', '', '', cinema);
-}).catch(console.error);
-</script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">director</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="k">year</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Mathieu Kassovitz&#39;</span><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2000</span><span class="w">   </span>
-</code></pre></div>
-</details>
-</div>
-</div>
-<h2 id="2-retour-sur-les-matrices">2. Retour sur les matrices<a class="headerlink" href="#2-retour-sur-les-matrices" title="Permanent link">⚓︎</a></h2>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
 <div class="admonition note">
 <p class="admonition-title"><img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> Syntaxe des opérations matricielles <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1697,7 +1781,7 @@ se saisira par le code suivant :
 <div class="highlight"><pre><span></span><code><span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  2</p>
 <p><em>d'après le sujet 0 n°2 Ecricome 2023</em></p>
 <p>On note
@@ -1889,7 +1973,7 @@ Lorsque <span class="arithmatex">\(\rho\)</span> est en valeur absolue <em>proch
 dans le code précédent. On obtient alors :
 <img alt="image" class="center" src="../data/Figure_9.png" /></p>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  3</p>
 <p><em>d'après Mathématiques Dunod</em></p>
 <p>En 2019, l'ONU prévoyait que la population mondiale attendrait 10 milliards d'habitants en 2050. On se propose de vérifier ce résultat.<br />
@@ -2068,7 +2152,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> Ne pas oublier qu'on commence à indexer à 0, donc le 5ème élément est l'élément d'indice 4...</p>
 </div>
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a> (sous Chrome de préférence)</p>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
 <p>Antoine et Béatrice jouent au Badminton. On suppose que lors de chaque échange, le
 joueur qui a le service emporte le point avec une probabilité <span class="arithmatex">\(\dfrac{2}{3}\)</span> et le perd avec une
@@ -2129,7 +2213,7 @@ pour l’échange suivant.</p>
 </code></pre></div></td></tr></table></div>
 </details>
 </div>
-<div class="admonition abstract">
+<div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
 <p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
@@ -2170,7 +2254,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="14 février 2025 14:06:50 UTC">14 février 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 janvier 2026 15:32:23 UTC">24 janvier 2026</span>
   </span>
 
     
