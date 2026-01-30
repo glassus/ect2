@@ -1893,6 +1893,19 @@ On en déduit que :</p>
  <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span><span class="p">]]</span>
 </code></pre></div></p>
 <p>Que peut-on en conjecturer sur la matrice <span class="arithmatex">\(P\)</span> ? sur la matrice <span class="arithmatex">\(D\)</span> ?</p>
+<details class="success">
+<summary>Correction</summary>
+<ul>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(R\)</span> est une matrice nulle. Comme <span class="arithmatex">\(R=PQ-I\)</span>, cela signifie que <span class="arithmatex">\(PQ=I\)</span> et donc que <span class="arithmatex">\(P\)</span> et <span class="arithmatex">\(Q\)</span> sont deux matrices inverses.  </p>
+</li>
+<li>
+<p>On remarque que la matrice <span class="arithmatex">\(S\)</span> est égale à la matrice <span class="arithmatex">\(D\)</span>. Donc <span class="arithmatex">\(D=QBP=P^{-1}BP\)</span>.<br />
+Or la matrice <span class="arithmatex">\(P\)</span> est formée des trois vecteurs propres <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span> et <span class="arithmatex">\(X_3\)</span> de la matrice <span class="arithmatex">\(B\)</span>, c'est donc sa matrice de passage. Le calcul <span class="arithmatex">\(P^{-1}BP\)</span> va donc donner la matrice diagonale associée à <span class="arithmatex">\(B\)</span>.<br />
+On reconnaît d'ailleurs que <span class="arithmatex">\(D\)</span> est bien formée des 3 valeurs propres trouvées à la question précédente.</p>
+</li>
+</ul>
+</details>
 </div>
 <h2 id="3-regression-lineaire">3. Régression linéaire<a class="headerlink" href="#3-regression-lineaire" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -2254,7 +2267,7 @@ pour l’échange suivant.</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 janvier 2026 15:32:23 UTC">24 janvier 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 janvier 2026 09:55:25 UTC">30 janvier 2026</span>
   </span>
 
     
