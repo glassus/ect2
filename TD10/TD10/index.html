@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../xtra/fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -465,6 +465,28 @@
   
   
   TD09
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  TD10
 
         </a>
       </li>
@@ -1690,6 +1712,176 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD10
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TD10
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD10 : retour du SQL, régression, simulations, suite et fin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TD10 : retour du SQL, régression, simulations, suite et fin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-entrainement-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Entraînement SQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-retour-sur-la-regression-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retour sur la régression linéaire
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-retour-sur-les-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Retour sur les simulations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1721,7 +1913,7 @@
 <p><a class="" href="https://glassus.github.io/ect2/CoursSQL/langage_SQL/" target="_blank">Lien vers le cours de SQL</a></p>
 <div class="admonition example">
 <p class="admonition-title">Exercice  1 : création de table </p>
-<p>On souhaite créer une table <code>tournoi</code> concernant les joueurs de rugby du tournoi des VI nations 2023 et leur nombre de points marqués.</p>
+<p>On souhaite créer une table <code>tournoi</code> concernant les joueurs de rugby du tournoi des VI nations 2026 et leur nombre de points marqués.</p>
 <p>On veut que la table ait la structure suivante :</p>
 <ul>
 <li><code>id_joueur</code> : nombre unique identifiant un joueur (type <code>INT</code>)</li>
@@ -1731,10 +1923,6 @@
 <li><code>points</code> : nombre de points marqués (type <code>INT</code> )</li>
 </ul>
 <p><strong>Q1.</strong> Quelle sera la clé primaire de cette table ?  </p>
-<details class="success">
-<summary>Correction</summary>
-<p>La clé primaire de cette table est <code>id_joueur</code> car c'est un attribut qui identifie de manière unique chaque joueur. </p>
-</details>
 <p><strong>Q2.</strong> Écrire la requête SQL permettant la création de cette table <code>tournoi</code>. </p>
 <div id="ide1" >
 <label for='sqlcommands'>Votre code SQL :</label>
@@ -1750,18 +1938,7 @@
     new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(console.error);
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tournoi</span><span class="w"> </span><span class="p">(</span>
-<span class="n">id_joueur</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="n">prenom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="n">equipe</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="n">points</span><span class="w"> </span><span class="nb">INTEGER</span>
-<span class="p">);</span>
-</code></pre></div>
-</details>
-<p><strong>Q3.</strong> Insérer dans cette table le joueur Finn Russell (Ecosse) qui a marqué 32 points. On lui attribuera un <code>id_joueur</code> égal à 1. </p>
+<p><strong>Q3.</strong> Insérer dans cette table le joueur Thomas Ramos (France) qui a marqué 74 points. On lui attribuera un <code>id_joueur</code> égal à 1. </p>
 <div id="ide2" >
 <label for='sqlcommands'>Votre code SQL :</label>
 <br>
@@ -1791,23 +1968,17 @@
     new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(console.error);
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tournoi</span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Russel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Finn&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ecosse&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span>
-</code></pre></div>
-</details>
 <p><strong>Q4.</strong> Afin de rajouter des joueurs dans cette table, copier-coller le code ci-dessous dans le champ SQL :</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tournoi</span>
 <span class="k">VALUES</span><span class="w"> </span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Damian&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Penaud&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;France&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Tommaso&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Allan&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Italie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ross&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Byrne&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Irlande&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Thomas&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ramos&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;France&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">84</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Jonathan&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Sexton&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Irlande&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Blair&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Kinghorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ecosse&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">26</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Owen&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Farrell&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Angleterre&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">),</span>
-<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Huw&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Jones&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ecosse&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">26</span><span class="p">);</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Russell&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Finn&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ecosse&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">53</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Crowley&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Jack&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Irlande&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">47</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Bielle-Biarrey&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Louis&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;France&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Ford&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;George&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Angleterre&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">27</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Edwards&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Dan&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Pays de Galles&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">27</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Attissogbe&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Théo&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;France&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Garbisi&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Alessandro&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Italie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Arundell&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Henry&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Angleterre&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
 </code></pre></div>
 <div id="ide4" >
 <label for='sqlcommands'>Votre code SQL :</label>
@@ -1838,7 +2009,7 @@
     new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(console.error);
 </script>
-<p>Faire une requête pour afficher uniquement le nom et le prénom des joueurs écossais de cette table.</p>
+<p>Faire une requête pour afficher uniquement le nom et le prénom des joueurs français de cette table.</p>
 <div id="ide6" >
 <label for='sqlcommands'>Votre code SQL :</label>
 <br>
@@ -1853,13 +2024,6 @@
     new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/rugby.db', '', '', rugby);
 }).catch(console.error);
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">tournoi</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">equipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ecosse&#39;</span>
-</code></pre></div>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  2 : une dernière jointure...</p>
@@ -1899,14 +2063,6 @@ Cette base possède deux tables, <code>personnes</code> et <code>voitures</code>
     new SqlIde(ide, 'https://glassus.github.io/ect2//CoursSQL/data/parc.db', '', '', parc);
 }).catch(console.error);
 </script>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">prenom</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">personnes</span>
-<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">voitures</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">personnes</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">proprietaire</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">voitures</span><span class="p">.</span><span class="n">immatriculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AB123NB&#39;</span><span class="w">    </span>
-</code></pre></div>
-</details>
 </div>
 </div>
 <h2 id="2-retour-sur-la-regression-lineaire">2. Retour sur la régression linéaire<a class="headerlink" href="#2-retour-sur-la-regression-lineaire" title="Permanent link">⚓︎</a></h2>
@@ -2047,58 +2203,6 @@ dans le code précédent. On obtient alors :
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">4775</span><span class="p">,</span> <span class="mi">1350</span><span class="p">,</span> <span class="mi">5680</span><span class="p">,</span> <span class="mi">5872</span><span class="p">,</span> <span class="mi">7964</span><span class="p">,</span> <span class="mi">3072</span><span class="p">,</span> <span class="mi">1942</span><span class="p">,</span> <span class="mi">8802</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">83</span><span class="p">]</span>
 </code></pre></div></p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4775</span><span class="p">,</span> <span class="mi">1350</span><span class="p">,</span> <span class="mi">5680</span><span class="p">,</span> <span class="mi">5872</span><span class="p">,</span> <span class="mi">7964</span><span class="p">,</span> <span class="mi">3072</span><span class="p">,</span> <span class="mi">1942</span><span class="p">,</span> <span class="mi">8802</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">63</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">83</span><span class="p">])</span>
-
-
-<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">coeff</span><span class="p">)</span>
-
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-<p><img alt="image" class="center" src="../data/exo2.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="mf">0.004978235291745592</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="mf">39.07172126169925</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">7000</span><span class="o">+</span><span class="n">b</span>
-<span class="mf">73.91936830391839</span>
-</code></pre></div>
-<p>On peut estimer à 74 % le taux nécessaire de scolarisation des moins de 24 ans .        </p>
-</details>
 </div>
 <h2 id="3-retour-sur-les-simulations">3. Retour sur les simulations<a class="headerlink" href="#3-retour-sur-les-simulations" title="Permanent link">⚓︎</a></h2>
 <div class="admonition note">
@@ -2149,31 +2253,7 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <div class="admonition example">
 <p class="admonition-title">Exercice  4</p>
 <p><strong>Q1.</strong> Écrire une fonction <code>tirage</code> qui renvoie un nombre entier entre 0 et 10 inclus, suivant une loi uniforme.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">tirage</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q2.</strong> Écrire une fonction <code>moyenne_tirages</code> qui prend pour paramètre un entier <code>n</code> et qui renvoie la valeur moyenne de la fonction <code>tirage</code> sur <code>n</code> tirages.</p>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">moyenne_tirages</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">+=</span> <span class="n">tirage</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">n</span>
-</code></pre></div></td></tr></table></div>
-</details>
 <p><strong>Q3.</strong> Les instructions ci-dessous permettent de tracer l'histogramme des valeurs que prend <code>moyenne_tirages(5)</code> lorsqu'on la répète 100 fois.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2216,12 +2296,6 @@ Pour simuler 10 tirages aléatoires de nombres égaux à 0 ou à 1, on utilisera
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>Faire varier ces paramètres <code>k</code>  et <code>N</code> , et observer les changements. Quelle est la loi qui est illustrée ici ?</p>
-<details class="success">
-<summary>Correction</summary>
-<p>Le paramètre <code>k</code> va influer sur l'écart-type de la gaussienne.
-Plus le paramètre <code>N</code> sera grand, plus l'histogramme se rapprochera d'une gaussienne.</p>
-<p>Le théorème ici illustré est le Théorème Central Limite.        </p>
-</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Exercice  5</p>
@@ -2241,41 +2315,7 @@ Plus le paramètre <code>N</code> sera grand, plus l'histogramme se rapprochera 
 <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;proposition ? &quot;</span><span class="p">))</span>
 <span class="k">while</span> <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Correction</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;proposition ? &#39;</span><span class="p">))</span>
-<span class="k">while</span> <span class="n">prop</span> <span class="o">!=</span> <span class="n">nb_secret</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">prop</span> <span class="o">&gt;</span> <span class="n">nb_secret</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;trop grand&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;trop petit&#39;</span><span class="p">)</span>
-    <span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;proposition ? &#39;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bravo !&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
 </div>
-<hr />
-<p><strong>Bonne chance à tous !</strong></p>
-<p><img alt="image" class="center" src="../data/bye.gif" /></p>
 <script src="https://glassus.github.io/ect2//js/material-tabbed-fix.js"></script>
 
 
@@ -2298,7 +2338,7 @@ Plus le paramètre <code>N</code> sera grand, plus l'histogramme se rapprochera 
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 mars 2025 10:27:49 UTC">28 mars 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 mars 2026 07:40:22 UTC">20 mars 2026</span>
   </span>
 
     
