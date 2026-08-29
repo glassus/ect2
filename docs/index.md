@@ -6,10 +6,10 @@ test: ok
 
 !!! note ":star: Séance en cours :star:"
  
-    - :arrow_right: [TD10](./TD10/TD10/) : retour du SQL, régression, simulations, suite et fin
+    - [TD01](./TD01/TD01/) : révision des structures élémentaires
 
 
-
+{#
 !!! note "Séances précédentes"
     - [TD09](./TD09/TD09/) : SQL, régression, simulations
     - [TD08](./TD08/TD08/) : SQL, matrices, régression, simulations
@@ -21,7 +21,7 @@ test: ok
     - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
     
-
+#}
 
 {#
 !!! note "Séances précédentes"
