@@ -9,6 +9,10 @@ test: ok
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
 
 
+!!! note "Séances précédentes"
+    - [TD02](./TD02/TD02/) : premières simulations
+
+
 {#
 !!! note "Séances précédentes"
     - [TD09](./TD09/TD09/) : SQL, régression, simulations
