@@ -1082,17 +1082,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-retour-sur-le-while" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Retour sur le while.
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1139,6 +1128,7 @@
 <p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <a class="" href="https://console.basthon.fr/" target="_blank">Lien pour ouvrir une console Python dans un nouvel onglet</a></p>
 <h2 id="1-rappels">1. Rappels<a class="headerlink" href="#1-rappels" title="Permanent link">⚓︎</a></h2>
 <p>Chaque langage de programmation permet de simuler du hasard. Ce hasard n'est que du <strong>pseudo-hasard</strong>, un ordinateur étant par définition un objet déterministe, effectuant de manière fidèle et répétitive des opérations ordonnées par le programmeur.</p>
+<p>Pour faire <strong>réellement</strong> de l'aléatoire, certaines entreprises utilisent des <a class="" href="https://www.cloudflare.com/fr-fr/learning/ssl/lava-lamp-encryption/" target="_blank">astuces physiques</a></p>
 <p>Nous allons travailler avec le générateur pseudo-aléatoire (GPA) du module <code>random</code> de la bibliothèque <code>numpy</code>. </p>
 <div class="admonition note">
 <p class="admonition-title">Exemples <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" title=":heart:" /></p>
@@ -1433,28 +1423,6 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
 <p><strong>Q3.</strong> Exécutez le script précédent et observez le graphique obtenu.</p>
 <p><strong>Q4.</strong> Sur ce même graphique, tracez la courbe représentative de la fonction <span class="arithmatex">\(\ln\)</span>.</p>
 </div>
-<h2 id="7-retour-sur-le-while">7. Retour sur le <code>while</code>.<a class="headerlink" href="#7-retour-sur-le-while" title="Permanent link">⚓︎</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Exercice  7</p>
-<p>Écrire un code où l'utilisateur doit deviner un nombre choisi aléatoirement par l'ordinateur entre 1 et 100. L'utilisateur devra être guidé après chaque proposition par les instructions <em>«trop grand»</em> ou <em>«trop petit»</em>.</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg></span> <em>aide :</em></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rd</span>
-
-<span class="n">nb_secret</span> <span class="o">=</span> <span class="o">...</span>
-
-<span class="n">prop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"proposition ? "</span><span class="p">))</span>
-<span class="k">while</span> <span class="o">...</span>
-    <span class="o">...</span>
-</code></pre></div></td></tr></table></div>
-</div>
 <script src="https://glassus.github.io/ect2//js/material-tabbed-fix.js"></script>
 
 
@@ -1477,7 +1445,7 @@ On aurait aussi pu tracer la ligne brisée les reliant :</p>
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 septembre 2026 16:52:10 UTC">24 septembre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 septembre 2026 06:28:26 UTC">25 septembre 2026</span>
   </span>
 
     
