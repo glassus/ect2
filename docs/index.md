@@ -5,7 +5,8 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD02](./TD02/TD02/) : premières simulations
+    - [TD03](./TD03/TD03/) : suites et simulations (Groupe 1)
+    - [TD02](./TD02/TD02/) : premières simulations (Groupe 2)
     
 
 
