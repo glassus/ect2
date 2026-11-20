@@ -68,7 +68,7 @@ Ajoutons maintenant les relations ci-dessous :
 
 | id_emprunteur | Nom    | Prénom | 
 |---------------|--------|--------|
-| 129           | DULAC | Marcel  | 
+| 129           | DULAC | Pierre  | 
 | 845           | DURAND | Michel |
 | 125           | MARTIN | Jean   |
 
