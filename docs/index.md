@@ -5,11 +5,12 @@ test: ok
 ### 1. Séances de Travaux Dirigés
 
 !!! note ":star: Séance en cours :star:"
-    - [TD03](./TD03/TD03/) : suites et simulations
+    - [TD04](./TD04/TD04/) : découverte du langage SQL    
     
 
 
 !!! note "Séances précédentes"
+    - [TD03](./TD03/TD03/) : suites et simulations
     - [TD02](./TD02/TD02/) : premières simulations
     - [TD01](./TD01/TD01/) : révision des structures élémentaires
 
